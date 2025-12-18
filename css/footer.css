@@ -1,0 +1,14 @@
+/* Simple footer at the bottom of each page's content */
+.rw1-footer {
+  margin-top: 2.5rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(0,0,0,.15);
+  color: rgba(0,0,0,.65);
+  font-size: 0.9rem;
+}
+
+.rw1-footer-inner {
+  max-width: 1140px;   /* matches common Quarto container widths */
+  margin: 0 auto;
+  padding: 0 1rem;
+}

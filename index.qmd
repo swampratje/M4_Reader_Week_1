@@ -1,0 +1,21 @@
+---
+title: "Reader Week 1"
+numbered: false      # prevents numbering in sidebar and page header
+toc: false           # optional: hides local TOC on that page
+---
+
+## Overview {-}
+
+Sequences and series are the language of “step-by-step change”. They show up whenever we observe a quantity over time (temperatures, prices, interest rates), whenever we run an algorithm that produces successive approximations (root finding, numerical integration, gradient descent), and whenever we model dynamics (difference equations, learning, feedback systems). In all of these settings, the central question is:
+
+> **Do these successive values settle down—and if so, to what?**
+
+That question is the mathematical notion of **convergence**. Once you can decide whether a sequence converges, you can reason reliably about limits, stability, approximation quality, and long-run behavior.
+
+A **series** is what you get when you start *adding up* the terms of a sequence. Series occur naturally in economics and finance (discounted cash flows), in probability (expected values and tail bounds), and throughout applied mathematics via **power series** (which define familiar functions such as \(e^x\), \(\sin x\), and \(\cos x\)). Here, the key question becomes:
+
+> **Do the partial sums approach a finite value?**
+
+To answer that, we develop practical convergence tools: monotonicity and boundedness, alternating series arguments, absolute convergence, and the ratio test—culminating in a first look at power series and radii of convergence.
+
+## Road map {-}

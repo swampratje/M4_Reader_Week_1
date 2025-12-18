@@ -1,0 +1,49 @@
+---
+title: "Motivation and basic definitions"
+---
+
+## Motivation {-}
+
+Sequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.
+
+Consider the simple act of measuring the temperature in your garden on a daily basis. You are then actually generating a sequence (a time series) of temperature readings.
+
+You will also find numerous examples of sequences in the world of financial econometrics. Analysts study time series comprised of valuations of financial products such as stocks and bonds. These sequences of financial data unveil crucial information about market trends, volatility, and investment opportunities. By scrutinizing these series, analysts can make informed decisions and devise effective investment strategies.
+
+In the course *Programming and Numerical Analysis*, you were introduced to algorithms that generate sequences of values. These algorithms serve a crucial purpose, because they help estimate fundamental mathematical quantities like derivatives and roots of equations.
+
+So these examples already illustrate that a basic understanding of the theory of sequences contributes to understanding sequential data in a general sense, and to exploring techniques to model and analyze temporal patterns. Let us start more formally.
+
+## What is a sequence? {-}
+
+The basic characteristic of all sequences is that one can number their elements. This means that a sequence in a set $V$ is basically a mapping
+$$
+f:\mathbb{N}\rightarrow V,
+$$
+possibly after re-numbering and re-labelling.[^nat]
+
+A sequence is a mathematical structure that can be represented in this way. The image $f(n)\in V$ is called the $n$-th element, with index $n$. It will be convenient to denote the $n$-th element of the sequence as
+$$
+a_n := f(n).
+$$
+A sequence can then also be written as $\{a_n\}_{n\in \mathbb{N}}$.
+
+[^nat]: Here we use the convention that $\mathbb{N}=\{1,2,\ldots\}$; sometimes it will be useful to extend the set $\mathbb{N}$ with the 0 element: $\mathbb{N}_0:=\mathbb{N}\cup\{0\}$.
+
+Other times it will be more convenient to use other sub-indices. For instance you may want to define a sequence through
+$$
+a_n=\frac{1}{n-1},
+$$
+but clearly this will function only if the sequence of indices starts at $n=2$. In this case you could transform your sequence by relabelling: introduce the sequence $\{b_n\}_{n\in \mathbb{N}}$ defined by $b_n:=a_{n+1}$ for $n\in \mathbb{N}$. This sequence would agree with the mapping $f(n)=\frac{1}{n}$.
+
+Re-labelling is not really necessary: you could start numbering at $n=2$, so that the right expression becomes $\{a_n\}_{n=2}^\infty$.[^stewart]
+
+[^stewart]: This is the reason that sequences are sometimes denoted $\{a_n\}$ if there is common ground about the indices. In this case we could have known that $\{a_n\}=\{a_n\}_{n=2}^\infty$. For example, this approach is used in Stewart, Chapter 11 on sequences and series.
+
+::: {.callout-note title="Examples"}
+- A trivial example of a sequence in $\mathbb{N}$ is the mapping $f(n)=n$.
+- The sequence of all even numbers can be associated with the mapping $f(n)=2n$.
+- The sequence of all odd numbers can be associated with the mapping $f(n)=2n+1$.
+:::
+
+Numerous other examples of sequences will be given in the subsequent chapters. Below we will first focus on sequences in $\mathbb{R}$: convergence, monotonicity, and the Monotonic Convergence Theorem. Then we extend convergence to sequences in higher-dimensional spaces $\mathbb{R}^m$ using norms and distances.

@@ -1,0 +1,80 @@
+---
+title: 'Sequences in $\mathbb{R}$ and convergence'
+---
+
+Some quick numerical illustration:
+
+```{python}
+import numpy as np
+np.mean([1, 2, 3])
+```
+
+## Definition of convergence {#sec-convergence-def}
+
+We say that the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}$ has limit $L\in\mathbb{R}$ if, for large enough indices, the elements become arbitrarily close to $L$.
+
+::: {.callout-note title="Convergence of sequences in $\mathbb{R}$"}
+The sequence $\{a_n\}_{n\in \mathbb{N}}$ has limit $L\in \mathbb{R}$ if for each $\varepsilon>0$ there exists an index number $N\in \mathbb{N}$ such that
+$$
+n\geq N\Rightarrow |a_n-L|\leq \varepsilon.
+$$
+
+Shorthand notation:
+$$
+\lim_{n\rightarrow \infty} a_n=L.
+$$
+
+If a sequence does not converge, it is called *divergent*.
+:::
+
+### Examples {-}
+
+::: {.callout-note title="Example 1: random perturbation sequence" #ex-random}
+Generate a sequence $\{a_n\}_{n=1}^\infty$ using
+$$
+a_n=1+\frac{(-1)^n+\delta}{n},
+$$
+where $\delta$ is randomly drawn from the uniform distribution on $[-1,1]$. Then $\lim_{n\rightarrow \infty} a_n=1=L$.
+
+Let $\varepsilon>0$ be arbitrary but fixed. For all $n$ we have
+$$
+-\tfrac{2}{n}\leq 1-a_n\leq \tfrac{2}{n}
+\quad\Rightarrow\quad
+|a_n-L|\leq \tfrac{2}{n}.
+$$
+If $\tfrac{2}{n}\leq\varepsilon$ then $|a_n-L|\leq \varepsilon$, which is guaranteed when
+$n\geq N:=\left\lceil\frac{2}{\varepsilon}\right\rceil$.[^ceil]
+:::
+
+[^ceil]: Here $\lceil\cdot\rceil$ denotes the ceiling function, $\lceil x\rceil:=\min \{k\in \mathbb{Z}: k\geq x\}$.
+
+![Illustration of the limit in Example 1.](figures/Figure7_conv_random.png){#fig-conv-random width=60%}
+
+
+
+::: {.callout-note title="Example 2: geometric sequence" #ex-geoseries}
+Consider the geometric sequence $a_n=r^n$ for $n\in \mathbb{N}$, and assume $r\neq 0$. Then $a_n$ converges for $-1<r\leq 1$.
+
+If $r=1$ convergence is clear, as $a_n=1$ for all $n$. If $r=-1$, divergence is also clear as $a_n=(-1)^n$.
+
+Now suppose $|r|<1$. We will show that the limit is $L=0$. Take $\varepsilon>0$, arbitrary but fixed. Then
+\begin{align*}
+|a_n-L|=|a_n| \leq \varepsilon
+&\Leftrightarrow |r|^n\leq \varepsilon \\
+&\Leftrightarrow n\ln(|r|)=\ln(|r|^n)\leq \ln(\varepsilon)\\
+& \Leftrightarrow n\geq \frac{\ln(\varepsilon)}{\ln(|r|)}.
+\end{align*}
+The last inequality uses $\ln(|r|)<0$. So let
+$$
+N:=\left\lceil\frac{\ln(\varepsilon)}{\ln(|r|)}\right\rceil,
+$$
+then $n\geq N\Rightarrow |a_n-L|\leq \varepsilon$.
+:::
+
+Geometric sequences play an important role in finance, as these can be used to model processes with a constant proportional change (e.g., steady growth, inflation, or discount factors), where each period’s value is obtained by multiplying the previous one by the same factor.
+
+::: {.callout-note title="Example 3: arithmetic sequence" #ex-ariseries}
+Consider the arithmetic sequence inductively defined, i.e. $a_1=A, a_n=a_{n-1}+K$ for $n\in \mathbb{N}$. This sequence clearly does not converge, or it must be constant.   
+:::
+
+Arithmetic sequences also appear in finance. Whenever a cash flow, payment, or value changes by a constant amount per period—such as in stepwise contributions, fixed annual raises in income, or straight-line depreciation—the underlying quantities follow an arithmetic pattern.

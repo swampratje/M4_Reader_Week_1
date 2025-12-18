@@ -1,0 +1,77 @@
+---
+title: 'Monotonic convergence'
+---
+
+In this chapter we examine two qualitative properties that are very useful to show convergence: **boundedness** and **monotonicity**. Many times we do not have a closed formula for the sequence (or it is hard to obtain), but these qualitative tools still let us prove convergence.
+
+::: {.callout-note title="Monotonicity"}
+A sequence $\{a_n\}_{n\in \mathbb{N}}$ is *monotonic* if either:
+
+- $a_{n}\geq a_{n+1}$ for all $n$ (monotonically decreasing), or
+- $a_{n+1}\geq a_n$ for all $n$ (monotonically increasing).
+:::
+
+::: {.callout-note title="Boundedness"}
+A sequence $\{a_n\}_{n\in \mathbb{N}}$ is *bounded* if there is a constant $M>0$ such that
+$$
+-M\leq a_n\leq M \quad \text{for all } n.
+$$
+:::
+
+::: {#sec-mct}
+**Theorem (Monotonic Convergence Theorem).**  
+Suppose $\{a_n\}_{n\in \mathbb{N}}$ is bounded and monotonic. Then the limit
+$$
+L=\lim_{n\rightarrow \infty}a_n
+$$
+exists.
+:::
+
+<details>
+<summary><b>Proof (increasing case)</b></summary>
+
+Assume $\{a_n\}$ is monotonically increasing and bounded. Then
+$$
+L=\sup\{a_n\mid n\in\mathbb{N}\}
+$$
+exists. Take $\varepsilon>0$. Since $L$ is the least upper bound, $L-\varepsilon$ is not an upper bound, so there exists $N$ with
+$L-\varepsilon < a_N \le L$. Because the sequence is increasing, for all $n\ge N$ we have
+$L-\varepsilon < a_n \le L$, hence $|a_n-L|<\varepsilon$.
+
+A proof for decreasing sequences is similar (use the infimum).
+
+</details>
+
+::: {.callout-note title="Worked example: an iteratively defined sequence"}
+Consider the sequence defined by
+$$
+a_1=1,\qquad a_{n+1} =3-\frac{1}{a_n}.
+$$
+We want to understand the long-term behavior and compute $\lim_{n\rightarrow \infty} a_n$.
+
+We show:
+- $\{a_n\}$ is increasing,
+- $\{a_n\}$ is bounded.
+
+*Increasing (induction).* Define $P(n): a_{n+1}> a_n$. Then $P(1)$ holds since $a_2=3-1/a_1=2>a_1$. Assume $P(k)$ holds so that $a_{k+1}>a_k>\cdots>a_1=1$. Then
+$$
+a_{k+2}=3-\frac{1}{a_{k+1}}> 3-\frac{1}{a_k}=a_{k+1},
+$$
+so $P(k+1)$ holds.
+
+*Bounded.* One can show $a_n\le 3$ for all $n$ (and all terms stay positive).
+
+By the Monotonic Convergence Theorem, $L=\lim_{n\to\infty}a_n$ exists. Compute:
+$$
+L=\lim_{n\rightarrow\infty}a_{n+1}
+=\lim_{n\rightarrow \infty}\left(3-\frac{1}{a_n}\right)
+=3-\frac{1}{L}.
+$$
+So $L$ solves $L=3-\frac{1}{L}$, i.e.
+$$
+L=\tfrac{3}{2}+\tfrac{1}{2}\sqrt{5}
+$$
+(the other root is not compatible with the sequence).
+:::
+
+![Sequence values and (fast) convergence to $L$.](../figures/MonConv_seq.png){#fig-monconv width=50%}

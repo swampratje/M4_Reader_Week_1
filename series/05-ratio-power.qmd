@@ -1,0 +1,91 @@
+---
+title: "Ratio test and power series"
+---
+## The ratio test
+
+For many sequences it may be hard to know whether the corresponding series converge. Fortunately, there are several criteria that can help. Here we focus on the **ratio test**, which shows that a series can often be compared to a geometric series—whose convergence behavior we understand well.^[There are other tests. One you may have discovered in earlier exercises is the **integral test**. Another is **D’Alembert’s criterion**. For our purposes here, the ratio test suffices.]
+
+
+::: {#thm-ratio}
+**Theorem (Ratio test).**
+Let $\{a_n\}$ be a sequence with $a_n\neq 0$ eventually.
+1. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$, then $\sum_{n=1}^\infty a_n$ converges (in fact absolutely).
+2. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1$ or the limit is $\infty$, then $\sum_{n=1}^\infty a_n$ diverges.
+:::
+
+::: {.callout-tip title="Proof" collapse="true"}
+
+**(i)** Suppose
+$$
+\left|\frac{a_{n+1}}{a_n}\right|\to L
+\quad\text{with }L<1.
+$$
+Then there exist a number $r\in(0,1)$ and an index $N$ such that for all $n\ge N$,
+$$
+\left|\frac{a_{n+1}}{a_n}\right|<r.
+$$
+Hence, iterating,
+$$
+|a_{N+1}|<|a_N|\,r,\qquad
+|a_{N+2}|<|a_N|\,r^2,\qquad \ldots,\qquad
+|a_{N+k}|<|a_N|\,r^k.
+$$
+Therefore, for any $\ell\ge 1$,
+$$
+\sum_{k=1}^{\ell}|a_{N+k}|
+\le |a_N|\sum_{k=1}^{\ell} r^k.
+$$
+Since $\sum_{k=1}^{\infty} r^k$ converges, the comparison test implies that
+$\sum_{k=1}^{\infty}|a_{N+k}|$ converges. Consequently,
+$$
+\sum_{n=1}^{\infty}|a_n|
+=
+\sum_{n=1}^{N}|a_n|+\sum_{k=1}^{\infty}|a_{N+k}|
+$$
+converges, so $\sum_{n=1}^{\infty} a_n$ converges absolutely (hence converges).
+
+**(ii)** If
+$$
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1
+\quad\text{or}\quad
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty,
+$$
+then for all sufficiently large $n$ we have $|a_{n+1}|>|a_n|$. In particular,
+$|a_n|$ cannot tend to $0$, so $a_n\nrightarrow 0$. By the term test for divergence
+(Theorem $\ref{th:conv}$), the series $\sum_{n=1}^{\infty} a_n$ cannot converge.
+
+:::
+
+
+## Power series and convergence
+
+A **power series** has the form
+$$
+\sum_{n=0}^\infty a_n x^n.
+$$
+
+Example:
+$$
+\sum_{n=0}^\infty \frac{x^n}{n!}
+$$
+converges for every $x\in\mathbb{R}$ (ratio test gives limit $0$).
+
+### Convergence interval
+
+::: {#thm-interval}
+**Theorem (Convergence propagates inward).**
+For a power series $\sum_{n=0}^\infty c_n x^n$:
+1. If it converges at $x=b\neq 0$, then it converges for all $|x|<|b|$.
+2. If it diverges at $x=b$, then it diverges for all $|x|>|b|$.
+:::
+
+### Radius of convergence
+
+::: {#thm-radius}
+**Theorem (Radius of convergence).**
+For $\sum_{n=0}^\infty c_n (x-a)^n$, exactly one holds:
+1. it converges only at $x=a$;
+2. it converges for all $x$;
+3. there exists $R>0$ such that it converges if $|x-a|<R$ and diverges if $|x-a|>R$.
+The number $R$ is the **radius of convergence**.
+:::

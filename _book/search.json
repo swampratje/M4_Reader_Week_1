@@ -1,0 +1,505 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reader Week 1",
+    "section": "",
+    "text": "Overview\nSequences and series are the language of “step-by-step change”. They show up whenever we observe a quantity over time (temperatures, prices, interest rates), whenever we run an algorithm that produces successive approximations (root finding, numerical integration, gradient descent), and whenever we model dynamics (difference equations, learning, feedback systems). In all of these settings, the central question is:\nThat question is the mathematical notion of convergence. Once you can decide whether a sequence converges, you can reason reliably about limits, stability, approximation quality, and long-run behavior.\nA series is what you get when you start adding up the terms of a sequence. Series occur naturally in economics and finance (discounted cash flows), in probability (expected values and tail bounds), and throughout applied mathematics via power series (which define familiar functions such as (e^x), (x), and (x)). Here, the key question becomes:\nTo answer that, we develop practical convergence tools: monotonicity and boundedness, alternating series arguments, absolute convergence, and the ratio test—culminating in a first look at power series and radii of convergence.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reader Week 1</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Reader Week 1",
+    "section": "",
+    "text": "Do these successive values settle down—and if so, to what?\n\n\n\n\nDo the partial sums approach a finite value?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reader Week 1</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#road-map",
+    "href": "index.html#road-map",
+    "title": "Reader Week 1",
+    "section": "Road map",
+    "text": "Road map",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reader Week 1</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/01-intro.html",
+    "href": "sequences/01-intro.html",
+    "title": "2  Motivation and basic definitions",
+    "section": "",
+    "text": "Motivation\nSequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.\nConsider the simple act of measuring the temperature in your garden on a daily basis. You are then actually generating a sequence (a time series) of temperature readings.\nYou will also find numerous examples of sequences in the world of financial econometrics. Analysts study time series comprised of valuations of financial products such as stocks and bonds. These sequences of financial data unveil crucial information about market trends, volatility, and investment opportunities. By scrutinizing these series, analysts can make informed decisions and devise effective investment strategies.\nIn the course Programming and Numerical Analysis, you were introduced to algorithms that generate sequences of values. These algorithms serve a crucial purpose, because they help estimate fundamental mathematical quantities like derivatives and roots of equations.\nSo these examples already illustrate that a basic understanding of the theory of sequences contributes to understanding sequential data in a general sense, and to exploring techniques to model and analyze temporal patterns. Let us start more formally.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Motivation and basic definitions</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/01-intro.html#what-is-a-sequence",
+    "href": "sequences/01-intro.html#what-is-a-sequence",
+    "title": "2  Motivation and basic definitions",
+    "section": "What is a sequence?",
+    "text": "What is a sequence?\nThe basic characteristic of all sequences is that one can number their elements. This means that a sequence in a set \\(V\\) is basically a mapping \\[\nf:\\mathbb{N}\\rightarrow V,\n\\] possibly after re-numbering and re-labelling.1\nA sequence is a mathematical structure that can be represented in this way. The image \\(f(n)\\in V\\) is called the \\(n\\)-th element, with index \\(n\\). It will be convenient to denote the \\(n\\)-th element of the sequence as \\[\na_n := f(n).\n\\] A sequence can then also be written as \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\).\nOther times it will be more convenient to use other sub-indices. For instance you may want to define a sequence through \\[\na_n=\\frac{1}{n-1},\n\\] but clearly this will function only if the sequence of indices starts at \\(n=2\\). In this case you could transform your sequence by relabelling: introduce the sequence \\(\\{b_n\\}_{n\\in \\mathbb{N}}\\) defined by \\(b_n:=a_{n+1}\\) for \\(n\\in \\mathbb{N}\\). This sequence would agree with the mapping \\(f(n)=\\frac{1}{n}\\).\nRe-labelling is not really necessary: you could start numbering at \\(n=2\\), so that the right expression becomes \\(\\{a_n\\}_{n=2}^\\infty\\).2\n\n\n\n\n\n\nNoteExamples\n\n\n\n\nA trivial example of a sequence in \\(\\mathbb{N}\\) is the mapping \\(f(n)=n\\).\nThe sequence of all even numbers can be associated with the mapping \\(f(n)=2n\\).\nThe sequence of all odd numbers can be associated with the mapping \\(f(n)=2n+1\\).\n\n\n\nNumerous other examples of sequences will be given in the subsequent chapters. Below we will first focus on sequences in \\(\\mathbb{R}\\): convergence, monotonicity, and the Monotonic Convergence Theorem. Then we extend convergence to sequences in higher-dimensional spaces \\(\\mathbb{R}^m\\) using norms and distances.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Motivation and basic definitions</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/01-intro.html#footnotes",
+    "href": "sequences/01-intro.html#footnotes",
+    "title": "2  Motivation and basic definitions",
+    "section": "",
+    "text": "Here we use the convention that \\(\\mathbb{N}=\\{1,2,\\ldots\\}\\); sometimes it will be useful to extend the set \\(\\mathbb{N}\\) with the 0 element: \\(\\mathbb{N}_0:=\\mathbb{N}\\cup\\{0\\}\\).↩︎\nThis is the reason that sequences are sometimes denoted \\(\\{a_n\\}\\) if there is common ground about the indices. In this case we could have known that \\(\\{a_n\\}=\\{a_n\\}_{n=2}^\\infty\\). For example, this approach is used in Stewart, Chapter 11 on sequences and series.↩︎",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Motivation and basic definitions</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/02-convergence-R.html",
+    "href": "sequences/02-convergence-R.html",
+    "title": "3  Sequences in \\(\\mathbb{R}\\) and convergence",
+    "section": "",
+    "text": "Definition of convergence\nSome quick numerical illustration:\nWe say that the sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}\\) has limit \\(L\\in\\mathbb{R}\\) if, for large enough indices, the elements become arbitrarily close to \\(L\\).",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}$ and convergence</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/02-convergence-R.html#sec-convergence-def",
+    "href": "sequences/02-convergence-R.html#sec-convergence-def",
+    "title": "3  Sequences in \\(\\mathbb{R}\\) and convergence",
+    "section": "",
+    "text": "NoteConvergence of sequences in \\(\\mathbb{R}\\)\n\n\n\nThe sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) has limit \\(L\\in \\mathbb{R}\\) if for each \\(\\varepsilon&gt;0\\) there exists an index number \\(N\\in \\mathbb{N}\\) such that \\[\nn\\geq N\\Rightarrow |a_n-L|\\leq \\varepsilon.\n\\]\nShorthand notation: \\[\n\\lim_{n\\rightarrow \\infty} a_n=L.\n\\]\nIf a sequence does not converge, it is called divergent.\n\n\n\nExamples\n\n\n\n\n\n\nNoteExample 1: random perturbation sequence\n\n\n\nGenerate a sequence \\(\\{a_n\\}_{n=1}^\\infty\\) using \\[\na_n=1+\\frac{(-1)^n+\\delta}{n},\n\\] where \\(\\delta\\) is randomly drawn from the uniform distribution on \\([-1,1]\\). Then \\(\\lim_{n\\rightarrow \\infty} a_n=1=L\\).\nLet \\(\\varepsilon&gt;0\\) be arbitrary but fixed. For all \\(n\\) we have \\[\n-\\tfrac{2}{n}\\leq 1-a_n\\leq \\tfrac{2}{n}\n\\quad\\Rightarrow\\quad\n|a_n-L|\\leq \\tfrac{2}{n}.\n\\] If \\(\\tfrac{2}{n}\\leq\\varepsilon\\) then \\(|a_n-L|\\leq \\varepsilon\\), which is guaranteed when \\(n\\geq N:=\\left\\lceil\\frac{2}{\\varepsilon}\\right\\rceil\\).1\n\n\n\n\n\n\n\n\nFigure 3.1: Illustration of the limit in Example 1.\n\n\n\n\n\n\n\n\n\nNoteExample 2: geometric sequence\n\n\n\nConsider the geometric sequence \\(a_n=r^n\\) for \\(n\\in \\mathbb{N}\\), and assume \\(r\\neq 0\\). Then \\(a_n\\) converges for \\(-1&lt;r\\leq 1\\).\nIf \\(r=1\\) convergence is clear, as \\(a_n=1\\) for all \\(n\\). If \\(r=-1\\), divergence is also clear as \\(a_n=(-1)^n\\).\nNow suppose \\(|r|&lt;1\\). We will show that the limit is \\(L=0\\). Take \\(\\varepsilon&gt;0\\), arbitrary but fixed. Then \\[\\begin{align*}\n|a_n-L|=|a_n| \\leq \\varepsilon\n&\\Leftrightarrow |r|^n\\leq \\varepsilon \\\\\n&\\Leftrightarrow n\\ln(|r|)=\\ln(|r|^n)\\leq \\ln(\\varepsilon)\\\\\n& \\Leftrightarrow n\\geq \\frac{\\ln(\\varepsilon)}{\\ln(|r|)}.\n\\end{align*}\\] The last inequality uses \\(\\ln(|r|)&lt;0\\). So let \\[\nN:=\\left\\lceil\\frac{\\ln(\\varepsilon)}{\\ln(|r|)}\\right\\rceil,\n\\] then \\(n\\geq N\\Rightarrow |a_n-L|\\leq \\varepsilon\\).\n\n\nGeometric sequences play an important role in finance, as these can be used to model processes with a constant proportional change (e.g., steady growth, inflation, or discount factors), where each period’s value is obtained by multiplying the previous one by the same factor.\n\n\n\n\n\n\nNoteExample 3: arithmetic sequence\n\n\n\nConsider the arithmetic sequence inductively defined, i.e. \\(a_1=A, a_n=a_{n-1}+K\\) for \\(n\\in \\mathbb{N}\\). This sequence clearly does not converge, or it must be constant.\n\n\nArithmetic sequences also appear in finance. Whenever a cash flow, payment, or value changes by a constant amount per period—such as in stepwise contributions, fixed annual raises in income, or straight-line depreciation—the underlying quantities follow an arithmetic pattern.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}$ and convergence</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/02-convergence-R.html#footnotes",
+    "href": "sequences/02-convergence-R.html#footnotes",
+    "title": "3  Sequences in \\(\\mathbb{R}\\) and convergence",
+    "section": "",
+    "text": "Here \\(\\lceil\\cdot\\rceil\\) denotes the ceiling function, \\(\\lceil x\\rceil:=\\min \\{k\\in \\mathbb{Z}: k\\geq x\\}\\).↩︎",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}$ and convergence</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/03-monotone.html",
+    "href": "sequences/03-monotone.html",
+    "title": "4  Monotonic convergence",
+    "section": "",
+    "text": "In this chapter we examine two qualitative properties that are very useful to show convergence: boundedness and monotonicity. Many times we do not have a closed formula for the sequence (or it is hard to obtain), but these qualitative tools still let us prove convergence.\n\n\n\n\n\n\nNoteMonotonicity\n\n\n\nA sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) is monotonic if either:\n\n\\(a_{n}\\geq a_{n+1}\\) for all \\(n\\) (monotonically decreasing), or\n\\(a_{n+1}\\geq a_n\\) for all \\(n\\) (monotonically increasing).\n\n\n\n\n\n\n\n\n\nNoteBoundedness\n\n\n\nA sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) is bounded if there is a constant \\(M&gt;0\\) such that \\[\n-M\\leq a_n\\leq M \\quad \\text{for all } n.\n\\]\n\n\n\nTheorem (Monotonic Convergence Theorem).\nSuppose \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) is bounded and monotonic. Then the limit \\[\nL=\\lim_{n\\rightarrow \\infty}a_n\n\\] exists.\n\n\n\nProof (increasing case)\n\nAssume \\(\\{a_n\\}\\) is monotonically increasing and bounded. Then \\[\nL=\\sup\\{a_n\\mid n\\in\\mathbb{N}\\}\n\\] exists. Take \\(\\varepsilon&gt;0\\). Since \\(L\\) is the least upper bound, \\(L-\\varepsilon\\) is not an upper bound, so there exists \\(N\\) with \\(L-\\varepsilon &lt; a_N \\le L\\). Because the sequence is increasing, for all \\(n\\ge N\\) we have \\(L-\\varepsilon &lt; a_n \\le L\\), hence \\(|a_n-L|&lt;\\varepsilon\\).\nA proof for decreasing sequences is similar (use the infimum).\n\n\n\n\n\n\n\nNoteWorked example: an iteratively defined sequence\n\n\n\nConsider the sequence defined by \\[\na_1=1,\\qquad a_{n+1} =3-\\frac{1}{a_n}.\n\\] We want to understand the long-term behavior and compute \\(\\lim_{n\\rightarrow \\infty} a_n\\).\nWe show: - \\(\\{a_n\\}\\) is increasing, - \\(\\{a_n\\}\\) is bounded.\nIncreasing (induction). Define \\(P(n): a_{n+1}&gt; a_n\\). Then \\(P(1)\\) holds since \\(a_2=3-1/a_1=2&gt;a_1\\). Assume \\(P(k)\\) holds so that \\(a_{k+1}&gt;a_k&gt;\\cdots&gt;a_1=1\\). Then \\[\na_{k+2}=3-\\frac{1}{a_{k+1}}&gt; 3-\\frac{1}{a_k}=a_{k+1},\n\\] so \\(P(k+1)\\) holds.\nBounded. One can show \\(a_n\\le 3\\) for all \\(n\\) (and all terms stay positive).\nBy the Monotonic Convergence Theorem, \\(L=\\lim_{n\\to\\infty}a_n\\) exists. Compute: \\[\nL=\\lim_{n\\rightarrow\\infty}a_{n+1}\n=\\lim_{n\\rightarrow \\infty}\\left(3-\\frac{1}{a_n}\\right)\n=3-\\frac{1}{L}.\n\\] So \\(L\\) solves \\(L=3-\\frac{1}{L}\\), i.e. \\[\nL=\\tfrac{3}{2}+\\tfrac{1}{2}\\sqrt{5}\n\\] (the other root is not compatible with the sequence).\n\n\n\n\n\n\n\n\nFigure 4.1: Sequence values and (fast) convergence to \\(L\\).",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Monotonic convergence</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/04-continuity.html",
+    "href": "sequences/04-continuity.html",
+    "title": "5  Sequences and continuity",
+    "section": "",
+    "text": "Continuity\n%{#sec-continuity}\nUsing functions \\(f:\\mathbb{R}\\rightarrow \\mathbb{R}\\) it is easy to generate a new sequence \\(\\{b_n\\}_{n\\in \\mathbb{N}}\\) from a given sequence \\(\\{a_n\\}_{n\\in\\mathbb{N}}\\) by applying \\(f\\) to each element: \\[\nb_n:=f(a_n).\n\\] Below we focus on continuous \\(f\\).",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sequences and continuity</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/04-continuity.html#continuity",
+    "href": "sequences/04-continuity.html#continuity",
+    "title": "5  Sequences and continuity",
+    "section": "",
+    "text": "NoteContinuity (definition)\n\n\n\nConsider a function \\(f:I\\rightarrow \\mathbb{R}\\), where \\(I\\subset \\mathbb{R}\\) is an open interval, and take \\(a\\in I\\). Then \\(f\\) is continuous at \\(a\\) if \\[\n\\lim_{x\\rightarrow a}f(x)=f(a).\n\\] Equivalently: for each \\(\\varepsilon&gt;0\\) there is \\(\\delta&gt;0\\) such that \\[\nx\\in I,\\ |x-a|\\leq \\delta\\Rightarrow |f(x)-f(a)|\\leq \\varepsilon.\n\\] The function \\(f\\) is continuous on \\(I\\) if it is continuous at every \\(a\\in I\\).",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sequences and continuity</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/04-continuity.html#continuity-and-row-continuity",
+    "href": "sequences/04-continuity.html#continuity-and-row-continuity",
+    "title": "5  Sequences and continuity",
+    "section": "Continuity and row continuity",
+    "text": "Continuity and row continuity\n\nTheorem 5.1 (Characterization of continuity in terms of sequences).\nLet \\(f:I\\rightarrow \\mathbb{R}\\) with \\(I\\subset\\mathbb{R}\\) open. Then \\(f\\) is continuous at \\(a\\in I\\) iff for each sequence \\(\\{a_n\\}\\subset I\\) with \\(a_n\\to a\\) we have \\[\nf(a_n)\\to f(a).\n\\]\n\n\n\nProof\n\n(\\(\\Rightarrow\\)) If \\(f\\) is continuous at \\(a\\), then for each \\(\\varepsilon&gt;0\\) there exists \\(\\delta&gt;0\\) such that \\(|x-a|\\le\\delta\\Rightarrow |f(x)-f(a)|\\le\\varepsilon\\). If \\(a_n\\to a\\), then for some \\(N\\) we have \\(n\\ge N\\Rightarrow |a_n-a|\\le\\delta\\), hence \\(|f(a_n)-f(a)|\\le\\varepsilon\\).\n(\\(\\Leftarrow\\)) Suppose the sequential condition holds but \\(f\\) is not continuous at \\(a\\). Then there exists \\(\\varepsilon&gt;0\\) such that for every \\(n\\) there exists \\(b_n\\in (a-\\tfrac1n,a+\\tfrac1n)\\) with \\(|f(b_n)-f(a)|&gt;\\varepsilon\\). Then \\(b_n\\to a\\) but \\(f(b_n)\\not\\to f(a)\\), contradiction.\n\nA standard consequence: if \\(a_n\\to a\\) and \\(f\\) is continuous at \\(a\\), then \\(f(a_n)\\to f(a)\\). For example: \\[\n\\lim_{n\\rightarrow\\infty}\\sqrt{1+\\tfrac{1}{n}}\n= \\sqrt{\\lim_{n\\rightarrow \\infty}(1+\\tfrac{1}{n})}\n=\\sqrt{1+0}=1.\n\\]",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sequences and continuity</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/05-Rm.html",
+    "href": "sequences/05-Rm.html",
+    "title": "6  Sequences in \\(\\mathbb{R}^m\\)",
+    "section": "",
+    "text": "Norm and distance\nA sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}^m\\) consists of elements \\(a_n\\in \\mathbb{R}^m\\). So instead of considering numbers only, we now look at \\(m\\)-tuples of numbers.\nSimilar to the discussion of convergence of a sequence in \\(\\mathbb{R}\\) one may ask oneself when a sequence in \\(\\mathbb{R}^m\\) converges – or what that should mean. Note that \\(\\displaystyle\\lim_{n\\rightarrow\\infty}a_n=L\\) in \\(\\mathbb{R}\\) means that by taking high enough index numbers \\(n\\), the corresponding sequence elements \\(a_n\\) get arbitrarily close to the value \\(L\\). Intuitively, we would want to say that a converging sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\in\\mathbb{R}^m\\) must get close to some element of \\(\\mathbb{R}^m\\), where the closeness is measured by some idea of distance. A distance measure that is quite common is the Euclidean distance \\(d()\\), which uses the Euclidean norm on \\(\\mathbb{R}^m\\).\nA sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}^m\\) consists of elements \\(a_n\\in \\mathbb{R}^m\\), so instead of numbers we now consider \\(m\\)-tuples of numbers.\nA common choice of distance in \\(\\mathbb{R}^m\\) is based on the Euclidean norm \\[\n\\|x\\|:=\\sqrt{\\sum_{k=1}^m x_k^2}.\n\\] The associated Euclidean distance is \\[\nd(x,y)=\\|x-y\\|=\\sqrt{\\sum_{k=1}^m(x_k-y_k)^2}.\n\\]\nIt is called a norm because it satisfies the following properties:",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}^m$</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/05-Rm.html#sec-norm-distance",
+    "href": "sequences/05-Rm.html#sec-norm-distance",
+    "title": "6  Sequences in \\(\\mathbb{R}^m\\)",
+    "section": "",
+    "text": "Norm axioms\n\n\n\n\n\n\n\nTip\n\n\n\nA function \\(\\lVert\\cdot\\rVert:\\mathbb{R}^m\\to\\mathbb{R}\\) is a norm if for all \\(x,y\\in\\mathbb{R}^m\\) and \\(\\alpha\\in\\mathbb{R}\\):\n\nNon-negativity: \\(\\|x\\|\\ge 0\\).\nDefiniteness: \\(\\|x\\|=0 \\iff x=0\\).\nHomogeneity: \\(\\|\\alpha x\\|=|\\alpha|\\,\\|x\\|\\).\nTriangle inequality: \\(\\|x+y\\|\\le \\|x\\|+\\|y\\|\\).\n\nThere are different norms on \\(\\mathbb{R}^m\\) that have clear applications. Here are some examples.\n\nThe \\(L_1\\) norm is defined by \\(\\|x\\|_1:=\\sum_{i=1}^m|x_i|\\).\nThe \\(L_\\infty\\) norm is defined by \\(\\|x\\|_\\infty:=\\max_{i=1,\\ldots,m}|x_i|\\)\n\nWhat do your think an alternative name is for the Euclidean norm?\n\n\n\n\nConvergence in \\(\\mathbb{R}^m\\)\n\nDefinition 6.1 Definition (Convergence in \\(\\mathbb{R}^m\\)).\nA sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\subset\\mathbb{R}^m\\) converges to \\(L\\in \\mathbb{R}^m\\) if for each \\(\\varepsilon&gt;0\\) there exists \\(N\\in \\mathbb{N}\\) such that \\[\nn\\geq N \\Rightarrow \\Vert a_n-L\\Vert\\leq \\varepsilon.\n\\]\n\n\n\n\n\n\n\nNoteExample\n\n\n\nDefine the sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}^2\\) by \\[\na_n:=\\left(1+\\tfrac{1}{n}, \\tfrac{1}{n}\\right).\n\\] Then \\(a_n\\to (1,0)\\), because \\[\\begin{align*}\n\\Vert a_n-(1,0)\\Vert\n&= \\sqrt{(\\tfrac{1}{n})^2+(\\tfrac{1}{n})^2}\n= \\tfrac{\\sqrt{2}}{n}\\rightarrow 0.\n\\end{align*}\\]\n\n\n\n\n\n\n\n\nNoteExample\n\n\n\nDefine the sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}^2\\) by \\[a_n:=\\left(1+\\tfrac{1}{n}, n\\right).\\] Then we see that the sequence of the first coordinates \\(\\{a_{n,1}\\}_{n\\in \\mathbb{N}}=\\{1+\\tfrac{1}{n}\\}_{n\\in \\mathbb{N}}\\) converges with limit \\(1\\), whereas the sequence of second coordinates ${a_{n,2}}_{n} $ does not converge as \\(a_{n,2}\\rightarrow \\infty\\) for \\(n\\rightarrow\\infty\\). The sequence \\(\\{a_n\\}\\) does not get close to a particular element of \\(\\mathbb{R}^2\\) for \\(n\\rightarrow\\infty\\) , so we would intuitively say that it does not converge. In fact, for any fixed \\(L=(L_1,L_2)\\in \\mathbb{R}^2\\), \\[\n\\Vert a_n-L\\Vert = \\sqrt{(1-L_1+\\tfrac{1}{n})^2+(n-L_2)^2}\\rightarrow \\infty.\n\\]\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nA common property of all norms on \\(\\mathbb{R}^m\\) is that they have the same convergence properties. In the definition above you may exchange \\(\\|\\cdot\\|\\) for any norm. Interested? Figure out, or use the web.\n\n\n\n\n\nCoordinate-wise criterion\nIn our previous example, what went wrong with respect to convergence is that in one coordinate the values of the vectors did not converge. It is easily seen that a sequence of vectors can only converge only if all coordinates of these vectors converge. It will also be sufficient. We have the following:\n\nTheorem 6.1 Theorem (Coordinate-wise convergence criterion).\nThe sequence \\(\\{a_n\\}\\subset \\mathbb{R}^m\\) converges to \\(L\\) iff for \\(k=1,2,\\ldots,m\\), \\[\n\\lim_{n\\rightarrow \\infty}a_{n,k}=L_k.\n\\]\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nWe show both implications.\n(\\(\\Rightarrow\\)) Suppose \\(\\{a_n\\}_{n\\in\\mathbb{N}}\\subset\\mathbb{R}^m\\) converges to \\(L\\in\\mathbb{R}^m\\). Let \\(\\varepsilon&gt;0\\). Then there exists \\(N\\) such that for all \\(n\\ge N\\), \\[\n\\|a_n-L\\|\\le \\varepsilon.\n\\] Write \\(a_n=(a_{n,1},\\ldots,a_{n,m})\\) and \\(L=(L_1,\\ldots,L_m)\\). For each coordinate \\(k\\in\\{1,\\ldots,m\\}\\) and \\(n\\ge N\\), \\[\n|a_{n,k}-L_k|\n= \\sqrt{(a_{n,k}-L_k)^2}\n\\le \\sqrt{\\sum_{j=1}^m (a_{n,j}-L_j)^2}\n= \\|a_n-L\\|\n\\le \\varepsilon.\n\\] Hence \\(\\lim_{n\\to\\infty} a_{n,k}=L_k\\) for every \\(k\\).\n(\\(\\Leftarrow\\)) Conversely, suppose \\(\\lim_{n\\to\\infty} a_{n,k}=L_k\\) for all \\(k\\in\\{1,\\ldots,m\\}\\). Let \\(\\varepsilon&gt;0\\). For each \\(k\\) there exists \\(N_k\\) such that for all \\(n\\ge N_k\\), \\[\n|a_{n,k}-L_k|\\le \\frac{\\varepsilon}{\\sqrt{m}}.\n\\] Let \\(N=\\max\\{N_1,\\ldots,N_m\\}\\). Then for all \\(n\\ge N\\), \\[\n\\|a_n-L\\|\n= \\sqrt{\\sum_{k=1}^m (a_{n,k}-L_k)^2}\n\\le \\sqrt{\\sum_{k=1}^m \\frac{\\varepsilon^2}{m}}\n= \\varepsilon.\n\\] Therefore \\(a_n\\to L\\) in \\(\\mathbb{R}^m\\).\n\n\n\n\n\nSubsequences\nGiven a sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) and an increasing function \\(f:\\mathbb{N}\\rightarrow \\mathbb{N}\\), the sequence \\(\\{a_{f(n)}\\}_{n\\in \\mathbb{N}}\\) is called a subsequence of \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\).\nA subsequence is therefore a sequence which is “drawn” from a sequence of elements.\n\n\n\n\n\n\nNoteExample\n\n\n\nLet \\(\\{a_n\\}_{n\\in \\mathbb{N}}=\\{(-1)^n\\}_{n\\in\\mathbb{N}}\\). Then \\(f:\\mathbb{N}\\rightarrow\\mathbb{N}\\) with \\(f(n)=2n\\) defines the constant subsequence \\[\nb_n=a_{f(n)}=1.\n\\]\n\n\n\n\nTheorem of Bolzano–Weierstrass\nThe following theorem will be important in numerous applications in proofs in the second part of the course. You will also encounter it in the second reader, only then confined to a slightly different setting.\n\nTheorem 6.2 Theorem (Bolzano–Weierstrass).\nLet \\(\\{x_n\\}\\) be a bounded sequence in \\(\\mathbb{R}^m\\). Then it has a convergent subsequence.\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nFirst look at the case \\(m=1\\). Take a bounded sequence \\(\\{x_n\\}\\) in \\(\\mathbb{R}\\). Then there is \\(M&gt;0\\) with \\(x_n\\in [a_0,b_0]:=[-M,M]\\) for all \\(n\\).\nSubdivide \\([a_0,b_0]\\) into two subintervals of equal length. One of these contains infinitely many points of the sequence. Subdivide that subinterval again into two equal parts, and continue. This yields nested intervals \\[\n[a_1,b_1]\\supset [a_2,b_2]\\supset\\cdots\n\\] each containing infinitely many points of \\(\\{x_n\\}\\), with lengths \\[\nb_k-a_k=\\frac{M}{2^{k-1}}.\n\\]\nThe endpoints \\(\\{a_k\\}\\) form a non-decreasing sequence bounded above, and \\(\\{b_k\\}\\) form a non-increasing sequence bounded below, so both converge. Since \\(b_k-a_k\\to 0\\), they converge to the same limit \\(\\ell\\).\nNow pick \\(x_{n_1}\\in [a_1,b_1]\\), then choose \\(x_{n_2}\\) with \\(n_2&gt;n_1\\) from \\([a_2,b_2]\\), and so on. Then for every \\(k\\), \\[\na_k\\le x_{n_k}\\le b_k,\n\\] so by the squeeze theorem \\(x_{n_k}\\to \\ell\\). Hence every bounded sequence in \\(\\mathbb{R}\\) has a convergent subsequence.\nFor general \\(m\\), write \\(x_n=(x_{n,1},\\ldots,x_{n,m})\\). Boundedness of \\(\\|x_n\\|\\) implies each coordinate sequence \\(\\{x_{n,k}\\}\\) is bounded. Apply the \\(m=1\\) result to the first coordinate to obtain a convergent subsequence; then refine it to a subsequence whose second coordinate converges; and so on. After \\(m\\) steps we obtain a subsequence \\(\\{x_{n_k}\\}\\) for which all components converge, hence \\(x_{n_k}\\) converges in \\(\\mathbb{R}^m\\).\n\n\n\n\n\n\n\n\n\nNoteExample\n\n\n\nThe sequence \\(\\{(-1)^n\\}_{n\\in \\mathbb{N}}\\) does not converge, but it is bounded. One convergent subsequence is obtained by \\(f(n)=2n\\), giving \\(b_n=a_{2n}=1\\).\n\n\n\n\n\n\n\n\nNoteExample\n\n\n\nConsider the sequence \\(a_n=(\\cos n,\\sin n)\\) in \\(\\mathbb{R}^2\\). This sequence does not converge. But since \\(\\|a_n\\|=1\\) for all \\(n\\), it is bounded, so by Bolzano–Weierstrass it has a convergent subsequence.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}^m$</span>"
+    ]
+  },
+  {
+    "objectID": "series/01-intro.html",
+    "href": "series/01-intro.html",
+    "title": "7  Series",
+    "section": "",
+    "text": "Series are constructed using sequences. Consider a sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\). We can form the sequence of partial sums \\[\ns_n=\\sum_{k=1}^n a_k.\n\\] We call the sequence of partial sums \\(\\{s_n\\}_{n\\in\\mathbb{N}}\\) a series (associated to \\(\\{a_n\\}\\)). If \\[\nS=\\lim_{n\\to\\infty} s_n\n\\] exists, then the series converges and \\(S\\) is called its sum.\n\n\n\n\n\n\nNoteExample: geometric series\n\n\n\nLet \\(r\\in\\mathbb{R}\\) and consider \\(\\{r^n\\}_{n=0}^\\infty\\). The partial sums satisfy \\[\ns_n=\\sum_{k=0}^n r^k=\\frac{1-r^{n+1}}{1-r}\\quad (r\\neq 1).\n\\] Hence \\[\n\\lim_{n\\to\\infty}s_n=\n\\begin{cases}\n\\frac{1}{1-r}, & |r|&lt;1,\\\\\n\\text{does not exist}, & |r|\\ge 1.\n\\end{cases}\n\\]\n\n\n\n\n\n\n\n\nNoteExample: harmonic series\n\n\n\nConsider the harmonic series \\[\ns_n=\\sum_{k=1}^n \\frac{1}{k}\n=1+\\frac12+\\frac13+\\cdots+\\frac1n.\n\\] The sequence of partial sums \\(\\{s_n\\}_{n=1}^\\infty\\) is increasing. Moreover, \\[\n\\begin{aligned}\ns_2 &= 1+\\frac12,\\\\[4pt]\ns_4 &= 1+\\frac12+\\overbrace{\\left(\\frac13+\\frac14\\right)}^{&gt;\\,\\frac12}\n    \\;&gt;\\; 1+2\\cdot \\frac12,\\\\[6pt]\ns_8 &= 1+\\frac12+\\overbrace{\\left(\\frac13+\\frac14\\right)}^{&gt;\\,\\frac12}\n          +\\overbrace{\\left(\\frac15+\\frac16+\\frac17+\\frac18\\right)}^{&gt;\\,\\frac12}\n    \\;&gt;\\; 1+3\\cdot \\frac12,\\\\[6pt]\n&\\ \\vdots \\\\[4pt]\ns_{2^k} &=\n1+\\frac12+\\overbrace{\\left(\\frac13+\\frac14\\right)}^{&gt;\\,\\frac12}\n+\\overbrace{\\left(\\frac15+\\cdots+\\frac18\\right)}^{&gt;\\,\\frac12}\n+\\cdots\n+\\overbrace{\\left(\\frac{1}{2^{k-1}+1}+\\cdots+\\frac{1}{2^k}\\right)}^{&gt;\\,\\frac12}\n\\;&gt;\\; 1+k\\cdot \\frac12.\n\\end{aligned}\n\\]\nHence, \\[\n\\lim_{k\\to\\infty} s_{2^k}=\\infty,\n\\] so also \\(\\lim_{n\\to\\infty} s_n=\\infty\\). Therefore the harmonic series does not converge, even though the terms \\(\\frac{1}{k}\\) tend to \\(0\\).\nWe will see below that \\(a_n\\to 0\\) is a necessary condition for \\(\\sum_{n=1}^\\infty a_n\\) to converge, but it is not sufficient. \\(\\triangleleft\\)",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Series</span>"
+    ]
+  },
+  {
+    "objectID": "series/02-basic-properties.html",
+    "href": "series/02-basic-properties.html",
+    "title": "8  Series and convergence",
+    "section": "",
+    "text": "A necessary condition for convergence of a series is that the underlying sequence must have a limit 0.\n\nTheorem 8.1 (Necessary condition for convergence).\nIf \\(\\sum_{n=0}^\\infty a_n\\) converges, then \\(\\lim_{n\\to\\infty} a_n=0\\).\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nLet \\(s_n=\\sum_{k=0}^n a_k\\). If \\(s_n\\to S\\), then also \\(s_{n+1}\\to S\\). Hence \\[\na_{n+1}=s_{n+1}-s_n \\longrightarrow S-S = 0.\n\\]\n\n\n\nFurther basic properties of series are these algebraic ones. You may try to prove them yourself:\n\nTheorem 8.2 (Linearity of convergent series).\nLet \\(\\sum_{n=0}^\\infty a_n\\) and \\(\\sum_{n=0}^\\infty b_n\\) converge with sums \\(S_a\\) and \\(S_b\\). Then for any \\(c\\in\\mathbb{R}\\):\n\n\\(\\sum_{n=0}^\\infty (c a_n)\\) converges and has sum \\(cS_a\\);\n\\(\\sum_{n=0}^\\infty (a_n\\pm b_n)\\) converges and has sum \\(S_a\\pm S_b\\).",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Series and convergence</span>"
+    ]
+  },
+  {
+    "objectID": "series/03-alternating.html",
+    "href": "series/03-alternating.html",
+    "title": "9  Alternating series",
+    "section": "",
+    "text": "An alternating series has the form \\[\n\\sum_{n=0}^\\infty (-1)^n a_n,\n\\] where typically \\(a_n\\ge 0\\).\nSome examples:\n\nFor \\(a_n=n\\) we have \\(\\displaystyle\\sum_{n=0}^\\infty (-1)^n a_n =\\sum_{n=0}^\\infty (-1)^n n.\\)\nFor \\(a_n=\\frac{1}{n}\\) we get the series \\(\\displaystyle \\sum_{n=0}^\\infty (-1)^n \\frac{1}{n}.\\)\n\nIt is easy to see that the first example of an alternating series is not converging, since \\(\\displaystyle\\lim_{n\\rightarrow\\infty }(-1)^na_n\\) is not convergent, it is divergent. Now what about the second example? See the figure below.\n\n\n\n\n\n\nFigure 9.1: Partial sums \\(s_n\\) plotted.\n\n\n\n\nTheorem 9.1 (Alternating Series Test + error bound).\nLet \\(a_n\\ge 0\\) be decreasing and \\(a_n\\to 0\\). Then \\(\\sum_{n=0}^\\infty (-1)^n a_n\\) converges. If \\(S\\) is its sum and \\(s_n\\) the \\(n\\)-th partial sum, then \\[\n|S-s_n|\\le a_{n+1}.\n\\]\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nLet \\(b_n=s_{2n}\\) and \\(c_n=s_{2n+1}\\). Then for all \\(n\\) we have that \\(c_n\\leq b_n\\). Moreover \\(\\{b_n\\}\\) is decreasing and the elements are bounded below by \\(c_1\\). Also, \\(\\{c_n\\}\\) is increasing and the elements are bounded above by \\(b_1\\). This means that by the Monotonic Convergence Theorem these sequences are both converging. Also \\(b_n-c_n=a_{2n+1}\\to 0\\), so both subsequences have the same limit, hence \\(S_n\\to S\\).\nMoreover, \\(|S-s_n|\\le |s_{n+1}-s_n| = a_{n+1}.\\)\n\n\n\n\n\n\n\n\n\nNoteExample\n\n\n\nConsider the alternating harmonic series \\[\n\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n}.\n\\] This is an alternating series, with \\(a_n=\\frac{1}{n}\\downarrow 0\\). So the series converges.\nIn orde to estimate its limit (which is actually \\(\\ln(2)\\) as we will see later), we may concentrate on a partial sum. For instance, if we want the error to be less than \\(0.01\\) then it suffices to concentrate on a partial sum \\(s_n\\) such that \\(a_{n+1}&lt;0.01\\). In this case we see that this works if only \\(\\frac{1}{n+1}\\leq 0.01\\) or \\(n+1&gt;100 \\Leftrightarrow n&gt;99\\). So we may take \\(s_{100}\\) as estimate. Below we calculate the partial sum using Python.\n\nfrom IPython.display import display, Math\nimport math\n\nn = 100\ns = sum(((-1)**k)/k for k in range(1, n+1))\nS = -math.log(2)\nerr = abs(S - s)\n\ndisplay(Math(rf\"s_{{{n}}} = {s:.10f},\\qquad -\\ln 2 = {S:.10f},\\qquad |S-s_{{{n}}}| = {err:.2e}.\"))\n\n\\(\\displaystyle s_{100} = -0.6881721793,\\qquad -\\ln 2 = -0.6931471806,\\qquad |S-s_{100}| = 4.98e-03.\\)",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Alternating series</span>"
+    ]
+  },
+  {
+    "objectID": "series/04-absolute.html",
+    "href": "series/04-absolute.html",
+    "title": "10  Absolute convergence",
+    "section": "",
+    "text": "We call \\(\\sum_{n=1}^\\infty a_n\\) absolutely convergent if \\(\\sum_{n=1}^\\infty |a_n|\\) converges.\n\nTheorem 10.1 Theorem (Absolute convergence implies convergence). If \\(\\sum_{n=1}^\\infty |a_n|\\) converges, then \\(\\sum_{n=1}^\\infty a_n\\) converges.\n\n\n\n\n\n\n\nNoteExample: convergent but not absolutely\n\n\n\nThe alternating harmonic series \\[\n\\sum_{n=1}^\\infty \\frac{(-1)^n}{n}\n\\] converges (alternating series test), but \\[\n\\sum_{n=1}^\\infty \\left|\\frac{(-1)^n}{n}\\right|\n=\n\\sum_{n=1}^\\infty \\frac{1}{n}\n\\] diverges. So it is conditionally convergent.",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Absolute convergence</span>"
+    ]
+  },
+  {
+    "objectID": "series/05-ratio-power.html",
+    "href": "series/05-ratio-power.html",
+    "title": "11  Ratio test and power series",
+    "section": "",
+    "text": "The ratio test\nFor many sequences it may be hard to know whether the corresponding series converge. Fortunately, there are several criteria that can help. Here we focus on the ratio test, which shows that a series can often be compared to a geometric series—whose convergence behavior we understand well.1",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ratio test and power series</span>"
+    ]
+  },
+  {
+    "objectID": "series/05-ratio-power.html#the-ratio-test",
+    "href": "series/05-ratio-power.html#the-ratio-test",
+    "title": "11  Ratio test and power series",
+    "section": "",
+    "text": "Theorem 11.1 Theorem (Ratio test). Let \\(\\{a_n\\}\\) be a sequence with \\(a_n\\neq 0\\) eventually. 1. If \\(\\displaystyle\\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|=L&lt;1\\), then \\(\\sum_{n=1}^\\infty a_n\\) converges (in fact absolutely). 2. If \\(\\displaystyle\\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|=L&gt;1\\) or the limit is \\(\\infty\\), then \\(\\sum_{n=1}^\\infty a_n\\) diverges.\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\n(i) Suppose \\[\n\\left|\\frac{a_{n+1}}{a_n}\\right|\\to L\n\\quad\\text{with }L&lt;1.\n\\] Then there exist a number \\(r\\in(0,1)\\) and an index \\(N\\) such that for all \\(n\\ge N\\), \\[\n\\left|\\frac{a_{n+1}}{a_n}\\right|&lt;r.\n\\] Hence, iterating, \\[\n|a_{N+1}|&lt;|a_N|\\,r,\\qquad\n|a_{N+2}|&lt;|a_N|\\,r^2,\\qquad \\ldots,\\qquad\n|a_{N+k}|&lt;|a_N|\\,r^k.\n\\] Therefore, for any \\(\\ell\\ge 1\\), \\[\n\\sum_{k=1}^{\\ell}|a_{N+k}|\n\\le |a_N|\\sum_{k=1}^{\\ell} r^k.\n\\] Since \\(\\sum_{k=1}^{\\infty} r^k\\) converges, the comparison test implies that \\(\\sum_{k=1}^{\\infty}|a_{N+k}|\\) converges. Consequently, \\[\n\\sum_{n=1}^{\\infty}|a_n|\n=\n\\sum_{n=1}^{N}|a_n|+\\sum_{k=1}^{\\infty}|a_{N+k}|\n\\] converges, so \\(\\sum_{n=1}^{\\infty} a_n\\) converges absolutely (hence converges).\n(ii) If \\[\n\\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|=L&gt;1\n\\quad\\text{or}\\quad\n\\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|=\\infty,\n\\] then for all sufficiently large \\(n\\) we have \\(|a_{n+1}|&gt;|a_n|\\). In particular, \\(|a_n|\\) cannot tend to \\(0\\), so \\(a_n\\nrightarrow 0\\). By the term test for divergence (Theorem \\(\\ref{th:conv}\\)), the series \\(\\sum_{n=1}^{\\infty} a_n\\) cannot converge.",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ratio test and power series</span>"
+    ]
+  },
+  {
+    "objectID": "series/05-ratio-power.html#power-series-and-convergence",
+    "href": "series/05-ratio-power.html#power-series-and-convergence",
+    "title": "11  Ratio test and power series",
+    "section": "Power series and convergence",
+    "text": "Power series and convergence\nA power series has the form \\[\n\\sum_{n=0}^\\infty a_n x^n.\n\\]\nExample: \\[\n\\sum_{n=0}^\\infty \\frac{x^n}{n!}\n\\] converges for every \\(x\\in\\mathbb{R}\\) (ratio test gives limit \\(0\\)).\n\nConvergence interval\n\nTheorem 11.2 Theorem (Convergence propagates inward). For a power series \\(\\sum_{n=0}^\\infty c_n x^n\\): 1. If it converges at \\(x=b\\neq 0\\), then it converges for all \\(|x|&lt;|b|\\). 2. If it diverges at \\(x=b\\), then it diverges for all \\(|x|&gt;|b|\\).\n\n\n\nRadius of convergence\n\nTheorem 11.3 Theorem (Radius of convergence). For \\(\\sum_{n=0}^\\infty c_n (x-a)^n\\), exactly one holds: 1. it converges only at \\(x=a\\); 2. it converges for all \\(x\\); 3. there exists \\(R&gt;0\\) such that it converges if \\(|x-a|&lt;R\\) and diverges if \\(|x-a|&gt;R\\). The number \\(R\\) is the radius of convergence.",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ratio test and power series</span>"
+    ]
+  },
+  {
+    "objectID": "series/05-ratio-power.html#footnotes",
+    "href": "series/05-ratio-power.html#footnotes",
+    "title": "11  Ratio test and power series",
+    "section": "",
+    "text": "There are other tests. One you may have discovered in earlier exercises is the integral test. Another is D’Alembert’s criterion. For our purposes here, the ratio test suffices.↩︎",
+    "crumbs": [
+      "Series",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ratio test and power series</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/01-intro.html",
+    "href": "taylor/01-intro.html",
+    "title": "12  Polynomials and approximation",
+    "section": "",
+    "text": "Road map\nPolynomials are among the most important functions in mathematics and, more generally, in science. They are computationally convenient: function values and higher-order derivatives can be computed using only addition and multiplication—exactly the operations that lie at the heart of machine computation.\nPolynomials are also used to approximate more complex functions. In Mathematics 1 you saw how to approximate a function locally by its linear approximation—a polynomial of degree 1. Figure 12.1 illustrates this for \\(f(x)=e^x\\), together with the linear approximations at \\(a=0\\) and \\(a=1\\).\nThis chapter studies approximation by Taylor polynomials, which use information about local derivatives. In doing so, we will look at sequences of functions (Taylor polynomials of increasing degree) rather than sequences of numbers.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Polynomials and approximation</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/01-intro.html#sec-roadmap",
+    "href": "taylor/01-intro.html#sec-roadmap",
+    "title": "12  Polynomials and approximation",
+    "section": "",
+    "text": "Tangency and Taylor polynomials (how to match derivatives at a point)\nTaylor’s Theorem (the remainder term and approximation quality)\nApplications (optimization, estimating \\(e\\), the binomial formula)\nTaylor series (power series expansions)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Polynomials and approximation</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/02-tangency-taylor-polynomials.html",
+    "href": "taylor/02-tangency-taylor-polynomials.html",
+    "title": "13  Tangency and Taylor polynomials",
+    "section": "",
+    "text": "Tangency\nLet \\(f,g:\\mathbb{R}\\to\\mathbb{R}\\) be differentiable.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Tangency and Taylor polynomials</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/02-tangency-taylor-polynomials.html#sec-tangency",
+    "href": "taylor/02-tangency-taylor-polynomials.html#sec-tangency",
+    "title": "13  Tangency and Taylor polynomials",
+    "section": "",
+    "text": "The graphs of \\(f\\) and \\(g\\) intersect at \\(x=a\\) if \\(f(a)=g(a)\\).\nThey are tangent at \\(x=a\\) if \\[\nf(a)=g(a)\\quad\\text{and}\\quad f'(a)=g'(a).\n\\]\n\n\nExample: intersecting vs tangent\nConsider \\(f(x)=2-e^{x-1}\\).\n\nThe graph of \\(g_0(x)=1\\) merely intersects \\(f\\) at \\(x=1\\), because \\(f(1)=g_0(1)=1\\).\nThe graph of \\(g_1(x)=2-x\\) is tangent to \\(f\\) at \\(x=1\\), because \\(f(1)=g_1(1)=1\\) and \\(f'(1)=g_1'(1)=-1\\).\n\n\n\n\n\n\n\nFigure 13.1: Tangency example.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Tangency and Taylor polynomials</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/02-tangency-taylor-polynomials.html#sec-higher-tangency",
+    "href": "taylor/02-tangency-taylor-polynomials.html#sec-higher-tangency",
+    "title": "13  Tangency and Taylor polynomials",
+    "section": "Higher-order tangency",
+    "text": "Higher-order tangency\nTwo functions can be “more tangent” if more derivatives agree. We say the graphs of two \\(n\\) times differentiable functions \\(f\\) and \\(g\\) are tangent at \\(a\\) to order \\(n\\) if \\[\nf^{(k)}(a)=g^{(k)}(a)\\qquad \\text{for }k=0,1,\\ldots,n.\n\\]\nIn the example above, \\(g_2(x)=1-x-\\tfrac{1}{2}x^2\\) is tangent to \\(f\\) at \\(a=1\\) to order \\(2\\) (check it). Around the point of tangency, \\(g_2\\) is typically a much better local approximation of \\(f\\) than \\(g_1\\).",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Tangency and Taylor polynomials</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/02-tangency-taylor-polynomials.html#sec-taylor-polynomials",
+    "href": "taylor/02-tangency-taylor-polynomials.html#sec-taylor-polynomials",
+    "title": "13  Tangency and Taylor polynomials",
+    "section": "Taylor polynomials",
+    "text": "Taylor polynomials\nLet \\(I\\subset \\mathbb{R}\\) be a nonempty open interval and let \\(f:I\\to\\mathbb{R}\\) have \\(n\\) continuous derivatives \\(f,f',f'',\\ldots,f^{(n)}\\). Fix \\(a\\in I\\) and suppose we know \\[\nf(a), f'(a), f''(a),\\ldots, f^{(n)}(a).\n\\]\nWe ask:\n\nDoes there exist a polynomial \\(T\\) of degree \\(n\\) whose derivatives match those of \\(f\\) at \\(a\\) up to order \\(n\\)?\nCan we compute it efficiently?\nHow good is it as an approximation to \\(f\\)?\n\n\nDeriving the coefficients\nStart with a polynomial of degree \\(n\\) expanded around \\(a\\): \\[\np(x)=c_0+c_1(x-a)+\\cdots+c_n(x-a)^n=\\sum_{k=0}^n c_k(x-a)^k.\n\\]\nMatching \\(p(a)=f(a)\\) gives \\(c_0=f(a)\\). Differentiating, \\[\np'(x)=\\sum_{k=1}^n k c_k(x-a)^{k-1},\n\\quad\\Rightarrow\\quad\np'(a)=f'(a)\\ \\Longrightarrow\\ c_1=f'(a).\n\\] Differentiating again, \\[\np''(x)=\\sum_{k=2}^n k(k-1)c_k(x-a)^{k-2},\n\\quad\\Rightarrow\\quad\np''(a)=f''(a)\\ \\Longrightarrow\\ c_2=\\tfrac{1}{2}f''(a).\n\\]\nContinuing in the same way, one finds that choosing \\[\nc_k=\\frac{1}{k!}f^{(k)}(a)\\qquad (k=0,1,\\ldots,n)\n\\] makes \\(p\\) tangent to \\(f\\) at \\(a\\) to order \\(n\\).\n\nDefinition 13.1 Definition (Taylor polynomial).\nLet \\(I\\subset\\mathbb{R}\\) be a nonempty open interval and let \\(f:I\\to\\mathbb{R}\\) be \\(n\\) times continuously differentiable. For \\(a\\in I\\), the polynomial \\[\nT_n(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2!}(x-a)^2+\\cdots+\\frac{f^{(n)}(a)}{n!}(x-a)^n\n\\] is called the Taylor polynomial of order \\(n\\) at \\(a\\).",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Tangency and Taylor polynomials</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/02-tangency-taylor-polynomials.html#sec-well-known",
+    "href": "taylor/02-tangency-taylor-polynomials.html#sec-well-known",
+    "title": "13  Tangency and Taylor polynomials",
+    "section": "Taylor polynomials of well-known functions",
+    "text": "Taylor polynomials of well-known functions\n\nThe exponential function\nFor \\(f(x)=e^x\\), we have \\(f^{(k)}(x)=e^x\\) for all \\(k\\), so \\(f^{(k)}(0)=1\\). Hence the Taylor polynomials at \\(a=0\\) are \\[\nT_n(x)=\\sum_{k=0}^n \\frac{x^k}{k!}\n=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots+\\frac{x^n}{n!}.\n\\]\n\n\nSine and cosine\nIf \\(f(x)=\\sin x\\), then \\[\nf'(x)=\\cos x,\\quad f''(x)=-\\sin x,\\quad f^{(3)}(x)=-\\cos x,\\quad f^{(4)}(x)=\\sin x,\n\\] so the derivatives repeat in a cycle. At \\(a=0\\) we obtain \\[\nf^{(2k+1)}(0)=(-1)^k,\\qquad f^{(2k)}(0)=0.\n\\] Therefore the Taylor polynomials of \\(\\sin x\\) at \\(0\\) are \\[\nT_{2n+1}(x)=\\sum_{k=0}^n(-1)^k\\frac{x^{2k+1}}{(2k+1)!}\n=x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots+(-1)^n\\frac{x^{2n+1}}{(2n+1)!}.\n\\]\nSimilarly, for \\(f(x)=\\cos x\\) we have \\[\nf^{(2k)}(0)=(-1)^k,\\qquad f^{(2k+1)}(0)=0,\n\\] so \\[\nT_{2n}(x)=\\sum_{k=0}^n(-1)^k\\frac{x^{2k}}{(2k)!}\n=1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots+(-1)^n\\frac{x^{2n}}{(2n)!}.\n\\]",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Tangency and Taylor polynomials</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html",
+    "href": "taylor/03-taylor-theorem.html",
+    "title": "14  Taylor’s Theorem",
+    "section": "",
+    "text": "Why do we need a theorem?\nTaylor polynomials match derivatives of a function at a point. The natural next question is whether they also provide good approximations to the function values on some interval.\nIn Mathematics 1 you saw that a linear approximation can be poor if curvature is large. The same idea appears here: approximation quality depends on higher derivatives.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-why",
+    "href": "taylor/03-taylor-theorem.html#sec-why",
+    "title": "14  Taylor’s Theorem",
+    "section": "",
+    "text": "Example: linear approximation can be bad\nConsider \\[\nf(x)=x+100x^2.\n\\] The Taylor polynomials around \\(a=0\\) are \\[\\begin{align*}\nT_0(x) &= f(0)=0,\\\\\nT_1(x) &= f(0)+f'(0)x=x,\\\\\nT_2(x) &= f(0)+f'(0)x+\\tfrac{1}{2}f''(0)x^2=x+100x^2.\n\\end{align*}\\] The remainder after the linear approximation is \\[\nR_1(x)=f(x)-T_1(x)=100x^2,\n\\] which becomes large even for small deviations from \\(0\\).\n\n\n\n\n\n\nFigure 14.1: Here \\(T_2(x)=f(x)\\), while the straight line \\(T_1(x)\\) is a poor approximation.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-remainder",
+    "href": "taylor/03-taylor-theorem.html#sec-remainder",
+    "title": "14  Taylor’s Theorem",
+    "section": "The remainder term",
+    "text": "The remainder term\nThe quality of the \\(n\\)th-order Taylor polynomial \\(T_n\\) is measured by the remainder term \\[\nR_n(x):=f(x)-T_n(x).\n\\]",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-taylor-theorem",
+    "href": "taylor/03-taylor-theorem.html#sec-taylor-theorem",
+    "title": "14  Taylor’s Theorem",
+    "section": "Taylor’s Theorem",
+    "text": "Taylor’s Theorem\n\nTheorem 14.1 Theorem (Taylor).\nLet \\(f^{(n)}(t)\\) be continuous for \\(a\\le t\\le x\\) and let \\(f^{(n+1)}(t)\\) exist for all \\(a&lt;t&lt;x\\). Then there exists a point \\(\\xi_x\\) between \\(a\\) and \\(x\\) such that \\[\nR_n(x)=\\frac{f^{(n+1)}(\\xi_x)}{(n+1)!}(x-a)^{n+1}.\n\\]\n\nIf \\(x&lt;a\\), interpret “\\(\\xi_x\\) between \\(a\\) and \\(x\\)” as \\(\\xi_x\\in(x,a)\\).\nTo prove Taylor’s Theorem, we first prepare two results.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-cauchy-mvt",
+    "href": "taylor/03-taylor-theorem.html#sec-cauchy-mvt",
+    "title": "14  Taylor’s Theorem",
+    "section": "Cauchy’s Mean Value Theorem",
+    "text": "Cauchy’s Mean Value Theorem\n\nTheorem 14.2 Theorem (Cauchy’s Mean Value Theorem).\nLet \\(f,g:[a,b]\\to\\mathbb{R}\\) be continuous on \\([a,b]\\) and differentiable on \\((a,b)\\). Assume \\(g'(x)\\ne 0\\) for all \\(x\\in(a,b)\\). Then there exists \\(\\xi\\in(a,b)\\) such that \\[\n\\frac{f(b)-f(a)}{g(b)-g(a)}=\\frac{f'(\\xi)}{g'(\\xi)}.\n\\]\n\nProof.\nThe Mean Value Theorem implies there exists \\(\\gamma\\in(a,b)\\) with \\[\n\\frac{g(b)-g(a)}{b-a}=g'(\\gamma)\\ne 0,\n\\] so \\(g(b)\\ne g(a)\\). Define \\[\n\\varphi(x):=f(x)+p\\,g(x),\n\\] and choose \\(p\\) so that \\(\\varphi(a)=\\varphi(b)\\): \\[\nf(a)+pg(a)=f(b)+pg(b)\n\\quad\\Longrightarrow\\quad\np=-\\frac{f(b)-f(a)}{g(b)-g(a)}.\n\\] By Rolle’s Theorem there exists \\(\\xi\\in(a,b)\\) with \\(\\varphi'(\\xi)=0\\), i.e. \\[\nf'(\\xi)+p\\,g'(\\xi)=0\n\\quad\\Longrightarrow\\quad\np=-\\frac{f'(\\xi)}{g'(\\xi)}.\n\\] Equating the two expressions for \\(p\\) gives the result. \\(\\square\\)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-technical-lemma",
+    "href": "taylor/03-taylor-theorem.html#sec-technical-lemma",
+    "title": "14  Taylor’s Theorem",
+    "section": "A technical lemma",
+    "text": "A technical lemma\n\nTheorem 14.3 Theorem.\nLet \\(I\\) be an open interval and let \\(f:I\\to\\mathbb{R}\\) be \\((n+1)\\) times differentiable on \\(I\\), with \\[\nf(a)=f'(a)=\\cdots=f^{(n)}(a)=0.\n\\] Then for any \\(x\\in I\\setminus\\{a\\}\\) there exists a point \\(\\xi_x\\) between \\(a\\) and \\(x\\) such that \\[\nf(x)=\\frac{f^{(n+1)}(\\xi_x)}{(n+1)!}(x-a)^{n+1}.\n\\]\n\nProof.\nAssume without loss of generality that \\(a&lt;x\\), and let \\(g(x)=(x-a)^{n+1}\\). Then \\[\ng(a)=g'(a)=\\cdots=g^{(n)}(a)=0,\\qquad g^{(n+1)}(x)=(n+1)!.\n\\] Applying Cauchy’s Mean Value Theorem repeatedly to \\((f,g)\\), then \\((f',g')\\), and so on, yields points \\[\nx_1\\in(a,x),\\ x_2\\in(a,x_1),\\ \\ldots,\\ x_{n+1}\\in(a,x_n)\n\\] such that \\[\n\\frac{f(x)}{g(x)}\n=\\frac{f'(x_1)}{g'(x_1)}\n=\\cdots\n=\\frac{f^{(n+1)}(x_{n+1})}{g^{(n+1)}(x_{n+1})}\n=\\frac{f^{(n+1)}(x_{n+1})}{(n+1)!}.\n\\] Let \\(\\xi_x:=x_{n+1}\\). Then \\[\nf(x)=\\frac{f^{(n+1)}(\\xi_x)}{(n+1)!}(x-a)^{n+1}.\n\\] \\(\\square\\)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-proof-taylor",
+    "href": "taylor/03-taylor-theorem.html#sec-proof-taylor",
+    "title": "14  Taylor’s Theorem",
+    "section": "Proof of Taylor’s Theorem",
+    "text": "Proof of Taylor’s Theorem\nProof.\nLet \\(R_n(x)=f(x)-T_n(x)\\). Since \\(T_n\\) matches derivatives of \\(f\\) at \\(a\\) up to order \\(n\\), we have \\[\nR_n^{(k)}(a)=0\\qquad (k=0,1,\\ldots,n).\n\\] Apply the previous theorem to \\(R_n\\) to obtain a point \\(\\xi_x\\) between \\(a\\) and \\(x\\) with \\[\nR_n(x)=\\frac{R_n^{(n+1)}(\\xi_x)}{(n+1)!}(x-a)^{n+1}.\n\\] Because \\(T_n^{(n+1)}\\equiv 0\\), we have \\(R_n^{(n+1)}(\\xi_x)=f^{(n+1)}(\\xi_x)\\), which gives the desired formula. \\(\\square\\)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/03-taylor-theorem.html#sec-interpretation",
+    "href": "taylor/03-taylor-theorem.html#sec-interpretation",
+    "title": "14  Taylor’s Theorem",
+    "section": "Interpretation",
+    "text": "Interpretation\nTaylor’s Theorem says that the approximation error near \\(a\\) depends on\n\nthe distance \\(|x-a|\\),\nthe order \\(n\\),\nand the behavior of the derivative \\(f^{(n+1)}\\) between \\(a\\) and \\(x\\).\n\nIf \\(f^{(n+1)}\\) behaves regularly and \\(x\\) is close to \\(a\\), the Taylor approximation is typically accurate; erratic higher derivatives can make approximation worse.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Taylor's Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/04-applications.html",
+    "href": "taylor/04-applications.html",
+    "title": "15  Applications",
+    "section": "",
+    "text": "Taylor’s theorem and optimization\nLet \\(f:\\mathbb{R}\\to\\mathbb{R}\\) have continuous first and second derivatives. Suppose \\(a\\) is a critical point, i.e. \\(f'(a)=0\\). Then the first-order Taylor polynomial at \\(a\\) is constant: \\[\nT_1(x)=f(a)+f'(a)(x-a)=f(a).\n\\]\nTaylor’s Theorem gives, for \\(x\\) near \\(a\\), \\[\nf(x)=f(a)+\\frac{f''(\\xi_x)}{2}(x-a)^2\n\\] for some \\(\\xi_x\\) between \\(a\\) and \\(x\\).",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Applications</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/04-applications.html#sec-optimization",
+    "href": "taylor/04-applications.html#sec-optimization",
+    "title": "15  Applications",
+    "section": "",
+    "text": "If \\(f''(a)&gt;0\\), then for \\(x\\) close enough to \\(a\\) we also have \\(f''(\\xi_x)&gt;0\\), so \\(f(x)&gt;f(a)\\) for \\(x\\ne a\\) near \\(a\\). Thus \\(a\\) is a strict local minimum.\nIf \\(f''(a)&lt;0\\), then \\(f''(\\xi_x)&lt;0\\) near \\(a\\), so \\(f(x)&lt;f(a)\\) for \\(x\\ne a\\) near \\(a\\). Thus \\(a\\) is a strict local maximum.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Applications</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/04-applications.html#sec-estimating-e",
+    "href": "taylor/04-applications.html#sec-estimating-e",
+    "title": "15  Applications",
+    "section": "Estimating the number \\(e\\)",
+    "text": "Estimating the number \\(e\\)\nUsing the Taylor expansion of \\(e^x\\) at \\(a=0\\), \\[\ne^x=\\sum_{k=0}^n\\frac{x^k}{k!}+\\frac{e^{\\xi}}{(n+1)!}x^{n+1},\n\\qquad (0&lt;\\xi&lt;x),\n\\] and setting \\(x=1\\), we obtain \\[\ne=\\sum_{k=0}^n\\frac{1}{k!}+\\frac{e^{\\xi}}{(n+1)!}.\n\\]\nSince \\(0&lt;\\xi&lt;1\\), we have \\(1&lt;e^{\\xi}&lt;e\\), hence \\[\n\\sum_{k=0}^n\\frac{1}{k!}&lt;e\\le \\sum_{k=0}^n\\frac{1}{k!}+\\frac{e}{(n+1)!}.\n\\] Rearranging the upper bound gives \\[\ne &lt; \\frac{(n+1)!}{(n+1)!-1}\\sum_{k=0}^n\\frac{1}{k!}.\n\\] Define \\[\na_n:=\\sum_{k=0}^n\\frac{1}{k!},\n\\qquad\nb_n:=\\frac{(n+1)!}{(n+1)!-1}\\sum_{k=0}^n\\frac{1}{k!}.\n\\] Then \\(a_n&lt;e&lt;b_n\\) and \\[\n0&lt;e-a_n&lt;b_n-a_n=\\frac{1}{(n+1)!-1}\\sum_{k=0}^n\\frac{1}{k!}.\n\\]\nComputing the values shows that \\(b_n-a_n&lt;0.01\\) for \\(n=5\\):\n\n\n\n\\(n\\)\n\\(a_n\\)\n\\(b_n-a_n\\)\n\n\n\n\n1\n2.000\n2.000\n\n\n2\n2.500\n0.500\n\n\n3\n2.666\n0.1159\n\n\n4\n2.708\n0.0228\n\n\n5\n2.717\n0.0038\n\n\n\nSo \\(e\\approx 2.717\\) and the error is less than \\(0.004\\).",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Applications</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/04-applications.html#sec-binomial",
+    "href": "taylor/04-applications.html#sec-binomial",
+    "title": "15  Applications",
+    "section": "The binomial formula",
+    "text": "The binomial formula\nAn expression \\(x^n\\) is a monomial (from Greek monos, “single”). An expression \\((x+a)^n\\) is a binomial.\nFor small \\(n\\): \\[\\begin{align*}\n(x+a)^1 &= x+a,\\\\\n(x+a)^2 &= x^2+2ax+a^2,\\\\\n(x+a)^3 &= x^3+3x^2a+3xa^2+a^3.\n\\end{align*}\\]\nIn general:\n\nTheorem 15.1 Theorem (Binomial formula).\nFor \\(x,a\\in\\mathbb{R}\\) and \\(n\\in\\mathbb{N}\\), \\[\\begin{align*}\n(x+a)^n\n&=\\sum_{k=0}^n\\binom{n}{k}a^k x^{\\,n-k}\\\\\n&=\\binom{n}{0}x^n+\\binom{n}{1}x^{n-1}a+\\cdots+\\binom{n}{n}a^n,\n\\end{align*}\\] where \\[\n\\binom{n}{k}=\\frac{n!}{(n-k)!k!}.\n\\]\n\nThe binomial coefficient \\(\\binom{n}{k}\\) counts the number of ways to select \\(k\\) objects from \\(n\\) when order does not matter—matching the idea that expanding \\((x+a)^n\\) corresponds to choosing \\(a\\) from exactly \\(k\\) of the \\(n\\) factors.\n\nProof via Taylor’s theorem\nProof.\nLet \\(f(x)=(x+a)^n\\). Then \\[\nf^{(k)}(x)=\\frac{n!}{(n-k)!}(x+a)^{n-k},\n\\qquad k=0,1,\\ldots,n,\n\\] and \\(f^{(n+1)}(x)=0\\) for all \\(x\\).\nAt \\(x=0\\), \\[\nf^{(k)}(0)=\\frac{n!}{(n-k)!}a^{n-k}.\n\\] The Taylor polynomial of order \\(n\\) at \\(0\\) is therefore \\[\\begin{align*}\nT_n(x)\n&=\\sum_{k=0}^n\\frac{f^{(k)}(0)}{k!}x^k\n=\\sum_{k=0}^n\\frac{n!}{k!(n-k)!}a^{n-k}x^k\\\\\n&=\\sum_{k=0}^n\\binom{n}{k}a^{n-k}x^k.\n\\end{align*}\\] Since \\(f^{(n+1)}\\equiv 0\\), Taylor’s Theorem gives \\(R_n(x)=0\\) and hence \\(f(x)=T_n(x)\\), which is exactly the binomial formula. \\(\\square\\)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Applications</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/05-taylor-series.html",
+    "href": "taylor/05-taylor-series.html",
+    "title": "16  Taylor series",
+    "section": "",
+    "text": "From Taylor polynomials to series\nSuppose \\(f:I\\to\\mathbb{R}\\) is infinitely differentiable (all derivatives exist and are continuous). Then for each \\(n\\) we can form a Taylor polynomial \\(T_n\\) at a point \\(a\\in I\\), and write \\[\nf(x)=T_n(x)+R_n(x).\n\\]\nNow consider the sequence of polynomials \\[\nT_0,\\,T_1,\\,T_2,\\ldots\n\\] If for a given \\(x\\) we have \\[\n\\lim_{n\\to\\infty} R_n(x)=0,\n\\] then \\[\nf(x)=\\lim_{n\\to\\infty}T_n(x),\n\\] and the limit may be representable as a power series.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Taylor series</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/05-taylor-series.html#sec-exp-series",
+    "href": "taylor/05-taylor-series.html#sec-exp-series",
+    "title": "16  Taylor series",
+    "section": "Example: the exponential function",
+    "text": "Example: the exponential function\nFor \\(f(x)=e^x\\) at \\(a=0\\), \\[\nT_n(x)=\\sum_{k=0}^n \\frac{x^k}{k!}.\n\\] Taylor’s Theorem gives a remainder term of the form \\[\nR_n(x)=\\frac{f^{(n+1)}(\\xi)}{(n+1)!}\\,x^{n+1}\n=\\frac{e^{\\xi}}{(n+1)!}\\,x^{n+1},\n\\qquad \\xi\\in(0,x).\n\\]\nAssume \\(x&gt;0\\). Then \\(0&lt;\\xi&lt;x\\) implies \\(e^{\\xi}\\le e^x\\), so \\[\n|R_n(x)|\\le e^x\\frac{|x|^{n+1}}{(n+1)!}.\n\\]\nTo see that the right-hand side goes to \\(0\\) as \\(n\\to\\infty\\), define \\(a_n:=\\frac{x^n}{n!}\\). Then \\[\n\\left|\\frac{a_{n+1}}{a_n}\\right|=\\frac{|x|}{n+1}\\to 0.\n\\] Hence \\(a_n\\to 0\\), and therefore \\(R_n(x)\\to 0\\). Consequently, \\[\ne^x=\\sum_{n=0}^{\\infty}\\frac{x^n}{n!}.\n\\] (You can check the case \\(x&lt;0\\) similarly.)",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Taylor series</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/05-taylor-series.html#sec-geom-series",
+    "href": "taylor/05-taylor-series.html#sec-geom-series",
+    "title": "16  Taylor series",
+    "section": "Example: the geometric series",
+    "text": "Example: the geometric series\nConsider \\(f(x)=\\frac{1}{1-x}\\) on \\(\\mathbb{R}\\setminus\\{1\\}\\). One has the identity \\[\n\\frac{1}{1-x}=1+x+x^2+\\cdots=\\sum_{n=0}^{\\infty}x^n\n\\qquad \\text{for }x\\in(-1,1).\n\\]\nCompute derivatives: \\[\nf^{(k)}(x)=\\frac{k!}{(1-x)^{k+1}}.\n\\] At \\(a=0\\), \\[\nf^{(k)}(0)=k!,\n\\] so the Taylor polynomial at \\(0\\) is \\[\nT_n(x)=\\sum_{k=0}^n\\frac{f^{(k)}(0)}{k!}x^k=\\sum_{k=0}^n x^k\n=1+x+x^2+\\cdots+x^n.\n\\] On \\((-1,1)\\) these Taylor polynomials converge to \\(f(x)=\\frac{1}{1-x}\\), but not on the full domain.",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Taylor series</span>"
+    ]
+  },
+  {
+    "objectID": "taylor/05-taylor-series.html#sec-sin-cos-series",
+    "href": "taylor/05-taylor-series.html#sec-sin-cos-series",
+    "title": "16  Taylor series",
+    "section": "Example: sine and cosine series",
+    "text": "Example: sine and cosine series\nFor \\(f(x)=\\sin x\\) at \\(a=0\\), \\[\nT_{2n+1}(x)=\\sum_{k=0}^n(-1)^k\\frac{x^{2k+1}}{(2k+1)!}.\n\\] The remainder satisfies (using \\(|\\sin|\\le 1\\) and \\(|\\cos|\\le 1\\)) \\[\n|R_n(x)|\\le \\frac{|x|^{n+1}}{(n+1)!}\\to 0\\quad (n\\to\\infty),\n\\] so \\[\n\\sin x = x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots.\n\\]\nSimilarly, \\[\n\\cos x = 1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots.\n\\] Both series have radius of convergence \\(R=\\infty\\).",
+    "crumbs": [
+      "Taylor polynomials",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Taylor series</span>"
+    ]
+  }
+]

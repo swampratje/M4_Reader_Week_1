@@ -1,0 +1,33 @@
+.rw1-footer{
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(0,0,0,.1);
+  text-align: right;          /* <-- right side */
+}
+
+
+/* ------------------------------------------------------------
+   Keep chapter numbering, hide section/subsection numbering
+   ------------------------------------------------------------ */
+
+/* 1) In the page content: hide numbers for H2+ (sections, subsections, …) */ 
+h2 .header-section-number,
+h3 .header-section-number,
+h4 .header-section-number,
+h5 .header-section-number,
+h6 .header-section-number {
+  display: none;
+}
+
+/* 2) In the right-hand TOC (on-page TOC): hide numbers for entries */
+#TOC .toc-section-number {
+  display: none;
+}
+
+/* 3) In the left sidebar: hide numbers for items whose level contains a dot (e.g. 1.1, 2.3.4) */
+#quarto-sidebar .sidebar-item[data-level*="."] .chapter-number {
+  display: none;
+}
+

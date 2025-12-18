@@ -1,0 +1,119 @@
+---
+title: "Tangency and Taylor polynomials"
+---
+
+## Tangency {#sec-tangency}
+
+Let $f,g:\mathbb{R}\to\mathbb{R}$ be differentiable.
+
+- The graphs of $f$ and $g$ **intersect** at $x=a$ if $f(a)=g(a)$.
+- They are **tangent** at $x=a$ if
+  $$
+  f(a)=g(a)\quad\text{and}\quad f'(a)=g'(a).
+  $$
+
+### Example: intersecting vs tangent {#sec-tangent-example}
+
+Consider $f(x)=2-e^{x-1}$.  
+
+- The graph of $g_0(x)=1$ merely intersects $f$ at $x=1$, because $f(1)=g_0(1)=1$.
+- The graph of $g_1(x)=2-x$ is tangent to $f$ at $x=1$, because $f(1)=g_1(1)=1$ and $f'(1)=g_1'(1)=-1$.
+
+![Tangency example.](../figures/Taylor_approx.png){#fig-taylor-approx width=70%}
+
+## Higher-order tangency {#sec-higher-tangency}
+
+Two functions can be “more tangent” if more derivatives agree. We say the graphs of two $n$ times differentiable functions $f$ and $g$ are **tangent at $a$ to order $n$** if
+$$
+f^{(k)}(a)=g^{(k)}(a)\qquad \text{for }k=0,1,\ldots,n.
+$$
+
+In the example above, $g_2(x)=1-x-\tfrac{1}{2}x^2$ is tangent to $f$ at $a=1$ to order $2$ (check it). Around the point of tangency, $g_2$ is typically a much better local approximation of $f$ than $g_1$.
+
+## Taylor polynomials {#sec-taylor-polynomials}
+
+Let $I\subset \mathbb{R}$ be a nonempty open interval and let $f:I\to\mathbb{R}$ have $n$ continuous derivatives
+$f,f',f'',\ldots,f^{(n)}$.
+Fix $a\in I$ and suppose we know
+$$
+f(a), f'(a), f''(a),\ldots, f^{(n)}(a).
+$$
+
+We ask:
+
+1. Does there exist a polynomial $T$ of degree $n$ whose derivatives match those of $f$ at $a$ up to order $n$?
+2. Can we compute it efficiently?
+3. How good is it as an approximation to $f$?
+
+### Deriving the coefficients {#sec-deriving-coeffs}
+
+Start with a polynomial of degree $n$ expanded around $a$:
+$$
+p(x)=c_0+c_1(x-a)+\cdots+c_n(x-a)^n=\sum_{k=0}^n c_k(x-a)^k.
+$$
+
+Matching $p(a)=f(a)$ gives $c_0=f(a)$.
+Differentiating,
+$$
+p'(x)=\sum_{k=1}^n k c_k(x-a)^{k-1},
+\quad\Rightarrow\quad
+p'(a)=f'(a)\ \Longrightarrow\ c_1=f'(a).
+$$
+Differentiating again,
+$$
+p''(x)=\sum_{k=2}^n k(k-1)c_k(x-a)^{k-2},
+\quad\Rightarrow\quad
+p''(a)=f''(a)\ \Longrightarrow\ c_2=\tfrac{1}{2}f''(a).
+$$
+
+Continuing in the same way, one finds that choosing
+$$
+c_k=\frac{1}{k!}f^{(k)}(a)\qquad (k=0,1,\ldots,n)
+$$
+makes $p$ tangent to $f$ at $a$ to order $n$.
+
+::: {#def-taylor-poly}
+**Definition (Taylor polynomial).**  
+Let $I\subset\mathbb{R}$ be a nonempty open interval and let $f:I\to\mathbb{R}$ be $n$ times continuously differentiable.
+For $a\in I$, the polynomial
+$$
+T_n(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n
+$$
+is called the **Taylor polynomial of order $n$ at $a$**.
+:::
+
+## Taylor polynomials of well-known functions {#sec-well-known}
+
+### The exponential function {#sec-exp}
+
+For $f(x)=e^x$, we have $f^{(k)}(x)=e^x$ for all $k$, so $f^{(k)}(0)=1$. Hence the Taylor polynomials at $a=0$ are
+$$
+T_n(x)=\sum_{k=0}^n \frac{x^k}{k!}
+=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots+\frac{x^n}{n!}.
+$$
+
+### Sine and cosine {#sec-sin-cos}
+
+If $f(x)=\sin x$, then
+$$
+f'(x)=\cos x,\quad f''(x)=-\sin x,\quad f^{(3)}(x)=-\cos x,\quad f^{(4)}(x)=\sin x,
+$$
+so the derivatives repeat in a cycle. At $a=0$ we obtain
+$$
+f^{(2k+1)}(0)=(-1)^k,\qquad f^{(2k)}(0)=0.
+$$
+Therefore the Taylor polynomials of $\sin x$ at $0$ are
+$$
+T_{2n+1}(x)=\sum_{k=0}^n(-1)^k\frac{x^{2k+1}}{(2k+1)!}
+=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots+(-1)^n\frac{x^{2n+1}}{(2n+1)!}.
+$$
+
+Similarly, for $f(x)=\cos x$ we have
+$$
+f^{(2k)}(0)=(-1)^k,\qquad f^{(2k+1)}(0)=0,
+$$
+so
+$$
+T_{2n}(x)=\sum_{k=0}^n(-1)^k\frac{x^{2k}}{(2k)!}
+=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots+(-1)^n\frac{x^{2n}}{(2n)!}.
+$$

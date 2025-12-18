@@ -1,0 +1,30 @@
+---
+title: "Series and convergence"
+---
+A necessary condition for convergence of a series is that the underlying sequence must have a limit 0. 
+
+::: {#thm-conv}
+**(Necessary condition for convergence).**
+
+If $\sum_{n=0}^\infty a_n$ converges, then $\lim_{n\to\infty} a_n=0$.
+:::
+
+::: {.callout-tip collapse="true" title="Proof"}
+Let $s_n=\sum_{k=0}^n a_k$. If $s_n\to S$, then also $s_{n+1}\to S$. Hence
+$$
+a_{n+1}=s_{n+1}-s_n \longrightarrow S-S = 0.
+$$
+:::
+
+Further basic properties of series are these algebraic ones. You may try to prove them yourself:
+
+::: {#thm-linear}
+**(Linearity of convergent series).**
+
+Let $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ converge with sums $S_a$ and $S_b$.
+Then for any $c\in\mathbb{R}$:
+
+1. $\sum_{n=0}^\infty (c a_n)$ converges and has sum $cS_a$;
+2. $\sum_{n=0}^\infty (a_n\pm b_n)$ converges and has sum $S_a\pm S_b$.
+
+:::

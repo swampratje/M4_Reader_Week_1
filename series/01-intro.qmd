@@ -1,0 +1,66 @@
+---
+title: "Series"
+---
+Series are constructed using sequences. Consider a sequence $\{a_n\}_{n\in \mathbb{N}}$. We can form the sequence of **partial sums**
+$$
+s_n=\sum_{k=1}^n a_k.
+$$
+We call the sequence of partial sums $\{s_n\}_{n\in\mathbb{N}}$ a **series** (associated to $\{a_n\}$). If
+$$
+S=\lim_{n\to\infty} s_n
+$$
+exists, then the series **converges** and $S$ is called its **sum**.
+
+::: {.callout-note title="Example: geometric series"}
+Let $r\in\mathbb{R}$ and consider $\{r^n\}_{n=0}^\infty$. The partial sums satisfy
+$$
+s_n=\sum_{k=0}^n r^k=\frac{1-r^{n+1}}{1-r}\quad (r\neq 1).
+$$
+Hence
+$$
+\lim_{n\to\infty}s_n=
+\begin{cases}
+\frac{1}{1-r}, & |r|<1,\\
+\text{does not exist}, & |r|\ge 1.
+\end{cases}
+$$
+:::
+
+::: {.callout-note title="Example: harmonic series"}
+
+
+Consider the **harmonic series**
+$$
+s_n=\sum_{k=1}^n \frac{1}{k}
+=1+\frac12+\frac13+\cdots+\frac1n.
+$$
+The sequence of partial sums $\{s_n\}_{n=1}^\infty$ is increasing. Moreover,
+$$
+\begin{aligned}
+s_2 &= 1+\frac12,\\[4pt]
+s_4 &= 1+\frac12+\overbrace{\left(\frac13+\frac14\right)}^{>\,\frac12}
+    \;>\; 1+2\cdot \frac12,\\[6pt]
+s_8 &= 1+\frac12+\overbrace{\left(\frac13+\frac14\right)}^{>\,\frac12}
+          +\overbrace{\left(\frac15+\frac16+\frac17+\frac18\right)}^{>\,\frac12}
+    \;>\; 1+3\cdot \frac12,\\[6pt]
+&\ \vdots \\[4pt]
+s_{2^k} &=
+1+\frac12+\overbrace{\left(\frac13+\frac14\right)}^{>\,\frac12}
++\overbrace{\left(\frac15+\cdots+\frac18\right)}^{>\,\frac12}
++\cdots
++\overbrace{\left(\frac{1}{2^{k-1}+1}+\cdots+\frac{1}{2^k}\right)}^{>\,\frac12}
+\;>\; 1+k\cdot \frac12.
+\end{aligned}
+$$
+
+Hence,
+$$
+\lim_{k\to\infty} s_{2^k}=\infty,
+$$
+so also $\lim_{n\to\infty} s_n=\infty$. Therefore the harmonic series does **not**
+converge, even though the terms $\frac{1}{k}$ tend to $0$.
+
+We will see below that $a_n\to 0$ is a **necessary** condition for
+$\sum_{n=1}^\infty a_n$ to converge, but it is **not sufficient**. $\triangleleft$
+
+:::

@@ -1,0 +1,143 @@
+---
+title: "Taylor's Theorem"
+---
+
+## Why do we need a theorem? {#sec-why}
+
+Taylor polynomials match derivatives of a function at a point. The natural next question is whether they also provide good approximations to the *function values* on some interval.
+
+In *Mathematics 1* you saw that a linear approximation can be poor if curvature is large. The same idea appears here: approximation quality depends on higher derivatives.
+
+### Example: linear approximation can be bad {#sec-bad-linear}
+
+Consider
+$$
+f(x)=x+100x^2.
+$$
+The Taylor polynomials around $a=0$ are
+\begin{align*}
+T_0(x) &= f(0)=0,\\
+T_1(x) &= f(0)+f'(0)x=x,\\
+T_2(x) &= f(0)+f'(0)x+\tfrac{1}{2}f''(0)x^2=x+100x^2.
+\end{align*}
+The remainder after the linear approximation is
+$$
+R_1(x)=f(x)-T_1(x)=100x^2,
+$$
+which becomes large even for small deviations from $0$.
+
+![Here $T_2(x)=f(x)$, while the straight line $T_1(x)$ is a poor approximation.](Figure9_Taylor_bad.pdf){#fig-taylor-bad width=50%}
+
+## The remainder term {#sec-remainder}
+
+The quality of the $n$th-order Taylor polynomial $T_n$ is measured by the **remainder term**
+$$
+R_n(x):=f(x)-T_n(x).
+$$
+
+## Taylor’s Theorem {#sec-taylor-theorem}
+
+::: {#thm-taylor}
+**Theorem (Taylor).**  
+Let $f^{(n)}(t)$ be continuous for $a\le t\le x$ and let $f^{(n+1)}(t)$ exist for all $a<t<x$. Then there exists a point $\xi_x$ between $a$ and $x$ such that
+$$
+R_n(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
+$$
+:::
+
+If $x<a$, interpret “$\xi_x$ between $a$ and $x$” as $\xi_x\in(x,a)$.
+
+To prove Taylor’s Theorem, we first prepare two results.
+
+## Cauchy’s Mean Value Theorem {#sec-cauchy-mvt}
+
+::: {#thm-cauchy}
+**Theorem (Cauchy’s Mean Value Theorem).**  
+Let $f,g:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Assume $g'(x)\ne 0$ for all $x\in(a,b)$. Then there exists $\xi\in(a,b)$ such that
+$$
+\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
+$$
+:::
+
+**Proof.**  
+The Mean Value Theorem implies there exists $\gamma\in(a,b)$ with
+$$
+\frac{g(b)-g(a)}{b-a}=g'(\gamma)\ne 0,
+$$
+so $g(b)\ne g(a)$. Define
+$$
+\varphi(x):=f(x)+p\,g(x),
+$$
+and choose $p$ so that $\varphi(a)=\varphi(b)$:
+$$
+f(a)+pg(a)=f(b)+pg(b)
+\quad\Longrightarrow\quad
+p=-\frac{f(b)-f(a)}{g(b)-g(a)}.
+$$
+By Rolle’s Theorem there exists $\xi\in(a,b)$ with $\varphi'(\xi)=0$, i.e.
+$$
+f'(\xi)+p\,g'(\xi)=0
+\quad\Longrightarrow\quad
+p=-\frac{f'(\xi)}{g'(\xi)}.
+$$
+Equating the two expressions for $p$ gives the result. $\square$
+
+## A technical lemma {#sec-technical-lemma}
+
+::: {#thm-cauchy2}
+**Theorem.**  
+Let $I$ be an open interval and let $f:I\to\mathbb{R}$ be $(n+1)$ times differentiable on $I$, with
+$$
+f(a)=f'(a)=\cdots=f^{(n)}(a)=0.
+$$
+Then for any $x\in I\setminus\{a\}$ there exists a point $\xi_x$ between $a$ and $x$ such that
+$$
+f(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
+$$
+:::
+
+**Proof.**  
+Assume without loss of generality that $a<x$, and let $g(x)=(x-a)^{n+1}$. Then
+$$
+g(a)=g'(a)=\cdots=g^{(n)}(a)=0,\qquad g^{(n+1)}(x)=(n+1)!.
+$$
+Applying Cauchy’s Mean Value Theorem repeatedly to $(f,g)$, then $(f',g')$, and so on, yields points
+$$
+x_1\in(a,x),\ x_2\in(a,x_1),\ \ldots,\ x_{n+1}\in(a,x_n)
+$$
+such that
+$$
+\frac{f(x)}{g(x)}
+=\frac{f'(x_1)}{g'(x_1)}
+=\cdots
+=\frac{f^{(n+1)}(x_{n+1})}{g^{(n+1)}(x_{n+1})}
+=\frac{f^{(n+1)}(x_{n+1})}{(n+1)!}.
+$$
+Let $\xi_x:=x_{n+1}$. Then
+$$
+f(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
+$$
+$\square$
+
+## Proof of Taylor’s Theorem {#sec-proof-taylor}
+
+**Proof.**  
+Let $R_n(x)=f(x)-T_n(x)$. Since $T_n$ matches derivatives of $f$ at $a$ up to order $n$, we have
+$$
+R_n^{(k)}(a)=0\qquad (k=0,1,\ldots,n).
+$$
+Apply the previous theorem to $R_n$ to obtain a point $\xi_x$ between $a$ and $x$ with
+$$
+R_n(x)=\frac{R_n^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
+$$
+Because $T_n^{(n+1)}\equiv 0$, we have $R_n^{(n+1)}(\xi_x)=f^{(n+1)}(\xi_x)$, which gives the desired formula. $\square$
+
+## Interpretation {#sec-interpretation}
+
+Taylor’s Theorem says that the approximation error near $a$ depends on
+
+- the distance $|x-a|$,
+- the order $n$,
+- and the behavior of the derivative $f^{(n+1)}$ between $a$ and $x$.
+
+If $f^{(n+1)}$ behaves regularly and $x$ is close to $a$, the Taylor approximation is typically accurate; erratic higher derivatives can make approximation worse.

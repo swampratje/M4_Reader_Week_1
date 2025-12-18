@@ -1,0 +1,54 @@
+---
+title: 'Sequences and continuity'
+---
+
+## Continuity {-} 
+%{#sec-continuity}
+
+Using functions $f:\mathbb{R}\rightarrow \mathbb{R}$ it is easy to generate a new sequence $\{b_n\}_{n\in \mathbb{N}}$ from a given sequence $\{a_n\}_{n\in\mathbb{N}}$ by applying $f$ to each element:
+$$
+b_n:=f(a_n).
+$$
+Below we focus on continuous $f$.
+
+::: {.callout-note title="Continuity (definition)"}
+Consider a function $f:I\rightarrow \mathbb{R}$, where $I\subset \mathbb{R}$ is an open interval, and take $a\in I$. Then $f$ is *continuous at* $a$ if
+$$
+\lim_{x\rightarrow a}f(x)=f(a).
+$$
+Equivalently: for each $\varepsilon>0$ there is $\delta>0$ such that
+$$
+x\in I,\ |x-a|\leq \delta\Rightarrow |f(x)-f(a)|\leq \varepsilon.
+$$
+The function $f$ is *continuous on $I$* if it is continuous at every $a\in I$.
+:::
+
+
+## Continuity and row continuity {-}
+
+::: {#thm-seqcont}
+**(Characterization of continuity in terms of sequences).**  
+Let $f:I\rightarrow \mathbb{R}$ with $I\subset\mathbb{R}$ open. Then $f$ is continuous at $a\in I$ **iff** for each sequence $\{a_n\}\subset I$ with $a_n\to a$ we have
+$$
+f(a_n)\to f(a).
+$$
+:::
+
+<details>
+<summary><b>Proof</b></summary>
+
+($\Rightarrow$) If $f$ is continuous at $a$, then for each $\varepsilon>0$ there exists $\delta>0$ such that
+$|x-a|\le\delta\Rightarrow |f(x)-f(a)|\le\varepsilon$.
+If $a_n\to a$, then for some $N$ we have $n\ge N\Rightarrow |a_n-a|\le\delta$, hence $|f(a_n)-f(a)|\le\varepsilon$.
+
+($\Leftarrow$) Suppose the sequential condition holds but $f$ is not continuous at $a$. Then there exists $\varepsilon>0$ such that for every $n$ there exists $b_n\in (a-\tfrac1n,a+\tfrac1n)$ with $|f(b_n)-f(a)|>\varepsilon$. Then $b_n\to a$ but $f(b_n)\not\to f(a)$, contradiction.
+
+</details>
+
+A standard consequence: if $a_n\to a$ and $f$ is continuous at $a$, then $f(a_n)\to f(a)$. For example:
+$$
+\lim_{n\rightarrow\infty}\sqrt{1+\tfrac{1}{n}}
+= \sqrt{\lim_{n\rightarrow \infty}(1+\tfrac{1}{n})}
+=\sqrt{1+0}=1.
+$$
+

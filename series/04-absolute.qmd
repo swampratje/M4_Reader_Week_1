@@ -1,0 +1,23 @@
+---
+title: "Absolute convergence"
+---
+We call $\sum_{n=1}^\infty a_n$ **absolutely convergent** if $\sum_{n=1}^\infty |a_n|$ converges.
+
+::: {#thm-abs}
+**Theorem (Absolute convergence implies convergence).**
+If $\sum_{n=1}^\infty |a_n|$ converges, then $\sum_{n=1}^\infty a_n$ converges.
+:::
+
+::: {.callout-note title="Example: convergent but not absolutely"}
+The alternating harmonic series
+$$
+\sum_{n=1}^\infty \frac{(-1)^n}{n}
+$$
+converges (alternating series test), but
+$$
+\sum_{n=1}^\infty \left|\frac{(-1)^n}{n}\right|
+=
+\sum_{n=1}^\infty \frac{1}{n}
+$$
+diverges. So it is **conditionally convergent**.
+:::

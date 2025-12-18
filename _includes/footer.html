@@ -1,0 +1,12 @@
+<footer class="rw1-footer">
+  © <span id="rw1-year"></span> <span id="rw1-author"></span>. All rights reserved.
+</footer>
+
+<script>
+  // Dynamic year
+  document.getElementById("rw1-year").textContent = new Date().getFullYear();
+
+  // Try to pick up the author from the page metadata; fall back to a fixed name
+  const metaAuthor = document.querySelector('meta[name="author"]')?.content;
+  document.getElementById("rw1-author").textContent = metaAuthor || "Maurice Koster";
+</script>

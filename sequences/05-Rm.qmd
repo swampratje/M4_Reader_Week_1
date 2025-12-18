@@ -1,0 +1,202 @@
+---
+title: 'Sequences in $\mathbb{R}^m$'
+---
+
+
+A sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^m$ consists of elements $a_n\in \mathbb{R}^m$. So instead of considering numbers only, we now look at $m$-tuples of numbers. 
+
+
+::: {.callout-note title="Example"}
+Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by
+$$
+a_n:=(\cos(n),\sin(n)).
+$$
+The first 200 elements of this sequence are plotted in Figure @fig-cossin.
+:::
+
+![Plot of $a_n=(\cos(n),\sin(n))$ for $n=1,2,\ldots,200$.](../figures/Figure10_cossin.png){#fig-cossin width=30%}
+
+Similar to the discussion of convergence of a sequence in $\mathbb{R}$ one may ask oneself when a sequence in $\mathbb{R}^m$ converges -- or what that should mean. 
+Note that $\displaystyle\lim_{n\rightarrow\infty}a_n=L$ in $\mathbb{R}$ means that by taking high enough index numbers $n$, the corresponding sequence elements $a_n$ get arbitrarily close to the value $L$.  Intuitively, we would want to say that a converging sequence $\{a_n\}_{n\in \mathbb{N}}\in\mathbb{R}^m$ must get close to some element of $\mathbb{R}^m$, where the **closeness** is measured by some idea of ***distance***. A distance measure that is quite common is the Euclidean distance $d()$, which uses the Euclidean norm on $\mathbb{R}^m$.
+
+## Norm and distance {#sec-norm-distance}
+
+A sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^m$ consists of elements $a_n\in \mathbb{R}^m$, so instead of numbers we now consider $m$-tuples of numbers.
+
+A common choice of distance in $\mathbb{R}^m$ is based on the Euclidean norm
+$$
+\|x\|:=\sqrt{\sum_{k=1}^m x_k^2}.
+$$
+The associated Euclidean distance is
+$$
+d(x,y)=\|x-y\|=\sqrt{\sum_{k=1}^m(x_k-y_k)^2}.
+$$
+
+It is called a norm because it satisfies the following properties:
+
+<details markdown="1">
+<summary><strong>Norm axioms</strong></summary>
+
+::: {.callout-tip}
+A function $\lVert\cdot\rVert:\mathbb{R}^m\to\mathbb{R}$ is a **norm** if for all $x,y\in\mathbb{R}^m$ and $\alpha\in\mathbb{R}$:
+
+1. **Non-negativity:** $\|x\|\ge 0$.
+2. **Definiteness:** $\|x\|=0 \iff x=0$.
+3. **Homogeneity:** $\|\alpha x\|=|\alpha|\,\|x\|$.
+4. **Triangle inequality:** $\|x+y\|\le \|x\|+\|y\|$.
+
+There are different norms on $\mathbb{R}^m$ that have clear applications. Here are some examples.
+
+1. The $L_1$ norm is defined by $\|x\|_1:=\sum_{i=1}^m|x_i|$.
+2. The $L_\infty$ norm is defined by $\|x\|_\infty:=\max_{i=1,\ldots,m}|x_i|$
+
+What do your think an alternative name is for the Euclidean norm?
+:::
+
+</details>
+
+
+### Convergence in $\mathbb{R}^m$ {-}
+
+::: {#def-conv-rm}
+**Definition (Convergence in $\mathbb{R}^m$).**  
+A sequence $\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m$ *converges* to $L\in \mathbb{R}^m$ if for each $\varepsilon>0$ there exists $N\in \mathbb{N}$ such that
+$$
+n\geq N \Rightarrow \Vert a_n-L\Vert\leq \varepsilon.
+$$
+:::
+
+::: {.callout-note title="Example" #ex-conv}
+Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by
+$$
+a_n:=\left(1+\tfrac{1}{n}, \tfrac{1}{n}\right).
+$$
+Then $a_n\to (1,0)$, because
+\begin{align*}
+\Vert a_n-(1,0)\Vert
+&= \sqrt{(\tfrac{1}{n})^2+(\tfrac{1}{n})^2}
+= \tfrac{\sqrt{2}}{n}\rightarrow 0.
+\end{align*}
+:::
+
+::: {.callout-note title="Example" #ex-nonconv}
+Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by $$a_n:=\left(1+\tfrac{1}{n}, n\right).$$
+Then we see that the sequence of the first coordinates $\{a_{n,1}\}_{n\in \mathbb{N}}=\{1+\tfrac{1}{n}\}_{n\in \mathbb{N}}$ converges with limit $1$, whereas the sequence of second coordinates $\{a_{n,2}\}_{n\in \mathbb{N}} $ does not converge as $a_{n,2}\rightarrow \infty$ for $n\rightarrow\infty$. The sequence $\{a_n\}$ does not get close to a particular element of $\mathbb{R}^2$ for $n\rightarrow\infty$ , so we would intuitively say that it does not converge. In fact, for any fixed $L=(L_1,L_2)\in \mathbb{R}^2$,
+$$
+\Vert a_n-L\Vert = \sqrt{(1-L_1+\tfrac{1}{n})^2+(n-L_2)^2}\rightarrow \infty.
+$$
+:::
+
+<details markdown="1">
+::: {.callout-tip}
+A common property of all norms on $\mathbb{R}^m$ is that they have the same convergence properties. In the definition above you may exchange $\|\cdot\|$ for any norm. Interested? Figure out, or use the web. 
+:::
+</details>
+
+### Coordinate-wise criterion {-}
+
+In our previous example, what went wrong with respect to convergence is that in one coordinate the values of the vectors did not converge. It is easily seen that a sequence of vectors can only converge only if all coordinates of these vectors converge. It will also be sufficient. We have the following:
+
+::: {#thm-coord}
+**Theorem (Coordinate-wise convergence criterion).**  
+The sequence $\{a_n\}\subset \mathbb{R}^m$ converges to $L$ **iff** for $k=1,2,\ldots,m$,
+$$
+\lim_{n\rightarrow \infty}a_{n,k}=L_k.
+$$
+:::
+
+::: {.callout-tip collapse="true" title="Proof"}
+We show both implications.
+
+**($\Rightarrow$)** Suppose $\{a_n\}_{n\in\mathbb{N}}\subset\mathbb{R}^m$ converges to $L\in\mathbb{R}^m$.
+Let $\varepsilon>0$. Then there exists $N$ such that for all $n\ge N$,
+$$
+\|a_n-L\|\le \varepsilon.
+$$
+Write $a_n=(a_{n,1},\ldots,a_{n,m})$ and $L=(L_1,\ldots,L_m)$. For each coordinate $k\in\{1,\ldots,m\}$ and $n\ge N$,
+$$
+|a_{n,k}-L_k|
+= \sqrt{(a_{n,k}-L_k)^2}
+\le \sqrt{\sum_{j=1}^m (a_{n,j}-L_j)^2}
+= \|a_n-L\|
+\le \varepsilon.
+$$
+Hence $\lim_{n\to\infty} a_{n,k}=L_k$ for every $k$.
+
+**($\Leftarrow$)** Conversely, suppose $\lim_{n\to\infty} a_{n,k}=L_k$ for all $k\in\{1,\ldots,m\}$.
+Let $\varepsilon>0$. For each $k$ there exists $N_k$ such that for all $n\ge N_k$,
+$$
+|a_{n,k}-L_k|\le \frac{\varepsilon}{\sqrt{m}}.
+$$
+Let $N=\max\{N_1,\ldots,N_m\}$. Then for all $n\ge N$,
+$$
+\|a_n-L\|
+= \sqrt{\sum_{k=1}^m (a_{n,k}-L_k)^2}
+\le \sqrt{\sum_{k=1}^m \frac{\varepsilon^2}{m}}
+= \varepsilon.
+$$
+Therefore $a_n\to L$ in $\mathbb{R}^m$.
+:::
+
+
+
+### Subsequences {-}
+
+Given a sequence $\{a_n\}_{n\in \mathbb{N}}$ and an increasing function $f:\mathbb{N}\rightarrow \mathbb{N}$, the sequence $\{a_{f(n)}\}_{n\in \mathbb{N}}$ is called a *subsequence* of $\{a_n\}_{n\in \mathbb{N}}$.
+
+A subsequence is therefore a sequence which is “drawn” from a sequence of elements.
+
+::: {.callout-note title="Example" #ex-subseq-constant}
+Let $\{a_n\}_{n\in \mathbb{N}}=\{(-1)^n\}_{n\in\mathbb{N}}$. Then $f:\mathbb{N}\rightarrow\mathbb{N}$ with $f(n)=2n$ defines the constant subsequence
+$$
+b_n=a_{f(n)}=1.
+$$
+:::
+
+### Theorem of Bolzano–Weierstrass {-}
+
+The following theorem will be important in numerous applications in proofs in the second part of the course. You will also encounter it in the second reader, only then confined to a slightly different setting. 
+
+
+::: {#thm-bw}
+**Theorem (Bolzano–Weierstrass).**  
+Let $\{x_n\}$ be a bounded sequence in $\mathbb{R}^m$. Then it has a convergent subsequence.
+:::
+
+::: {.callout-tip collapse="true" title="Proof"}
+First look at the case $m=1$. Take a bounded sequence $\{x_n\}$ in $\mathbb{R}$. Then there is $M>0$ with
+$x_n\in [a_0,b_0]:=[-M,M]$ for all $n$.
+
+Subdivide $[a_0,b_0]$ into two subintervals of equal length. One of these contains infinitely many points of the sequence.
+Subdivide that subinterval again into two equal parts, and continue. This yields nested intervals
+$$
+[a_1,b_1]\supset [a_2,b_2]\supset\cdots
+$$
+each containing infinitely many points of $\{x_n\}$, with lengths
+$$
+b_k-a_k=\frac{M}{2^{k-1}}.
+$$
+
+The endpoints $\{a_k\}$ form a non-decreasing sequence bounded above, and $\{b_k\}$ form a non-increasing sequence bounded below, so both converge.
+Since $b_k-a_k\to 0$, they converge to the same limit $\ell$.
+
+Now pick $x_{n_1}\in [a_1,b_1]$, then choose $x_{n_2}$ with $n_2>n_1$ from $[a_2,b_2]$, and so on.
+Then for every $k$,
+$$
+a_k\le x_{n_k}\le b_k,
+$$
+so by the squeeze theorem $x_{n_k}\to \ell$. Hence every bounded sequence in $\mathbb{R}$ has a convergent subsequence.
+
+For general $m$, write $x_n=(x_{n,1},\ldots,x_{n,m})$. Boundedness of $\|x_n\|$ implies each coordinate sequence $\{x_{n,k}\}$ is bounded.
+Apply the $m=1$ result to the first coordinate to obtain a convergent subsequence; then refine it to a subsequence whose second coordinate converges; and so on.
+After $m$ steps we obtain a subsequence $\{x_{n_k}\}$ for which all components converge, hence $x_{n_k}$ converges in $\mathbb{R}^m$.
+:::
+
+
+::: {.callout-note title="Example" #ex-bw-alt}
+The sequence $\{(-1)^n\}_{n\in \mathbb{N}}$ does not converge, but it is bounded. One convergent subsequence is obtained by $f(n)=2n$, giving $b_n=a_{2n}=1$.
+:::
+
+::: {.callout-note title="Example" #ex-bw-cossin}
+Consider the sequence $a_n=(\cos n,\sin n)$ in $\mathbb{R}^2$. This sequence does not converge. But since $\|a_n\|=1$ for all $n$, it is bounded, so by Bolzano–Weierstrass it has a convergent subsequence.
+:::

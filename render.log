@@ -1,0 +1,347 @@
+Quarto version: 1.8.26
+Render: Using current directory (/Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1) as implicit input
+projectContext: Found Quarto project in /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1
+[execProcess] which git
+[execProcess] Success: true, code: 0
+[execProcess] git rev-parse
+[execProcess] Success: false, code: 128
+[1m[34m[ 1/11] index.qmd[39m[22m
+Loaded deno-dom-native
+Creating SassCache at /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/sass
+Returning SassCache at /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/sass
+SassCache.getOrSet(...)
+SassCache.getFromHash(hash=fa534718ebf6afe80c24a68e0b0bd389, inputHash=49beb8eecd96c4f93110479225442f8f, force=undefined)
+  cache miss
+  cache miss, setting
+SassCache.setFromHash(fa534718ebf6afe80c24a68e0b0bd389, 49beb8eecd96c4f93110479225442f8f), ...
+[execProcess] /Applications/quarto/bin/tools/aarch64/dart-sass/sass /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/5a299bd4c10748f0.scss /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/sass/fa534718ebf6afe80c24a68e0b0bd389.css --style compressed --quiet --load-path=/Applications/quarto/share/formats/html/bootstrap/dist/scss --load-path=/Applications/quarto/share/formats/html/bslib/bslib-scss
+[execProcess] Success: true, code: 0
+Creating SassCache at /Users/mkoster/Library/Caches/quarto/sass
+Returning SassCache at /Users/mkoster/Library/Caches/quarto/sass
+SassCache.getOrSet(...)
+SassCache.getFromHash(hash=2dce1cc6c82594539e1579de68416b47, inputHash=99bfea54542b8558cbb95e6d75e80dfa, force=undefined)
+  cache hit
+  cache hit
+[NotebookContext]: Writing all notebooks to /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/6d280cbae021491f.json
+-- Searching for R binary --
+Looking for 'Rscript' in QUARTO_R: undefined
+Looking for 'Rscript' in R_HOME: undefined
+Looking for 'Rscript' in PATH.
+[execProcess] which Rscript
+[execProcess] Success: true, code: 0
+Found in PATH at /usr/local/bin/Rscript
+[execProcess] /Applications/quarto/bin/tools/aarch64/pandoc +RTS -K512m -RTS --defaults /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-defaults9d7bd12acd73e9f1.yml /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-inputd6d79bcedc0dd8d0.md --metadata-file /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-metadatad275b99682bfd5c1.yml --verbose --trace --data-dir /Applications/quarto/share/pandoc/datadir
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/template.patched from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/template.patched
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/styles.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/styles.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/toc.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/ecf07b9cd5bd9772/toc.html
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Home"]] at line 1
+[trace] Parsed [Plain [Str "sequences/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/02-convergence-R.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/03-monotone.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/04-continuity.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/05-Rm.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Sequences"]] at line 1
+[trace] Parsed [Plain [Str "series/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/02-basic-properties.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/03-alternating.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/04-absolute.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/05-ratio-power.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Series"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "Sequences"]] at line 1
+[trace] Parsed [Plain [Str "part"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "2"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/02-convergence-R.qmd"]] at line 1
+[trace] Parsed [Plain [Str "3"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/03-monotone.qmd"]] at line 1
+[trace] Parsed [Plain [Str "4"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/04-continuity.qmd"]] at line 1
+[trace] Parsed [Plain [Str "5"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/05-Rm.qmd"]] at line 1
+[trace] Parsed [Plain [Str "6"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "Series"]] at line 1
+[trace] Parsed [Plain [Str "part"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "7"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/02-basic-properties.qmd"]] at line 1
+[trace] Parsed [Plain [Str "8"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/03-alternating.qmd"]] at line 1
+[trace] Parsed [Plain [Str "9"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/04-absolute.qmd"]] at line 1
+[trace] Parsed [Plain [Str "10"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/05-ratio-power.qmd"]] at line 1
+[trace] Parsed [Plain [Str "11"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "Reader",Space,Str "Week",Space,Str "1"]] at line 1
+[trace] Parsed [Plain [Str "long"]] at line 1
+[trace] Parsed [Plain [Str "en"]] at line 1
+[trace] Parsed [Plain [Str "true"]] at line 1
+[trace] Parsed [Plain [Str "1.8.26"]] at line 1
+[trace] Parsed [Plain [Str "cosmo"]] at line 1
+[trace] Parsed [Plain [Str "Reader",Space,Str "Week",Space,Str "1"]] at line 1
+[trace] Parsed [Plain [Str "Table",Space,Str "of",Space,Str "contents"]] at line 1
+[trace] Parsed [] at line 3
+[trace] Parsed [Header 2 ("overview",["unnumbered"],[]) [Str "Overview"]] at line 5
+[trace] Parsed [Para [Str "Sequences",Space,Str "and",Space,Str "series",Sp at line 7
+[trace] Parsed [Para [Strong [Str "Do",Space,Str "these",Space,Str "success at line 3
+[trace] Parsed [BlockQuote [Para [Strong [Str "Do",Space,Str "these",Space, at line 9
+[trace] Parsed [Para [Str "That",Space,Str "question",Space,Str "is",Space, at line 11
+[trace] Parsed [Para [Str "A",Space,Strong [Str "series"],Space,Str "is",Sp at line 13
+[trace] Parsed [Para [Strong [Str "Do",Space,Str "the",Space,Str "partial", at line 3
+[trace] Parsed [BlockQuote [Para [Strong [Str "Do",Space,Str "the",Space,St at line 15
+[trace] Parsed [Para [Str "To",Space,Str "answer",Space,Str "that,",Space,S at line 17
+[trace] Parsed [Header 2 ("road-map",["unnumbered"],[]) [Str "Road",Space,S at line 21
+[trace] Parsed [Para [Span ("",["hidden","quarto-markdown-envelope-contents at line 39
+[trace] Parsed [Div ("quarto-navigation-envelope",["hidden"],[]) [Para [Spa at line 43
+[trace] Parsed [Para [Span ("",["hidden","quarto-markdown-envelope-contents at line 50
+[trace] Parsed [Div ("quarto-meta-markdown",["hidden"],[]) [Para [Span ("", at line 54
+[INFO] Running filter /Applications/quarto/share/filters/main.lua
+[INFO] Completed filter /Applications/quarto/share/filters/main.lua in 50 ms
+[INFO] Not rendering RawInline (Format "tex") "\\sin "
+[INFO] Not rendering RawInline (Format "tex") "\\cos "
+[execProcess] Success: true, code: 0
+[1m[34m[ 2/11] sequences/01-intro.qmd[39m[22m
+Returning SassCache at /Users/mkoster/Documents/QuatroFile/quarto_Reader_Week_1/.quarto/quarto-session-tempffc2abdb8ca7f016/sass
+SassCache.getOrSet(...)
+SassCache.getFromHash(hash=fa534718ebf6afe80c24a68e0b0bd389, inputHash=49beb8eecd96c4f93110479225442f8f, force=undefined)
+  cache hit
+  cache hit
+Returning SassCache at /Users/mkoster/Library/Caches/quarto/sass
+SassCache.getOrSet(...)
+SassCache.getFromHash(hash=2dce1cc6c82594539e1579de68416b47, inputHash=99bfea54542b8558cbb95e6d75e80dfa, force=undefined)
+  cache hit
+  cache hit
+[execProcess] /Applications/quarto/bin/tools/aarch64/pandoc +RTS -K512m -RTS --defaults /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-defaults8717505a15fe55e1.yml /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-inputbb42342259e21b64.md --metadata-file /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/quarto-metadata4c9d230d542d394e.yml --verbose --trace --data-dir /Applications/quarto/share/pandoc/datadir
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/template.patched from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/template.patched
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/styles.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/styles.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-block.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/title-metadata.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/_title-meta-author.html
+[INFO] Loaded /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/toc.html from /var/folders/9x/tfzxw7_x5b53g0bj9rcgq6_40000gn/T/quarto-sessione5687040ebbdae3c/bbbfe7bda46924d3/f53b3760c1e3cb1a/toc.html
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Home"]] at line 1
+[trace] Parsed [Plain [Str "sequences/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/02-convergence-R.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/03-monotone.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/04-continuity.qmd"]] at line 1
+[trace] Parsed [Plain [Str "sequences/05-Rm.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Sequences"]] at line 1
+[trace] Parsed [Plain [Str "series/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/02-basic-properties.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/03-alternating.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/04-absolute.qmd"]] at line 1
+[trace] Parsed [Plain [Str "series/05-ratio-power.qmd"]] at line 1
+[trace] Parsed [Plain [Str "Series"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "Sequences"]] at line 1
+[trace] Parsed [Plain [Str "part"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "2"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/02-convergence-R.qmd"]] at line 1
+[trace] Parsed [Plain [Str "3"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/03-monotone.qmd"]] at line 1
+[trace] Parsed [Plain [Str "4"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/04-continuity.qmd"]] at line 1
+[trace] Parsed [Plain [Str "5"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "sequences/05-Rm.qmd"]] at line 1
+[trace] Parsed [Plain [Str "6"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "0"]] at line 1
+[trace] Parsed [Plain [Str "Series"]] at line 1
+[trace] Parsed [Plain [Str "part"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/01-intro.qmd"]] at line 1
+[trace] Parsed [Plain [Str "7"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/02-basic-properties.qmd"]] at line 1
+[trace] Parsed [Plain [Str "8"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/03-alternating.qmd"]] at line 1
+[trace] Parsed [Plain [Str "9"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/04-absolute.qmd"]] at line 1
+[trace] Parsed [Plain [Str "10"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "1"]] at line 1
+[trace] Parsed [Plain [Str "series/05-ratio-power.qmd"]] at line 1
+[trace] Parsed [Plain [Str "11"]] at line 1
+[trace] Parsed [Plain [Str "chapter"]] at line 1
+[trace] Parsed [Plain [Str "Reader",Space,Str "Week",Space,Str "1"]] at line 1
+[trace] Parsed [Plain [Str "long"]] at line 1
+[trace] Parsed [Plain [Str "en"]] at line 1
+[trace] Parsed [Plain [Str "true"]] at line 1
+[trace] Parsed [Plain [Str "1.8.26"]] at line 1
+[trace] Parsed [Plain [Str "cosmo"]] at line 1
+[trace] Parsed [Plain [Span ("",["chapter-number"],[]) [Str "2"],Str "\160" at line 1
+[trace] Parsed [Plain [Str "Table",Space,Str "of",Space,Str "contents"]] at line 1
+[trace] Parsed [] at line 3
+[trace] Parsed [Header 2 ("sec-motivation",[],[]) [Str "Motivation"]] at line 5
+[trace] Parsed [Para [Str "Sequences",Space,Str "are",Space,Str "basic",Spa at line 7
+[trace] Parsed [Para [Str "Consider",Space,Str "the",Space,Str "simple",Spa at line 9
+[trace] Parsed [Para [Str "You",Space,Str "will",Space,Str "also",Space,Str at line 11
+[trace] Parsed [Para [Str "In",Space,Str "the",Space,Str "course",Space,Emp at line 13
+[trace] Parsed [Para [Str "So",Space,Str "these",Space,Str "examples",Space at line 15
+[trace] Parsed [Header 2 ("sec-sequence-definition",[],[]) [Str "What",Spac at line 17
+[trace] Parsed [Para [Str "The",Space,Str "basic",Space,Str "characteristic at line 23
+[trace] Parsed [Para [Str "A",Space,Str "sequence",Space,Str "is",Space,Str at line 29
+[trace] Parsed [Para [Str "Here",Space,Str "we",Space,Str "use",Space,Str " at line 4
+[trace] Parsed [] at line 31
+[trace] Parsed [Para [Str "Other",Space,Str "times",Space,Str "it",Space,St at line 37
+[trace] Parsed [Para [Str "Re-labelling",Space,Str "is",Space,Str "not",Spa at line 39
+[trace] Parsed [Para [Str "This",Space,Str "is",Space,Str "the",Space,Str " at line 4
+[trace] Parsed [] at line 41
+[trace] Parsed [Plain [Str "A",Space,Str "trivial",Space,Str "example",Spac at line 2
+[trace] Parsed [Plain [Str "The",Space,Str "sequence",Space,Str "of",Space, at line 2
+[trace] Parsed [Plain [Str "The",Space,Str "sequence",Space,Str "of",Space, at line 2
+[trace] Parsed [BulletList [[Plain [Str "A",Space,Str "trivial",Space,Str " at line 45
+[trace] Parsed [Div ("sec-examples",["callout-note"],[("title","Examples")] at line 47
+[trace] Parsed [Para [Str "Numerous",Space,Str "other",Space,Str "examples" at line 52
+[trace] Parsed [Para [Span ("",["hidden","quarto-markdown-envelope-contents at line 72
+[trace] Parsed [Div ("quarto-navigation-envelope",["hidden"],[]) [Para [Spa at line 76
+[trace] Parsed [Para [Span ("",["hidden","quarto-markdown-envelope-contents at line 83
+[trace] Parsed [Div ("quarto-meta-markdown",["hidden"],[]) [Para [Span ("", at line 87
+[INFO] Running filter /Applications/quarto/share/filters/main.lua
+[trace] Parsed [Para [Str "Examples"]] at line 4
+[31mFATAL (/Applications/quarto/share/pandoc/datadir/../../filters/modules/callouts.lua:9) An error occurred:
+unknown callout prefix 'sec'
+[39mError running filter /Applications/quarto/share/filters/main.lua:
+.../share/pandoc/datadir/../../filters/modules/callouts.lua:45: FATAL QUARTO ERROR
+stack traceback:
+	/Applications/quarto/share/filters/main.lua:2619: in function 'fatal'
+	/Applications/quarto/share/filters/main.lua:2199: in function 'fail'
+	.../share/pandoc/datadir/../../filters/modules/callouts.lua:9: in upvalue 'callout_title_prefix'
+	.../share/pandoc/datadir/../../filters/modules/callouts.lua:45: in function 'modules/callouts.decorate_callout_title_with_crossref'
+	.../share/pandoc/datadir/../../filters/modules/callouts.lua:192: in function 'modules/callouts.render_to_bootstrap_div'
+	/Applications/quarto/share/filters/main.lua:1213: in local 'filter_fn'
+	/Applications/quarto/share/filters/main.lua:653: in function </Applications/quarto/share/filters/main.lua:643>
+	(...tail calls...)
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:34: in upvalue 'run_filter_function'
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:223: in function <...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:202>
+	(...tail calls...)
+	[C]: in function 'pandoc.List.map'
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:125: in upvalue 'recurse'
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:222: in local 'jogger'
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:171: in upvalue 'recurse'
+	...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:222: in function <...uarto/share/pandoc/datadir/../../filters/modules/jog.lua:202>
+	(...tail calls...)
+	/Applications/quarto/share/filters/main.lua:572: in function </Applications/quarto/share/filters/main.lua:550>
+	(...tail calls...)
+	/Applications/quarto/share/filters/main.lua:1314: in local 'callback'
+	/Applications/quarto/share/filters/main.lua:1332: in upvalue 'run_emulated_filter_chain'
+	/Applications/quarto/share/filters/main.lua:1368: in function </Applications/quarto/share/filters/main.lua:1365>
+[execProcess] Success: false, code: 83
+[33mWARN: Error encountered when rendering files[39m
+[NotebookContext]: Starting Cleanup

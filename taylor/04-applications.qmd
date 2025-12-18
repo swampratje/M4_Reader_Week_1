@@ -1,0 +1,115 @@
+---
+title: "Applications"
+---
+
+## Taylor’s theorem and optimization {#sec-optimization}
+
+Let $f:\mathbb{R}\to\mathbb{R}$ have continuous first and second derivatives. Suppose $a$ is a critical point, i.e. $f'(a)=0$.
+Then the first-order Taylor polynomial at $a$ is constant:
+$$
+T_1(x)=f(a)+f'(a)(x-a)=f(a).
+$$
+
+Taylor’s Theorem gives, for $x$ near $a$,
+$$
+f(x)=f(a)+\frac{f''(\xi_x)}{2}(x-a)^2
+$$
+for some $\xi_x$ between $a$ and $x$.
+
+- If $f''(a)>0$, then for $x$ close enough to $a$ we also have $f''(\xi_x)>0$, so $f(x)>f(a)$ for $x\ne a$ near $a$. Thus $a$ is a **strict local minimum**.
+- If $f''(a)<0$, then $f''(\xi_x)<0$ near $a$, so $f(x)<f(a)$ for $x\ne a$ near $a$. Thus $a$ is a **strict local maximum**.
+
+## Estimating the number $e$ {#sec-estimating-e}
+
+Using the Taylor expansion of $e^x$ at $a=0$,
+$$
+e^x=\sum_{k=0}^n\frac{x^k}{k!}+\frac{e^{\xi}}{(n+1)!}x^{n+1},
+\qquad (0<\xi<x),
+$$
+and setting $x=1$, we obtain
+$$
+e=\sum_{k=0}^n\frac{1}{k!}+\frac{e^{\xi}}{(n+1)!}.
+$$
+
+Since $0<\xi<1$, we have $1<e^{\xi}<e$, hence
+$$
+\sum_{k=0}^n\frac{1}{k!}<e\le \sum_{k=0}^n\frac{1}{k!}+\frac{e}{(n+1)!}.
+$$
+Rearranging the upper bound gives
+$$
+e < \frac{(n+1)!}{(n+1)!-1}\sum_{k=0}^n\frac{1}{k!}.
+$$
+Define
+$$
+a_n:=\sum_{k=0}^n\frac{1}{k!},
+\qquad
+b_n:=\frac{(n+1)!}{(n+1)!-1}\sum_{k=0}^n\frac{1}{k!}.
+$$
+Then $a_n<e<b_n$ and
+$$
+0<e-a_n<b_n-a_n=\frac{1}{(n+1)!-1}\sum_{k=0}^n\frac{1}{k!}.
+$$
+
+Computing the values shows that $b_n-a_n<0.01$ for $n=5$:
+
+| $n$ | $a_n$  | $b_n-a_n$ |
+|---:|:------:|:---------:|
+| 1 | 2.000 | 2.000 |
+| 2 | 2.500 | 0.500 |
+| 3 | 2.666 | 0.1159 |
+| 4 | 2.708 | 0.0228 |
+| 5 | 2.717 | 0.0038 |
+
+So $e\approx 2.717$ and the error is less than $0.004$.
+
+## The binomial formula {#sec-binomial}
+
+An expression $x^n$ is a *monomial* (from Greek *monos*, “single”). An expression $(x+a)^n$ is a *binomial*.
+
+For small $n$:
+\begin{align*}
+(x+a)^1 &= x+a,\\
+(x+a)^2 &= x^2+2ax+a^2,\\
+(x+a)^3 &= x^3+3x^2a+3xa^2+a^3.
+\end{align*}
+
+In general:
+
+::: {#thm-binomial}
+**Theorem (Binomial formula).**  
+For $x,a\in\mathbb{R}$ and $n\in\mathbb{N}$,
+\begin{align*}
+(x+a)^n
+&=\sum_{k=0}^n\binom{n}{k}a^k x^{\,n-k}\\
+&=\binom{n}{0}x^n+\binom{n}{1}x^{n-1}a+\cdots+\binom{n}{n}a^n,
+\end{align*}
+where
+$$
+\binom{n}{k}=\frac{n!}{(n-k)!k!}.
+$$
+:::
+
+The binomial coefficient $\binom{n}{k}$ counts the number of ways to select $k$ objects from $n$ when order does not matter—matching the idea that expanding $(x+a)^n$ corresponds to choosing $a$ from exactly $k$ of the $n$ factors.
+
+### Proof via Taylor’s theorem {#sec-binomial-proof}
+
+**Proof.**  
+Let $f(x)=(x+a)^n$. Then
+$$
+f^{(k)}(x)=\frac{n!}{(n-k)!}(x+a)^{n-k},
+\qquad k=0,1,\ldots,n,
+$$
+and $f^{(n+1)}(x)=0$ for all $x$.
+
+At $x=0$,
+$$
+f^{(k)}(0)=\frac{n!}{(n-k)!}a^{n-k}.
+$$
+The Taylor polynomial of order $n$ at $0$ is therefore
+\begin{align*}
+T_n(x)
+&=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k
+=\sum_{k=0}^n\frac{n!}{k!(n-k)!}a^{n-k}x^k\\
+&=\sum_{k=0}^n\binom{n}{k}a^{n-k}x^k.
+\end{align*}
+Since $f^{(n+1)}\equiv 0$, Taylor’s Theorem gives $R_n(x)=0$ and hence $f(x)=T_n(x)$, which is exactly the binomial formula. $\square$

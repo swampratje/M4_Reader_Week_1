@@ -1,0 +1,66 @@
+---
+title: "Alternating series"
+---
+An **alternating series** has the form
+$$
+\sum_{n=0}^\infty (-1)^n a_n,
+$$
+where typically $a_n\ge 0$.
+
+Some examples:
+
+
+- For $a_n=n$ we have $\displaystyle\sum_{n=0}^\infty (-1)^n a_n =\sum_{n=0}^\infty (-1)^n n.$
+- For $a_n=\frac{1}{n}$ we get the series $\displaystyle \sum_{n=0}^\infty (-1)^n \frac{1}{n}.$
+
+It is easy to see that the first example of an alternating series is not converging, since $\displaystyle\lim_{n\rightarrow\infty }(-1)^na_n$ is not convergent, it is divergent. Now what about the second example? See the figure below.
+
+![Partial sums $s_n$ plotted.](../figures/alternating_series.png){#fig-alternating_series width=70%}
+
+
+::: {#thm-alt}
+**(Alternating Series Test + error bound).**
+
+Let $a_n\ge 0$ be decreasing and $a_n\to 0$. Then $\sum_{n=0}^\infty (-1)^n a_n$ converges.
+If $S$ is its sum and $s_n$ the $n$-th partial sum, then
+$$
+|S-s_n|\le a_{n+1}.
+$$
+:::
+
+::: {.callout-tip collapse="true" title="Proof"}
+
+Let $b_n=s_{2n}$ and $c_n=s_{2n+1}$. Then for all $n$ we have that $c_n\leq b_n$. Moreover $\{b_n\}$ is decreasing and the elements are bounded below by $c_1$. Also, $\{c_n\}$ is increasing and the elements are bounded above by $b_1$. This means that by the Monotonic Convergence Theorem these sequences are both converging. Also $b_n-c_n=a_{2n+1}\to 0$, so both subsequences have the same limit, hence $S_n\to S$.
+
+Moreover, $|S-s_n|\le |s_{n+1}-s_n| = a_{n+1}.$
+
+:::
+
+::: {.callout-note title="Example"}
+
+Consider the alternating harmonic series
+$$
+\sum_{n=1}^{\infty}\frac{(-1)^n}{n}.
+$$
+This is an alternating series, with $a_n=\frac{1}{n}\downarrow 0$. So the series converges. 
+
+In orde to estimate its limit (which is actually $\ln(2)$ as we will see later), we may concentrate on a partial sum. For instance, if we want the error to be less than $0.01$ then it suffices to concentrate on a partial sum $s_n$ such that $a_{n+1}<0.01$. In this case we see that this works if only $\frac{1}{n+1}\leq 0.01$ or $n+1>100 \Leftrightarrow n>99$. So we may take $s_{100}$ as estimate. Below we calculate the partial sum using Python.
+
+```{python}
+#| label: alt-harmonic-demo
+#| echo: true
+#| warning: false
+#| message: false   
+from IPython.display import display, Math
+import math
+
+n = 100
+s = sum(((-1)**k)/k for k in range(1, n+1))
+S = -math.log(2)
+err = abs(S - s)
+
+display(Math(rf"s_{{{n}}} = {s:.10f},\qquad -\ln 2 = {S:.10f},\qquad |S-s_{{{n}}}| = {err:.2e}."))
+```
+
+
+:::

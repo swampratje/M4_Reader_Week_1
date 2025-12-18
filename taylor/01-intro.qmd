@@ -1,0 +1,18 @@
+---
+title: "Polynomials and approximation"
+---
+
+Polynomials are among the most important functions in mathematics and, more generally, in science. They are computationally convenient: function values and higher-order derivatives can be computed using only addition and multiplication—exactly the operations that lie at the heart of machine computation.
+
+Polynomials are also used to approximate more complex functions. In *Mathematics 1* you saw how to approximate a function locally by its *linear approximation*—a polynomial of degree 1. @fig-linapprox illustrates this for $f(x)=e^x$, together with the linear approximations at $a=0$ and $a=1$.
+
+![Plots of $f(x)=e^x$ together with the linear approximations at $a=1$ and $a=2$.](../figures/lin_approx_e.png){#fig-linapprox width=50%}
+
+This chapter studies approximation by **Taylor polynomials**, which use information about local derivatives. In doing so, we will look at sequences of *functions* (Taylor polynomials of increasing degree) rather than sequences of numbers.
+
+## Road map {#sec-roadmap}
+
+- **Tangency and Taylor polynomials** (how to match derivatives at a point)
+- **Taylor’s Theorem** (the remainder term and approximation quality)
+- **Applications** (optimization, estimating $e$, the binomial formula)
+- **Taylor series** (power series expansions)
