@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Sequences in \mathbb{R} and convergence – Reader Week 1</title>
+<title>12&nbsp; Power series – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sequences/03-monotone.html" rel="next">
-<link href="../sequences/01-intro.html" rel="prev">
+<link href="../taylor/01-intro.html" rel="next">
+<link href="../series/05-ratio-power.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -148,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/02-convergence-R.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,7 +161,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sequences/02-convergence-R.html" class="sidebar-item-text sidebar-link active">
+  <a href="../sequences/02-convergence-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></span></a>
   </div>
 </li>
@@ -272,7 +237,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
   </div>
 </li>
@@ -329,19 +294,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-convergence-def" id="toc-sec-convergence-def" class="nav-link active" data-scroll-target="#sec-convergence-def">Definition of convergence</a>
-  <ul class="collapse">
+  <li><a href="#ratio-test" id="toc-ratio-test" class="nav-link active" data-scroll-target="#ratio-test">Ratio test</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/02-convergence-R.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></h1>
 </div>
 
 
@@ -358,114 +321,169 @@ window.Quarto = {
 </header>
 
 
-<p>Some quick numerical illustration:</p>
-<div id="df518660" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>np.mean([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>np.float64(2.0)</code></pre>
-</div>
-</div>
-<section id="sec-convergence-def" class="level2">
-<h2 class="anchored" data-anchor-id="sec-convergence-def">Definition of convergence</h2>
-<p>We say that the sequence <span class="math inline">\(\{a_n\}_{n\in \mathbb{N}}\)</span> in <span class="math inline">\(\mathbb{R}\)</span> has limit <span class="math inline">\(L\in\mathbb{R}\)</span> if, for large enough indices, the elements become arbitrarily close to <span class="math inline">\(L\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Convergence of sequences in $\mathbb{R}$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Convergence of sequences in <span class="math inline">\(\mathbb{R}\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The sequence <span class="math inline">\(\{a_n\}_{n\in \mathbb{N}}\)</span> has limit <span class="math inline">\(L\in \mathbb{R}\)</span> if for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists an index number <span class="math inline">\(N\in \mathbb{N}\)</span> such that <span class="math display">\[
-n\geq N\Rightarrow |a_n-L|\leq \varepsilon.
+<p>Above we have seen that we may write <span class="math inline">\(e^x\)</span> as a series, an infinite polynomial: <span class="math display">\[
+e^x
+=\lim_{n\to\infty}\sum_{k=0}^n \frac{x^k}{k!}
+=\sum_{k=0}^\infty \frac{x^k}{k!}.
+\]</span> This is an example of a <strong>power series</strong>, i.e.&nbsp;an infinite sum of powers of <span class="math inline">\(x\)</span>.</p>
+<p>A general power series takes the form <span class="math display">\[
+\sum_{k=0}^\infty a_k x^k,
+\]</span> where <span class="math inline">\((a_k)\)</span> is a sequence and <span class="math inline">\(x\)</span> a real variable. Such a series always converges at <span class="math inline">\(x=0\)</span>. The question is: <strong>for which values of <span class="math inline">\(x\)</span> does it converge?</strong> Equivalently, what is the domain of the function <span class="math display">\[
+f(x):=\sum_{k=0}^\infty a_k x^k \, ?
 \]</span></p>
-<p>Shorthand notation: <span class="math display">\[
-\lim_{n\rightarrow \infty} a_n=L.
+<section id="ratio-test" class="level2">
+<h2 class="anchored" data-anchor-id="ratio-test">Ratio test</h2>
+<div id="thm-ratio-test" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12.1</strong></span> <strong>Theorem (Ratio test).</strong><br>
+Let <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> be a sequence. If <span class="math display">\[
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&lt;1,
+\]</span> then the infinite sum <span class="math display">\[
+\sum_{k=1}^\infty a_k=\lim_{n\to\infty}\sum_{k=1}^n a_k
+\]</span> exists (i.e.&nbsp;the series converges).</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Proof idea">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A full proof is found in your Appendix (B4) and uses the theory of <strong>absolute convergence</strong> (B3).</p>
+</div>
+</div>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Example: the exponential power series">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: the exponential power series
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the power series for the exponential function <span class="math display">\[
+\sum_{k=0}^{\infty}\frac{x^k}{k!},
+\]</span> and define <span class="math inline">\(a_k=\frac{x^k}{k!}\)</span>. Then <span class="math display">\[
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right|
+=
+\frac{|x|}{n+1}
+\to 0&lt;1.
+\]</span> So this series converges for <strong>all</strong> <span class="math inline">\(x\in\mathbb{R}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Example: $f(x)=\sum_{k=1}^\infty \frac{x^k}{k}$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: <span class="math inline">\(f(x)=\sum_{k=1}^\infty \frac{x^k}{k}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Define <span class="math display">\[
+f(x)=\sum_{k=1}^\infty\frac{x^k}{k}.
+\]</span> What is <span class="math inline">\(\mathrm{dom}(f)\)</span>?</p>
+<p>Use the ratio test with <span class="math inline">\(a_n=\frac{x^n}{n}\)</span>. Then <span class="math display">\[
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\frac{x^{n+1}}{n+1}}{\frac{x^n}{n}}\right|
+=
+\frac{n}{n+1}|x|
+\to |x|.
+\]</span> So the series converges at least for <span class="math inline">\(|x|&lt;1\)</span>, i.e.&nbsp;on <span class="math inline">\((-1,1)\)</span>.<br>
+You can also check that it converges for <span class="math inline">\(x=-1\)</span>, but not elsewhere. (Does this function look familiar?)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Example: binomial functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: binomial functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The idea of binomials can be extended as follows. For <span class="math inline">\(m\in\mathbb{R}\)</span> and <span class="math inline">\(k\in\mathbb{N}\)</span> define <span class="math display">\[
+\binom{m}{k}:=\frac{m(m-1)\cdots(m-k+1)}{k!}.
+\]</span> This agrees with the usual definition when <span class="math inline">\(m,k\in\mathbb{N}\)</span> and <span class="math inline">\(k\le m\)</span>: <span class="math display">\[
+\binom{m}{k}=\frac{m!}{k!(m-k)!}.
 \]</span></p>
-<p>If a sequence does not converge, it is called <em>divergent</em>.</p>
+<p>Consider <span class="math inline">\(f(x)=(1+x)^m\)</span> with <span class="math inline">\(m\in\mathbb{R}\setminus\mathbb{N}\)</span>. Then the derivatives do not vanish. We compute <span class="math display">\[
+f^{(k)}(x)=m(m-1)\cdots(m-k+1)(1+x)^{m-k}.
+\]</span> The Taylor polynomial at <span class="math inline">\(a=0\)</span> is <span class="math display">\[
+T_n(x)
+=
+\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k
+=
+\sum_{k=0}^n \binom{m}{k}x^k.
+\]</span></p>
+<p>Now consider the limit (a power series): <span class="math display">\[
+g(x)=\lim_{n\to\infty}T_n(x)=\sum_{k=0}^\infty \binom{m}{k}x^k.
+\]</span> What is <span class="math inline">\(\mathrm{dom}(g)\)</span>?</p>
+<p>Apply the ratio test with <span class="math inline">\(a_n=\binom{m}{n}x^n\)</span>: <span class="math display">\[
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\binom{m}{n+1}x^{n+1}}{\binom{m}{n}x^n}\right|
+=
+\left|\frac{m-n}{n+1}x\right|
+\to |x|.
+\]</span> So the series converges for <span class="math inline">\(|x|&lt;1\)</span> and diverges for <span class="math inline">\(|x|&gt;1\)</span>. For <span class="math inline">\(|x|&lt;1\)</span> one obtains the classic identity <span class="math display">\[
+(1+x)^m=\sum_{k=0}^\infty \binom{m}{k}x^k.
+\]</span></p>
 </div>
 </div>
-<section id="examples" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="examples">Examples</h3>
-<div id="ex-random" class="callout callout-style-default callout-note callout-titled" title="Example 1: random perturbation sequence">
+<div class="callout callout-style-default callout-note callout-titled" title="Example: $(1+x)^{1/2}$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example 1: random perturbation sequence
+<span class="screen-reader-only">Note</span>Example: <span class="math inline">\((1+x)^{1/2}\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Generate a sequence <span class="math inline">\(\{a_n\}_{n=1}^\infty\)</span> using <span class="math display">\[
-a_n=1+\frac{(-1)^n+\delta}{n},
-\]</span> where <span class="math inline">\(\delta\)</span> is randomly drawn from the uniform distribution on <span class="math inline">\([-1,1]\)</span>. Then <span class="math inline">\(\lim_{n\rightarrow \infty} a_n=1=L\)</span>.</p>
-<p>Let <span class="math inline">\(\varepsilon&gt;0\)</span> be arbitrary but fixed. For all <span class="math inline">\(n\)</span> we have <span class="math display">\[
--\tfrac{2}{n}\leq 1-a_n\leq \tfrac{2}{n}
-\quad\Rightarrow\quad
-|a_n-L|\leq \tfrac{2}{n}.
-\]</span> If <span class="math inline">\(\tfrac{2}{n}\leq\varepsilon\)</span> then <span class="math inline">\(|a_n-L|\leq \varepsilon\)</span>, which is guaranteed when <span class="math inline">\(n\geq N:=\left\lceil\frac{2}{\varepsilon}\right\rceil\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Find the Taylor series of <span class="math inline">\(f(x)=(1+x)^{1/2}\)</span>.</p>
+<p>Compute the first binomial coefficients: <span class="math display">\[
+\binom{1/2}{1}=\frac12,\qquad
+\binom{1/2}{2}=\frac{\frac12(\frac12-1)}{2!}=-\frac18,\qquad
+\binom{1/2}{3}=\frac{\frac12(\frac12-1)(\frac12-2)}{3!}=\frac1{16}.
+\]</span> Hence <span class="math display">\[
+\sqrt{1+x}
+=
+1+\frac12 x-\frac18 x^2+\frac1{16}x^3-\cdots.
+\]</span></p>
 </div>
 </div>
-<div id="fig-conv-random" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-conv-random-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/Figure7_conv_random.png" class="img-fluid figure-img" style="width:60.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conv-random-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Illustration of the limit in Example 1.
-</figcaption>
-</figure>
-</div>
-<div id="ex-geoseries" class="callout callout-style-default callout-note callout-titled" title="Example 2: geometric sequence">
+<div class="callout callout-style-default callout-note callout-titled" title="Example: $(1-x)^{1/2}$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example 2: geometric sequence
+<span class="screen-reader-only">Note</span>Example: <span class="math inline">\((1-x)^{1/2}\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the geometric sequence <span class="math inline">\(a_n=r^n\)</span> for <span class="math inline">\(n\in \mathbb{N}\)</span>, and assume <span class="math inline">\(r\neq 0\)</span>. Then <span class="math inline">\(a_n\)</span> converges for <span class="math inline">\(-1&lt;r\leq 1\)</span>.</p>
-<p>If <span class="math inline">\(r=1\)</span> convergence is clear, as <span class="math inline">\(a_n=1\)</span> for all <span class="math inline">\(n\)</span>. If <span class="math inline">\(r=-1\)</span>, divergence is also clear as <span class="math inline">\(a_n=(-1)^n\)</span>.</p>
-<p>Now suppose <span class="math inline">\(|r|&lt;1\)</span>. We will show that the limit is <span class="math inline">\(L=0\)</span>. Take <span class="math inline">\(\varepsilon&gt;0\)</span>, arbitrary but fixed. Then <span class="math display">\[\begin{align*}
-|a_n-L|=|a_n| \leq \varepsilon
-&amp;\Leftrightarrow |r|^n\leq \varepsilon \\
-&amp;\Leftrightarrow n\ln(|r|)=\ln(|r|^n)\leq \ln(\varepsilon)\\
-&amp; \Leftrightarrow n\geq \frac{\ln(\varepsilon)}{\ln(|r|)}.
-\end{align*}\]</span> The last inequality uses <span class="math inline">\(\ln(|r|)&lt;0\)</span>. So let <span class="math display">\[
-N:=\left\lceil\frac{\ln(\varepsilon)}{\ln(|r|)}\right\rceil,
-\]</span> then <span class="math inline">\(n\geq N\Rightarrow |a_n-L|\leq \varepsilon\)</span>.</p>
+<p>Find the Taylor series of <span class="math inline">\(f(x)=\sqrt{1-x}\)</span>.</p>
+<p><em>Solution:</em> substitute <span class="math inline">\(-x\)</span> for <span class="math inline">\(x\)</span> in the previous example: <span class="math display">\[
+\sqrt{1-x}
+=
+1-\frac12 x-\frac18 x^2-\frac1{16}x^3-\cdots.
+\]</span></p>
 </div>
 </div>
-<p>Geometric sequences play an important role in finance, as these can be used to model processes with a constant proportional change (e.g., steady growth, inflation, or discount factors), where each period’s value is obtained by multiplying the previous one by the same factor.</p>
-<div id="ex-ariseries" class="callout callout-style-default callout-note callout-titled" title="Example 3: arithmetic sequence">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example 3: arithmetic sequence
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the arithmetic sequence inductively defined, i.e.&nbsp;<span class="math inline">\(a_1=A, a_n=a_{n-1}+K\)</span> for <span class="math inline">\(n\in \mathbb{N}\)</span>. This sequence clearly does not converge, or it must be constant.</p>
-</div>
-</div>
-<p>Arithmetic sequences also appear in finance. Whenever a cash flow, payment, or value changes by a constant amount per period—such as in stepwise contributions, fixed annual raises in income, or straight-line depreciation—the underlying quantities follow an arithmetic pattern.</p>
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Here <span class="math inline">\(\lceil\cdot\rceil\)</span> denotes the ceiling function, <span class="math inline">\(\lceil x\rceil:=\min \{k\in \mathbb{Z}: k\geq x\}\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -883,13 +901,13 @@ N:=\left\lceil\frac{\ln(\varepsilon)}{\ln(|r|)}\right\rceil,
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sequences/01-intro.html" class="pagination-link" aria-label="Motivation and basic definitions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Motivation and basic definitions</span></span>
+      <a href="../series/05-ratio-power.html" class="pagination-link" aria-label="Ratio test and power series">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sequences/03-monotone.html" class="pagination-link" aria-label="Monotonic convergence">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monotonic convergence</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../taylor/01-intro.html" class="pagination-link" aria-label="Polynomials and approximation">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

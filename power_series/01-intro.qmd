@@ -1,0 +1,150 @@
+---
+title: "Power series"
+---
+
+Above we have seen that we may write $e^x$ as a series, an infinite polynomial:
+$$
+e^x
+=\lim_{n\to\infty}\sum_{k=0}^n \frac{x^k}{k!}
+=\sum_{k=0}^\infty \frac{x^k}{k!}.
+$$
+This is an example of a **power series**, i.e. an infinite sum of powers of $x$.
+
+A general power series takes the form
+$$
+\sum_{k=0}^\infty a_k x^k,
+$$
+where $(a_k)$ is a sequence and $x$ a real variable. Such a series always converges at $x=0$. The question is: **for which values of $x$ does it converge?** Equivalently, what is the domain of the function
+$$
+f(x):=\sum_{k=0}^\infty a_k x^k \, ?
+$$
+
+## Ratio test
+
+::: {#thm-ratio-test}
+**Theorem (Ratio test).**  
+Let $(a_n)_{n\in\mathbb{N}}$ be a sequence. If
+$$
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1,
+$$
+then the infinite sum
+$$
+\sum_{k=1}^\infty a_k=\lim_{n\to\infty}\sum_{k=1}^n a_k
+$$
+exists (i.e. the series converges).
+:::
+
+::: {.callout-note title="Proof idea"}
+A full proof is found in your Appendix (B4) and uses the theory of **absolute convergence** (B3).
+:::
+
+## Examples
+
+::: {.callout-note title="Example: the exponential power series"}
+Consider the power series for the exponential function
+$$
+\sum_{k=0}^{\infty}\frac{x^k}{k!},
+$$
+and define $a_k=\frac{x^k}{k!}$. Then
+$$
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right|
+=
+\frac{|x|}{n+1}
+\to 0<1.
+$$
+So this series converges for **all** $x\in\mathbb{R}$.
+:::
+
+::: {.callout-note title="Example: $f(x)=\\sum_{k=1}^\\infty \\frac{x^k}{k}$"}
+Define
+$$
+f(x)=\sum_{k=1}^\infty\frac{x^k}{k}.
+$$
+What is $\mathrm{dom}(f)$?
+
+Use the ratio test with $a_n=\frac{x^n}{n}$. Then
+$$
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\frac{x^{n+1}}{n+1}}{\frac{x^n}{n}}\right|
+=
+\frac{n}{n+1}|x|
+\to |x|.
+$$
+So the series converges at least for $|x|<1$, i.e. on $(-1,1)$.  
+You can also check that it converges for $x=-1$, but not elsewhere. (Does this function look familiar?)
+:::
+
+::: {.callout-note title="Example: binomial functions"}
+The idea of binomials can be extended as follows. For $m\in\mathbb{R}$ and $k\in\mathbb{N}$ define
+$$
+\binom{m}{k}:=\frac{m(m-1)\cdots(m-k+1)}{k!}.
+$$
+This agrees with the usual definition when $m,k\in\mathbb{N}$ and $k\le m$:
+$$
+\binom{m}{k}=\frac{m!}{k!(m-k)!}.
+$$
+
+Consider $f(x)=(1+x)^m$ with $m\in\mathbb{R}\setminus\mathbb{N}$. Then the derivatives do not vanish. We compute
+$$
+f^{(k)}(x)=m(m-1)\cdots(m-k+1)(1+x)^{m-k}.
+$$
+The Taylor polynomial at $a=0$ is
+$$
+T_n(x)
+=
+\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k
+=
+\sum_{k=0}^n \binom{m}{k}x^k.
+$$
+
+Now consider the limit (a power series):
+$$
+g(x)=\lim_{n\to\infty}T_n(x)=\sum_{k=0}^\infty \binom{m}{k}x^k.
+$$
+What is $\mathrm{dom}(g)$?
+
+Apply the ratio test with $a_n=\binom{m}{n}x^n$:
+$$
+\left|\frac{a_{n+1}}{a_n}\right|
+=
+\left|\frac{\binom{m}{n+1}x^{n+1}}{\binom{m}{n}x^n}\right|
+=
+\left|\frac{m-n}{n+1}x\right|
+\to |x|.
+$$
+So the series converges for $|x|<1$ and diverges for $|x|>1$. For $|x|<1$ one obtains the classic identity
+$$
+(1+x)^m=\sum_{k=0}^\infty \binom{m}{k}x^k.
+$$
+:::
+
+::: {.callout-note title="Example: $(1+x)^{1/2}$"}
+Find the Taylor series of $f(x)=(1+x)^{1/2}$.
+
+Compute the first binomial coefficients:
+$$
+\binom{1/2}{1}=\frac12,\qquad
+\binom{1/2}{2}=\frac{\frac12(\frac12-1)}{2!}=-\frac18,\qquad
+\binom{1/2}{3}=\frac{\frac12(\frac12-1)(\frac12-2)}{3!}=\frac1{16}.
+$$
+Hence
+$$
+\sqrt{1+x}
+=
+1+\frac12 x-\frac18 x^2+\frac1{16}x^3-\cdots.
+$$
+:::
+
+::: {.callout-note title="Example: $(1-x)^{1/2}$"}
+Find the Taylor series of $f(x)=\sqrt{1-x}$.
+
+*Solution:* substitute $-x$ for $x$ in the previous example:
+$$
+\sqrt{1-x}
+=
+1-\frac12 x-\frac18 x^2-\frac1{16}x^3-\cdots.
+$$
+:::

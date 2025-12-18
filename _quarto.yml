@@ -22,6 +22,10 @@ book:
         - series/03-alternating.qmd
         - series/04-absolute.qmd
         - series/05-ratio-power.qmd
+    - part: "Power series"
+      chapters:
+        - power_series/01-intro.qmd
+
     - part: "Taylor polynomials"
       chapters:
         - taylor/01-intro.qmd
