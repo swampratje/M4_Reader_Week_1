@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,10 +294,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-tangency" id="toc-sec-tangency" class="nav-link active" data-scroll-target="#sec-tangency">Tangency</a>
-  <ul class="collapse">
-  <li><a href="#sec-tangent-example" id="toc-sec-tangent-example" class="nav-link" data-scroll-target="#sec-tangent-example">Example: intersecting vs tangent</a></li>
-  </ul></li>
+  <li><a href="#sec-tangency" id="toc-sec-tangency" class="nav-link active" data-scroll-target="#sec-tangency">Tangency</a></li>
   <li><a href="#sec-higher-tangency" id="toc-sec-higher-tangency" class="nav-link" data-scroll-target="#sec-higher-tangency">Higher-order tangency</a></li>
   <li><a href="#sec-taylor-polynomials" id="toc-sec-taylor-polynomials" class="nav-link" data-scroll-target="#sec-taylor-polynomials">Taylor polynomials</a>
   <ul class="collapse">
@@ -342,8 +339,16 @@ window.Quarto = {
 f(a)=g(a)\quad\text{and}\quad f'(a)=g'(a).
 \]</span></li>
 </ul>
-<section id="sec-tangent-example" class="level3">
-<h3 class="anchored" data-anchor-id="sec-tangent-example">Example: intersecting vs tangent</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Consider <span class="math inline">\(f(x)=2-e^{x-1}\)</span>.</p>
 <ul>
 <li>The graph of <span class="math inline">\(g_0(x)=1\)</span> merely intersects <span class="math inline">\(f\)</span> at <span class="math inline">\(x=1\)</span>, because <span class="math inline">\(f(1)=g_0(1)=1\)</span>.</li>
@@ -352,14 +357,15 @@ f(a)=g(a)\quad\text{and}\quad f'(a)=g'(a).
 <div id="fig-taylor-approx" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-taylor-approx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/Taylor_approx.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="../figures/Taylor_approx.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-taylor-approx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14.1: Tangency example.
 </figcaption>
 </figure>
 </div>
-</section>
+</div>
+</div>
 </section>
 <section id="sec-higher-tangency" class="level2">
 <h2 class="anchored" data-anchor-id="sec-higher-tangency">Higher-order tangency</h2>
@@ -397,7 +403,7 @@ p''(a)=f''(a)\ \Longrightarrow\ c_2=\tfrac{1}{2}f''(a).
 c_k=\frac{1}{k!}f^{(k)}(a)\qquad (k=0,1,\ldots,n)
 \]</span> makes <span class="math inline">\(p\)</span> tangent to <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span> to order <span class="math inline">\(n\)</span>.</p>
 <div id="def-taylor-poly" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.1</strong></span> <strong>Definition (Taylor polynomial).</strong><br>
+<p><span class="theorem-title"><strong>Definition 14.1</strong></span> <strong>(Taylor polynomial)</strong><br>
 Let <span class="math inline">\(I\subset\mathbb{R}\)</span> be a nonempty open interval and let <span class="math inline">\(f:I\to\mathbb{R}\)</span> be <span class="math inline">\(n\)</span> times continuously differentiable. For <span class="math inline">\(a\in I\)</span>, the polynomial <span class="math display">\[
 T_n(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n
 \]</span> is called the <strong>Taylor polynomial of order <span class="math inline">\(n\)</span> at <span class="math inline">\(a\)</span></strong>.</p>

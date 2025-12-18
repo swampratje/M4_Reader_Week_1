@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,10 +323,9 @@ window.Quarto = {
 
 <section id="continuity" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="continuity">Continuity</h2>
-<p>%{#sec-continuity}</p>
 <p>Using functions <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> it is easy to generate a new sequence <span class="math inline">\(\{b_n\}_{n\in \mathbb{N}}\)</span> from a given sequence <span class="math inline">\(\{a_n\}_{n\in\mathbb{N}}\)</span> by applying <span class="math inline">\(f\)</span> to each element: <span class="math display">\[
 b_n:=f(a_n).
-\]</span> Below we focus on continuous <span class="math inline">\(f\)</span>.</p>
+\]</span> Below we focus on continuous <span class="math inline">\(f\)</span>. First we will repeat what that actually means.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Continuity (definition)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -353,13 +352,20 @@ Let <span class="math inline">\(f:I\rightarrow \mathbb{R}\)</span> with <span cl
 f(a_n)\to f(a).
 \]</span></p>
 </div>
-<details>
-<summary>
-<b>Proof</b>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>, then for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-a|\le\delta\Rightarrow |f(x)-f(a)|\le\varepsilon\)</span>. If <span class="math inline">\(a_n\to a\)</span>, then for some <span class="math inline">\(N\)</span> we have <span class="math inline">\(n\ge N\Rightarrow |a_n-a|\le\delta\)</span>, hence <span class="math inline">\(|f(a_n)-f(a)|\le\varepsilon\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose the sequential condition holds but <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\(a\)</span>. Then there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that for every <span class="math inline">\(n\)</span> there exists <span class="math inline">\(b_n\in (a-\tfrac1n,a+\tfrac1n)\)</span> with <span class="math inline">\(|f(b_n)-f(a)|&gt;\varepsilon\)</span>. Then <span class="math inline">\(b_n\to a\)</span> but <span class="math inline">\(f(b_n)\not\to f(a)\)</span>, contradiction.</p>
-</details>
+</div>
+</div>
 <p>A standard consequence: if <span class="math inline">\(a_n\to a\)</span> and <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>, then <span class="math inline">\(f(a_n)\to f(a)\)</span>. For example: <span class="math display">\[
 \lim_{n\rightarrow\infty}\sqrt{1+\tfrac{1}{n}}
 = \sqrt{\lim_{n\rightarrow \infty}(1+\tfrac{1}{n})}

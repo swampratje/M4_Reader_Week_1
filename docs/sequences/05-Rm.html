@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -361,20 +361,17 @@ Figure&nbsp;6.1: Plot of <span class="math inline">\(a_n=(\cos(n),\sin(n))\)</sp
 \]</span> The associated Euclidean distance is <span class="math display">\[
 d(x,y)=\|x-y\|=\sqrt{\sum_{k=1}^m(x_k-y_k)^2}.
 \]</span></p>
-<p>It is called a norm because it satisfies the following properties:</p>
-<details>
-<summary>
-<strong>Norm axioms</strong>
-</summary>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled" title="Properties of norms, general definition">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>Properties of norms, general definition
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A function <span class="math inline">\(\lVert\cdot\rVert:\mathbb{R}^m\to\mathbb{R}\)</span> is a <strong>norm</strong> if for all <span class="math inline">\(x,y\in\mathbb{R}^m\)</span> and <span class="math inline">\(\alpha\in\mathbb{R}\)</span>:</p>
 <ol type="1">
@@ -391,11 +388,11 @@ Tip
 <p>What do your think an alternative name is for the Euclidean norm?</p>
 </div>
 </div>
-</details>
+</div>
 <section id="convergence-in-mathbbrm" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="convergence-in-mathbbrm">Convergence in <span class="math inline">\(\mathbb{R}^m\)</span></h3>
 <div id="def-conv-rm" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6.1</strong></span> <strong>Definition (Convergence in <span class="math inline">\(\mathbb{R}^m\)</span>).</strong><br>
+<p><span class="theorem-title"><strong>Definition 6.1</strong></span> <strong>(Convergence in <span class="math inline">\(\mathbb{R}^m\)</span>).</strong><br>
 A sequence <span class="math inline">\(\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m\)</span> <em>converges</em> to <span class="math inline">\(L\in \mathbb{R}^m\)</span> if for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N\in \mathbb{N}\)</span> such that <span class="math display">\[
 n\geq N \Rightarrow \Vert a_n-L\Vert\leq \varepsilon.
 \]</span></p>
@@ -434,21 +431,22 @@ a_n:=\left(1+\tfrac{1}{n}, \tfrac{1}{n}\right).
 \]</span></p>
 </div>
 </div>
-<details>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled" title="A nice property of norms on $\mathbb{R}^m$">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>A nice property of norms on <span class="math inline">\(\mathbb{R}^m\)</span>
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A common property of all norms on <span class="math inline">\(\mathbb{R}^m\)</span> is that they have the same convergence properties. In the definition above you may exchange <span class="math inline">\(\|\cdot\|\)</span> for any norm. Interested? Figure out, or use the web.</p>
 </div>
 </div>
-</details>
+</div>
 </section>
 <section id="coordinate-wise-criterion" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="coordinate-wise-criterion">Coordinate-wise criterion</h3>

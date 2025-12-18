@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,15 +294,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-why" id="toc-sec-why" class="nav-link active" data-scroll-target="#sec-why">Why do we need a theorem?</a>
-  <ul class="collapse">
-  <li><a href="#sec-bad-linear" id="toc-sec-bad-linear" class="nav-link" data-scroll-target="#sec-bad-linear">Example: linear approximation can be bad</a></li>
-  </ul></li>
-  <li><a href="#sec-remainder" id="toc-sec-remainder" class="nav-link" data-scroll-target="#sec-remainder">The remainder term</a></li>
+  <li><a href="#sec-remainder" id="toc-sec-remainder" class="nav-link active" data-scroll-target="#sec-remainder">The remainder term</a></li>
   <li><a href="#sec-taylor-theorem" id="toc-sec-taylor-theorem" class="nav-link" data-scroll-target="#sec-taylor-theorem">Taylor’s Theorem</a></li>
-  <li><a href="#sec-cauchy-mvt" id="toc-sec-cauchy-mvt" class="nav-link" data-scroll-target="#sec-cauchy-mvt">Cauchy’s Mean Value Theorem</a></li>
-  <li><a href="#sec-technical-lemma" id="toc-sec-technical-lemma" class="nav-link" data-scroll-target="#sec-technical-lemma">A technical lemma</a></li>
-  <li><a href="#sec-proof-taylor" id="toc-sec-proof-taylor" class="nav-link" data-scroll-target="#sec-proof-taylor">Proof of Taylor’s Theorem</a></li>
   <li><a href="#sec-interpretation" id="toc-sec-interpretation" class="nav-link" data-scroll-target="#sec-interpretation">Interpretation</a></li>
   </ul>
 </nav>
@@ -329,12 +322,20 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-why" class="level2">
-<h2 class="anchored" data-anchor-id="sec-why">Why do we need a theorem?</h2>
-<p>Taylor polynomials match derivatives of a function at a point. The natural next question is whether they also provide good approximations to the <em>function values</em> on some interval.</p>
+<p>Taylor polynomials match derivatives of a function at a point. The zero order Taylor polynomial agrees with the function value, the first order Taylor approximation agrees with function value and slope, the second order Taylorpolynomial does all this and agrees in curvature of the function. The natural next question is whether they also provide good approximations to the <em>function values</em> on some interval.</p>
 <p>In <em>Mathematics 1</em> you saw that a linear approximation can be poor if curvature is large. The same idea appears here: approximation quality depends on higher derivatives.</p>
-<section id="sec-bad-linear" class="level3">
-<h3 class="anchored" data-anchor-id="sec-bad-linear">Example: linear approximation can be bad</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Example bad linear approximation">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example bad linear approximation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <p>Consider <span class="math display">\[
 f(x)=x+100x^2.
 \]</span> The Taylor polynomials around <span class="math inline">\(a=0\)</span> are <span class="math display">\[\begin{align*}
@@ -347,15 +348,16 @@ R_1(x)=f(x)-T_1(x)=100x^2,
 <div id="fig-taylor-bad" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-taylor-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<embed src="Figure9_Taylor_bad.pdf" class="img-fluid" style="width:50.0%">
+<img src="../figures/Taylor_bad.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-taylor-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.1: Here <span class="math inline">\(T_2(x)=f(x)\)</span>, while the straight line <span class="math inline">\(T_1(x)\)</span> is a poor approximation.
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
+</div>
+</div>
+</div>
 <section id="sec-remainder" class="level2">
 <h2 class="anchored" data-anchor-id="sec-remainder">The remainder term</h2>
 <p>The quality of the <span class="math inline">\(n\)</span>th-order Taylor polynomial <span class="math inline">\(T_n\)</span> is measured by the <strong>remainder term</strong> <span class="math display">\[
@@ -365,18 +367,27 @@ R_n(x):=f(x)-T_n(x).
 <section id="sec-taylor-theorem" class="level2">
 <h2 class="anchored" data-anchor-id="sec-taylor-theorem">Taylor’s Theorem</h2>
 <div id="thm-taylor" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15.1</strong></span> <strong>Theorem (Taylor).</strong><br>
+<p><span class="theorem-title"><strong>Theorem 15.1</strong></span> <strong>(Taylor).</strong><br>
 Let <span class="math inline">\(f^{(n)}(t)\)</span> be continuous for <span class="math inline">\(a\le t\le x\)</span> and let <span class="math inline">\(f^{(n+1)}(t)\)</span> exist for all <span class="math inline">\(a&lt;t&lt;x\)</span>. Then there exists a point <span class="math inline">\(\xi_x\)</span> between <span class="math inline">\(a\)</span> and <span class="math inline">\(x\)</span> such that <span class="math display">\[
 R_n(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
 \]</span></p>
 </div>
 <p>If <span class="math inline">\(x&lt;a\)</span>, interpret “<span class="math inline">\(\xi_x\)</span> between <span class="math inline">\(a\)</span> and <span class="math inline">\(x\)</span>” as <span class="math inline">\(\xi_x\in(x,a)\)</span>.</p>
 <p>To prove Taylor’s Theorem, we first prepare two results.</p>
-</section>
-<section id="sec-cauchy-mvt" class="level2">
-<h2 class="anchored" data-anchor-id="sec-cauchy-mvt">Cauchy’s Mean Value Theorem</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Cauchy's Mean Value Theorem">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Cauchy’s Mean Value Theorem
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div id="thm-cauchy" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15.2</strong></span> <strong>Theorem (Cauchy’s Mean Value Theorem).</strong><br>
+<p><span class="theorem-title"><strong>Theorem 15.2</strong></span> <strong>(Cauchy’s Mean Value Theorem).</strong><br>
 Let <span class="math inline">\(f,g:[a,b]\to\mathbb{R}\)</span> be continuous on <span class="math inline">\([a,b]\)</span> and differentiable on <span class="math inline">\((a,b)\)</span>. Assume <span class="math inline">\(g'(x)\ne 0\)</span> for all <span class="math inline">\(x\in(a,b)\)</span>. Then there exists <span class="math inline">\(\xi\in(a,b)\)</span> such that <span class="math display">\[
 \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
 \]</span></p>
@@ -395,12 +406,23 @@ f'(\xi)+p\,g'(\xi)=0
 \quad\Longrightarrow\quad
 p=-\frac{f'(\xi)}{g'(\xi)}.
 \]</span> Equating the two expressions for <span class="math inline">\(p\)</span> gives the result. <span class="math inline">\(\square\)</span></p>
-</section>
-<section id="sec-technical-lemma" class="level2">
-<h2 class="anchored" data-anchor-id="sec-technical-lemma">A technical lemma</h2>
-<div id="thm-cauchy2" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15.3</strong></span> <strong>Theorem.</strong><br>
-Let <span class="math inline">\(I\)</span> be an open interval and let <span class="math inline">\(f:I\to\mathbb{R}\)</span> be <span class="math inline">\((n+1)\)</span> times differentiable on <span class="math inline">\(I\)</span>, with <span class="math display">\[
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Technical Lemma">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Technical Lemma
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="thm-tech" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 15.3</strong></span> Let <span class="math inline">\(I\)</span> be an open interval and let <span class="math inline">\(f:I\to\mathbb{R}\)</span> be <span class="math inline">\((n+1)\)</span> times differentiable on <span class="math inline">\(I\)</span>, with <span class="math display">\[
 f(a)=f'(a)=\cdots=f^{(n)}(a)=0.
 \]</span> Then for any <span class="math inline">\(x\in I\setminus\{a\}\)</span> there exists a point <span class="math inline">\(\xi_x\)</span> between <span class="math inline">\(a\)</span> and <span class="math inline">\(x\)</span> such that <span class="math display">\[
 f(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
@@ -420,15 +442,29 @@ x_1\in(a,x),\ x_2\in(a,x_1),\ \ldots,\ x_{n+1}\in(a,x_n)
 \]</span> Let <span class="math inline">\(\xi_x:=x_{n+1}\)</span>. Then <span class="math display">\[
 f(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
 \]</span> <span class="math inline">\(\square\)</span></p>
-</section>
-<section id="sec-proof-taylor" class="level2">
-<h2 class="anchored" data-anchor-id="sec-proof-taylor">Proof of Taylor’s Theorem</h2>
-<p><strong>Proof.</strong><br>
-Let <span class="math inline">\(R_n(x)=f(x)-T_n(x)\)</span>. Since <span class="math inline">\(T_n\)</span> matches derivatives of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span> up to order <span class="math inline">\(n\)</span>, we have <span class="math display">\[
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof of Taylor's Theorem">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Proof of Taylor’s Theorem
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(R_n(x)=f(x)-T_n(x)\)</span>. Since <span class="math inline">\(T_n\)</span> matches derivatives of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span> up to order <span class="math inline">\(n\)</span>, we have <span class="math display">\[
 R_n^{(k)}(a)=0\qquad (k=0,1,\ldots,n).
 \]</span> Apply the previous theorem to <span class="math inline">\(R_n\)</span> to obtain a point <span class="math inline">\(\xi_x\)</span> between <span class="math inline">\(a\)</span> and <span class="math inline">\(x\)</span> with <span class="math display">\[
 R_n(x)=\frac{R_n^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
-\]</span> Because <span class="math inline">\(T_n^{(n+1)}\equiv 0\)</span>, we have <span class="math inline">\(R_n^{(n+1)}(\xi_x)=f^{(n+1)}(\xi_x)\)</span>, which gives the desired formula. <span class="math inline">\(\square\)</span></p>
+\]</span> Because polynomial <span class="math inline">\(T_n\)</span> is of order <span class="math inline">\(n\)</span>, we have <span class="math inline">\(T_n^{(n+1)}(x)\equiv 0\)</span>. So this means that <span class="math inline">\(R_n^{(n+1)}(\xi_x)=f^{(n+1)}(\xi_x)\)</span>, which gives the desired formula. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-interpretation">Interpretation</h2>

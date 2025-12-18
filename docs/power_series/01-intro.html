@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Power series – Reader Week 1</title>
+<title>12&nbsp; Power series and convergence – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,7 +294,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ratio-test" id="toc-ratio-test" class="nav-link active" data-scroll-target="#ratio-test">Ratio test</a></li>
+  <li><a href="#power-series" id="toc-power-series" class="nav-link active" data-scroll-target="#power-series">Power series</a>
+  <ul class="collapse">
+  <li><a href="#convergence-intervals" id="toc-convergence-intervals" class="nav-link" data-scroll-target="#convergence-intervals">Convergence intervals</a></li>
+  </ul></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul>
 </nav>
@@ -302,9 +305,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></h1>
 </div>
 
 
@@ -321,39 +324,92 @@ window.Quarto = {
 </header>
 
 
-<p>Above we have seen that we may write <span class="math inline">\(e^x\)</span> as a series, an infinite polynomial: <span class="math display">\[
-e^x
-=\lim_{n\to\infty}\sum_{k=0}^n \frac{x^k}{k!}
-=\sum_{k=0}^\infty \frac{x^k}{k!}.
-\]</span> This is an example of a <strong>power series</strong>, i.e.&nbsp;an infinite sum of powers of <span class="math inline">\(x\)</span>.</p>
-<p>A general power series takes the form <span class="math display">\[
-\sum_{k=0}^\infty a_k x^k,
-\]</span> where <span class="math inline">\((a_k)\)</span> is a sequence and <span class="math inline">\(x\)</span> a real variable. Such a series always converges at <span class="math inline">\(x=0\)</span>. The question is: <strong>for which values of <span class="math inline">\(x\)</span> does it converge?</strong> Equivalently, what is the domain of the function <span class="math display">\[
-f(x):=\sum_{k=0}^\infty a_k x^k \, ?
-\]</span></p>
-<section id="ratio-test" class="level2">
-<h2 class="anchored" data-anchor-id="ratio-test">Ratio test</h2>
-<div id="thm-ratio-test" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12.1</strong></span> <strong>Theorem (Ratio test).</strong><br>
-Let <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> be a sequence. If <span class="math display">\[
-\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&lt;1,
-\]</span> then the infinite sum <span class="math display">\[
-\sum_{k=1}^\infty a_k=\lim_{n\to\infty}\sum_{k=1}^n a_k
-\]</span> exists (i.e.&nbsp;the series converges).</p>
+<section id="power-series" class="level2">
+<h2 class="anchored" data-anchor-id="power-series">Power series</h2>
+<p>Power series are special series, which take the form <span class="math display">\[
+\sum_{n=0}^\infty a_n x^n,
+\]</span> where <span class="math inline">\(\{a_n\}_{n=0}^\infty\)</span> is a sequence and <span class="math inline">\(x\in\mathbb{R}\)</span>. We may wonder for what <span class="math inline">\(x\)</span> values such series converge, or not.</p>
+<p>As an example, consider the power series <span class="math display">\[
+\sum_{n=0}^\infty b_n := \sum_{n=0}^\infty \frac{x^n}{n!},
+\]</span> where we took <span class="math inline">\(a_n=\frac{1}{n!}\)</span>. A natural question here is for what <span class="math inline">\(x\)</span> this sum makes sense. If we use the ratio criterion we get: <span class="math display">\[
+\left|\frac{b_{n+1}}{b_n}\right|
+=\left|\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right|
+=\left|\frac{x}{n+1}\right|
+\rightarrow 0, \quad \text{as } n\rightarrow \infty.
+\]</span> So we see that we have convergence for all <span class="math inline">\(x\in\mathbb{R}\)</span>. In particular this means that the above power series as an infinite sum is always well-defined. So in this way we may define a function <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> by <span class="math display">\[
+f(x)=\sum_{n=0}^\infty \frac{1}{n!}x^n.
+\]</span> Later we will see that this is the well-known exponential function <span class="math inline">\(f(x)=e^x\)</span>.</p>
+<section id="convergence-intervals" class="level3">
+<h3 class="anchored" data-anchor-id="convergence-intervals">Convergence intervals</h3>
+<p>We will show that any power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty a_n x^n\)</span> converges on a symmetric interval around <span class="math inline">\(0\)</span>.</p>
+<div id="thm-convint" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12.1</strong></span> <strong>(convergence interval)</strong> Consider a power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span>. Then</p>
+<ol type="i">
+<li><p>If <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> converges when <span class="math inline">\(x=b\)</span>, then it converges when <span class="math inline">\(|x|&lt;|b|\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> diverges when <span class="math inline">\(x=b\)</span>, then it diverges when <span class="math inline">\(|x|&gt;|b|\)</span>.</p></li>
+</ol>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Proof idea">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Proof idea
+<span class="screen-reader-only">Tip</span>Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A full proof is found in your Appendix (B4) and uses the theory of <strong>absolute convergence</strong> (B3).</p>
+<p><strong>Case (i).</strong> Suppose that <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n b^n\)</span> converges and <span class="math inline">\(b\neq 0\)</span>. Then in particular <span class="math display">\[
+\lim_{n\rightarrow \infty} c_n b^n=0.
+\]</span> So for <span class="math inline">\(\varepsilon=1\)</span> there is a positive integer <span class="math inline">\(N\)</span> such that <span class="math display">\[
+n\geq N \Rightarrow |c_n b^n|&lt;1.
+\]</span> Thus for <span class="math inline">\(n\geq N\)</span> we have <span class="math display">\[
+|c_n x^n|
+=\left|\frac{c_n b^n x^n}{b^n}\right|
+=|c_n b^n|\left|\frac{x}{b}\right|^n
+&lt;\left|\frac{x}{b}\right|^n.
+\]</span> If <span class="math inline">\(|x|&lt;|b|\)</span>, then <span class="math inline">\(|x/b|&lt;1\)</span> so that <span class="math inline">\(\displaystyle\sum_{n=0}^\infty |x/b|^n\)</span> is a convergent geometric series. Then <span class="math inline">\(\displaystyle \sum_{n=N}^\infty |c_n x^n|\)</span> is also convergent. Hence the series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty |c_n x^n|\)</span> is convergent (absolutely), and therefore <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> is convergent.</p>
+<p><strong>Case (ii).</strong> Suppose that <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n d^n\)</span> diverges. If <span class="math inline">\(x\)</span> is any number with <span class="math inline">\(|x|&gt;|d|\)</span>, then <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> cannot converge, because—by Case (i)—it would imply that <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n d^n\)</span> converges.</p>
 </div>
 </div>
+</div>
+<p>This theorem shows that either there is a maximal <span class="math inline">\(R\in\mathbb{R}_+\)</span> with convergence on <span class="math inline">\(I=(-R,R)\)</span>, or the interval of convergence is all of <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>We cannot say so much about the end-points of those intervals; these have to be checked separately. The theory easily extends to cases where the power series <em>center</em> around a value <span class="math inline">\(a\in \mathbb{R}\)</span> instead of <span class="math inline">\(0\)</span>, i.e. <span class="math display">\[
+\sum_{n=0}^\infty c_n (x-a)^n
+\]</span> for a sequence <span class="math inline">\(\{c_n\}_{n=0}^\infty\)</span>. We have the following.</p>
+<div id="thm-convint2" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12.2</strong></span> <strong>(convergence interval)</strong> For a given power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n(x-a)^n\)</span>, there are only three possibilities:</p>
+<ol type="i">
+<li><p>The series converges only if <span class="math inline">\(x=a\)</span>.</p></li>
+<li><p>The series converges for all <span class="math inline">\(x\)</span>.</p></li>
+<li><p>There is a positive number <span class="math inline">\(R\)</span> such that the series converges if <span class="math inline">\(|x-a|&lt;R\)</span> and diverges if <span class="math inline">\(|x-a|&gt;R\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First look at power series centered around <span class="math inline">\(a=0\)</span>: <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span>.</p>
+<p>Now suppose that for this series (i) and (ii) do not hold. Then there are nonzero numbers <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> such that <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n b^n\)</span> converges and <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n d^n\)</span> diverges. Therefore the set <span class="math display">\[
+S=\left\{x:\sum_{n=0}^\infty c_n x^n \text{ converges }\right\}
+\]</span> is nonempty. We also know that the series diverges for any <span class="math inline">\(x\)</span> with <span class="math inline">\(|x|&gt;|d|\)</span>, so <span class="math inline">\(S\)</span> has an upper bound. Then <span class="math inline">\(S\)</span>, being nonempty and bounded, has a least upper bound <span class="math inline">\(R:=\sup S\)</span>.</p>
+<p>If <span class="math inline">\(|x|&gt;R\)</span>, then <span class="math inline">\(x\notin S\)</span>, so <span class="math inline">\(\sum_{n=0}^\infty c_n x^n\)</span> diverges. If <span class="math inline">\(|x|&lt;R\)</span>, then <span class="math inline">\(|x|\)</span> is not an upper bound for <span class="math inline">\(S\)</span>, and so there is <span class="math inline">\(b\in S\)</span> with <span class="math inline">\(b&gt;|x|\)</span>. Since <span class="math inline">\(b\in S\)</span>, <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n b^n\)</span> converges, so must <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span>.</p>
+<p>Now consider the general case, with <span class="math inline">\(a\neq 0\)</span>. Make the change of variable <span class="math inline">\(u=x-a\)</span>. Then the power series becomes <span class="math inline">\(\sum_{n=0}^\infty c_n u^n\)</span> and we can apply the former argument to this series. In particular, in case (iii) we have convergence for <span class="math inline">\(|u|&lt;R\)</span> and divergence for <span class="math inline">\(|u|&gt;R\)</span>. Thus we have convergence for <span class="math inline">\(|x-a|&lt;R\)</span> and divergence for <span class="math inline">\(|x-a|&gt;R\)</span>.</p>
+</div>
+</div>
+</div>
+<p>The number <span class="math inline">\(R\)</span> in Theorem <a href="#thm-convint2" class="quarto-xref">Theorem&nbsp;<span>12.2</span></a> is called the <em>radius of convergence</em> of the power series. We can also summarize the three discussed cases by <span class="math inline">\(R=0\)</span>, <span class="math inline">\(R&gt;0\)</span>, and <span class="math inline">\(R=\infty\)</span>. If <span class="math inline">\(R=0\)</span>, the series converges only at a single point, whereas if <span class="math inline">\(R=\infty\)</span> convergence is established for all <span class="math inline">\(x\)</span>.</p>
+</section>
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
@@ -901,8 +957,8 @@ g(x)=\lim_{n\to\infty}T_n(x)=\sum_{k=0}^\infty \binom{m}{k}x^k.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../series/05-ratio-power.html" class="pagination-link" aria-label="Ratio test and power series">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span>
+      <a href="../series/05-ratio-power.html" class="pagination-link" aria-label="Ratio test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

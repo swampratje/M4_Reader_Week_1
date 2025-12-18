@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Ratio test and power series – Reader Week 1</title>
+<title>11&nbsp; Ratio test – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/05-ratio-power.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/05-ratio-power.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,7 +238,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -289,26 +289,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-ratio-test" id="toc-the-ratio-test" class="nav-link active" data-scroll-target="#the-ratio-test">The ratio test</a></li>
-  <li><a href="#power-series-and-convergence" id="toc-power-series-and-convergence" class="nav-link" data-scroll-target="#power-series-and-convergence">Power series and convergence</a>
-  <ul class="collapse">
-  <li><a href="#convergence-interval" id="toc-convergence-interval" class="nav-link" data-scroll-target="#convergence-interval">Convergence interval</a></li>
-  <li><a href="#radius-of-convergence" id="toc-radius-of-convergence" class="nav-link" data-scroll-target="#radius-of-convergence">Radius of convergence</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/05-ratio-power.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/05-ratio-power.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test and power series</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></h1>
 </div>
 
 
@@ -325,11 +314,14 @@ window.Quarto = {
 </header>
 
 
-<section id="the-ratio-test" class="level2">
-<h2 class="anchored" data-anchor-id="the-ratio-test">The ratio test</h2>
 <p>For many sequences it may be hard to know whether the corresponding series converge. Fortunately, there are several criteria that can help. Here we focus on the <strong>ratio test</strong>, which shows that a series can often be compared to a geometric series—whose convergence behavior we understand well.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div id="thm-ratio" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 11.1</strong></span> <strong>Theorem (Ratio test).</strong> Let <span class="math inline">\(\{a_n\}\)</span> be a sequence with <span class="math inline">\(a_n\neq 0\)</span> eventually. 1. If <span class="math inline">\(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&lt;1\)</span>, then <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> converges (in fact absolutely). 2. If <span class="math inline">\(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&gt;1\)</span> or the limit is <span class="math inline">\(\infty\)</span>, then <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> diverges.</p>
+<p><span class="theorem-title"><strong>Theorem 11.1</strong></span> <strong>(Ratio test)</strong></p>
+<p>Let <span class="math inline">\(\{a_n\}\)</span> be a sequence with <span class="math inline">\(a_n\neq 0\)</span> eventually.</p>
+<ol type="1">
+<li>If <span class="math inline">\(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&lt;1\)</span>, then <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> converges (in fact absolutely).</li>
+<li>If <span class="math inline">\(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L&gt;1\)</span> or the limit is <span class="math inline">\(\infty\)</span>, then <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> diverges.</li>
+</ol>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -368,30 +360,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section>
-<section id="power-series-and-convergence" class="level2">
-<h2 class="anchored" data-anchor-id="power-series-and-convergence">Power series and convergence</h2>
-<p>A <strong>power series</strong> has the form <span class="math display">\[
-\sum_{n=0}^\infty a_n x^n.
-\]</span></p>
-<p>Example: <span class="math display">\[
-\sum_{n=0}^\infty \frac{x^n}{n!}
-\]</span> converges for every <span class="math inline">\(x\in\mathbb{R}\)</span> (ratio test gives limit <span class="math inline">\(0\)</span>).</p>
-<section id="convergence-interval" class="level3">
-<h3 class="anchored" data-anchor-id="convergence-interval">Convergence interval</h3>
-<div id="thm-interval" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 11.2</strong></span> <strong>Theorem (Convergence propagates inward).</strong> For a power series <span class="math inline">\(\sum_{n=0}^\infty c_n x^n\)</span>: 1. If it converges at <span class="math inline">\(x=b\neq 0\)</span>, then it converges for all <span class="math inline">\(|x|&lt;|b|\)</span>. 2. If it diverges at <span class="math inline">\(x=b\)</span>, then it diverges for all <span class="math inline">\(|x|&gt;|b|\)</span>.</p>
-</div>
-</section>
-<section id="radius-of-convergence" class="level3">
-<h3 class="anchored" data-anchor-id="radius-of-convergence">Radius of convergence</h3>
-<div id="thm-radius" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 11.3</strong></span> <strong>Theorem (Radius of convergence).</strong> For <span class="math inline">\(\sum_{n=0}^\infty c_n (x-a)^n\)</span>, exactly one holds: 1. it converges only at <span class="math inline">\(x=a\)</span>; 2. it converges for all <span class="math inline">\(x\)</span>; 3. there exists <span class="math inline">\(R&gt;0\)</span> such that it converges if <span class="math inline">\(|x-a|&lt;R\)</span> and diverges if <span class="math inline">\(|x-a|&gt;R\)</span>. The number <span class="math inline">\(R\)</span> is the <strong>radius of convergence</strong>.</p>
-</div>
+<p>Some examples here!</p>
 
 
-</section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -819,8 +790,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../power_series/01-intro.html" class="pagination-link" aria-label="Power series">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../power_series/01-intro.html" class="pagination-link" aria-label="Power series and convergence">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
