@@ -329,8 +329,26 @@ window.Quarto = {
 <li><p>If <span class="math inline">\(\displaystyle\int_1^\infty f(x)\,dx=L&lt;\infty\)</span>, then <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> is convergent.</p></li>
 </ol>
 </div>
+<p>A proof is illustrated by the following two examples.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Example of divergence">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example of divergence
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Consider the series <span class="math display">\[\sum_{n=1}^\infty \frac{1}{\sqrt{n}}.\]</span> Then this is the series corresponding to <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> which is decreasing and <span class="math inline">\(\displaystyle \lim_{x\rightarrow\infty}f(x)=0\)</span>.</p>
+<p><img src="../figures/integralcr_div.png" id="fig-int_test-div" class="img-fluid" style="width:70.0%" alt="Partial sums s_n as blocks above the graph of f."> The total area of all the blocks is larger than the area between the graph of <span class="math inline">\(f\)</span> and the <span class="math inline">\(x\)</span>-axes. This area is given by <span class="math display">\[\int_1^\infty f(x)dx=\infty.\]</span> Therefore the series must diverge.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -339,7 +357,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li><p>Let <span class="math inline">\(k\in\mathbb{N}\)</span> and <span class="math inline">\(x\in[k,k+1]\)</span>. Since <span class="math inline">\(f\)</span> is non-increasing, we have <span class="math inline">\(a_k=f(k)\ge f(x)\)</span>, hence <span class="math display">\[
@@ -363,7 +381,7 @@ s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\inf
 <p><span class="theorem-title"><strong>Theorem 12.2</strong></span> The series <span class="math inline">\(\displaystyle\sum_{n=1}^\infty \frac{1}{n^r}\)</span> is convergent if and only if <span class="math inline">\(r&gt;1\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -372,7 +390,7 @@ s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\inf
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Try to prove it yourself. Calculate the integral <span class="math inline">\(\displaystyle \int_1^\infty \frac{1}{x^r}\,dx\)</span> and conclude.</p>
 </div>
