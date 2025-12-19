@@ -67,7 +67,7 @@
     "href": "sequences/02-convergence-R.html",
     "title": "3  Sequences in \\(\\mathbb{R}\\) and convergence",
     "section": "",
-    "text": "Definition of convergence\nSome quick numerical illustration:\nWe say that the sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}\\) has limit \\(L\\in\\mathbb{R}\\) if, for large enough indices, the elements become arbitrarily close to \\(L\\).",
+    "text": "Definition of convergence\nThis can also include Python code and programming\nWe say that the sequence \\(\\{a_n\\}_{n\\in \\mathbb{N}}\\) in \\(\\mathbb{R}\\) has limit \\(L\\in\\mathbb{R}\\) if, for large enough indices, the elements become arbitrarily close to \\(L\\).",
     "crumbs": [
       "Sequences",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sequences in $\\mathbb{R}$ and convergence</span>"
