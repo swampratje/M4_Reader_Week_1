@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Polynomials and approximation – Reader Week 1</title>
+<title>12&nbsp; Integral test – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../taylor/02-tangency-taylor-polynomials.html" rel="next">
-<link href="../power_series/01-intro.html" rel="prev">
+<link href="../power_series/01-intro.html" rel="next">
+<link href="../series/05-ratio-power.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../taylor/01-intro.html">Taylor polynomials</a></li><li class="breadcrumb-item"><a href="../taylor/01-intro.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/06-integral-test.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -226,7 +226,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../series/06-integral-test.html" class="sidebar-item-text sidebar-link">
+  <a href="../series/06-integral-test.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></span></a>
   </div>
 </li>
@@ -260,7 +260,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../taylor/01-intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="../taylor/01-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span></a>
   </div>
 </li>
@@ -295,21 +295,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sec-roadmap" id="toc-sec-roadmap" class="nav-link active" data-scroll-target="#sec-roadmap">Road map</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../taylor/01-intro.html">Taylor polynomials</a></li><li class="breadcrumb-item"><a href="../taylor/01-intro.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../series/01-intro.html">Series</a></li><li class="breadcrumb-item"><a href="../series/06-integral-test.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></h1>
 </div>
 
 
@@ -326,30 +320,66 @@ window.Quarto = {
 </header>
 
 
-<p>Polynomials are among the most important functions in mathematics and, more generally, in science. They are computationally convenient: function values and higher-order derivatives can be computed using only addition and multiplication—exactly the operations that lie at the heart of machine computation.</p>
-<p>Polynomials are also used to approximate more complex functions. In <em>Mathematics 1</em> you saw how to approximate a function locally by its <em>linear approximation</em>—a polynomial of degree 1. <a href="#fig-linapprox" class="quarto-xref">Figure&nbsp;<span>14.1</span></a> illustrates this for <span class="math inline">\(f(x)=e^x\)</span>, together with the linear approximations at <span class="math inline">\(a=0\)</span> and <span class="math inline">\(a=1\)</span>.</p>
-<div id="fig-linapprox" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-linapprox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/lin_approx_e.png" class="img-fluid figure-img" style="width:50.0%">
+<div id="thm-integral" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12.1</strong></span> Let <span class="math inline">\(f:[1,\infty)\to \mathbb{R}_+\)</span> be a continuous non-increasing function with the property that <span class="math display">\[
+\lim_{x\to\infty} f(x)=0.
+\]</span> Define the sequence <span class="math inline">\(\{a_n\}_{n=1}^\infty\)</span> by <span class="math inline">\(a_n=f(n)\)</span>. Then:</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(\displaystyle\int_1^\infty f(x)\,dx=\infty\)</span>, then <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n=\infty\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\displaystyle\int_1^\infty f(x)\,dx=L&lt;\infty\)</span>, then <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> is convergent.</p></li>
+</ol>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linapprox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.1: Plots of <span class="math inline">\(f(x)=e^x\)</span> together with the linear approximations at <span class="math inline">\(a=1\)</span> and <span class="math inline">\(a=2\)</span>.
-</figcaption>
-</figure>
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>This chapter studies approximation by <strong>Taylor polynomials</strong>, which use information about local derivatives. In doing so, we will look at sequences of <em>functions</em> (Taylor polynomials of increasing degree) rather than sequences of numbers.</p>
-<section id="sec-roadmap" class="level2">
-<h2 class="anchored" data-anchor-id="sec-roadmap">Road map</h2>
-<ul>
-<li><strong>Tangency and Taylor polynomials</strong> (how to match derivatives at a point)</li>
-<li><strong>Taylor’s Theorem</strong> (the remainder term and approximation quality)</li>
-<li><strong>Applications</strong> (optimization, estimating <span class="math inline">\(e\)</span>, the binomial formula)</li>
-<li><strong>Taylor series</strong> (power series expansions)</li>
-</ul>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Let <span class="math inline">\(k\in\mathbb{N}\)</span> and <span class="math inline">\(x\in[k,k+1]\)</span>. Since <span class="math inline">\(f\)</span> is non-increasing, we have <span class="math inline">\(a_k=f(k)\ge f(x)\)</span>, hence <span class="math display">\[
+a_k \ge \int_k^{k+1} f(x)\,dx.
+\]</span> Therefore, <span class="math display">\[
+\sum_{k=1}^\infty a_k \ge \int_1^\infty f(x)\,dx=\infty.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\(k\in\mathbb{N}\)</span> and <span class="math inline">\(x\in[k,k+1]\)</span>. Since <span class="math inline">\(f\)</span> is non-increasing, we have <span class="math inline">\(f(x)\ge f(k+1)=a_{k+1}\)</span>, hence <span class="math display">\[
+\int_k^{k+1} f(x)\,dx \ge a_{k+1}.
+\]</span> Summing from <span class="math inline">\(k=1\)</span> to <span class="math inline">\(n-1\)</span> gives <span class="math display">\[
+\int_1^{n} f(x)\,dx \ge \sum_{k=2}^{n} a_k.
+\]</span> So for the partial sums <span class="math inline">\(s_n=\sum_{k=1}^n a_k\)</span>, <span class="math display">\[
+s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\infty f(x)\,dx.
+\]</span> All terms <span class="math inline">\(a_k\)</span> are nonnegative, so <span class="math inline">\((s_n)\)</span> is increasing, and the inequality above shows it is bounded. Hence <span class="math inline">\((s_n)\)</span> converges, so <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> converges.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>A direct application is the following.</p>
+<div id="thm-integral-pol" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12.2</strong></span> The series <span class="math inline">\(\displaystyle\sum_{n=1}^\infty \frac{1}{n^r}\)</span> is convergent if and only if <span class="math inline">\(r&gt;1\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Try to prove it yourself. Calculate the integral <span class="math inline">\(\displaystyle \int_1^\infty \frac{1}{x^r}\,dx\)</span> and conclude.</p>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <footer class="rw1-footer">
@@ -766,13 +796,13 @@ Figure&nbsp;14.1: Plots of <span class="math inline">\(f(x)=e^x\)</span> togethe
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../power_series/01-intro.html" class="pagination-link" aria-label="Power series and convergence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span>
+      <a href="../series/05-ratio-power.html" class="pagination-link" aria-label="Ratio test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../taylor/02-tangency-taylor-polynomials.html" class="pagination-link" aria-label="Tangency and Taylor polynomials">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Tangency and Taylor polynomials</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../power_series/01-intro.html" class="pagination-link" aria-label="Power series and convergence">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

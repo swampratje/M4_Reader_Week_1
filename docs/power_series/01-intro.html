@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Power series and convergence – Reader Week 1</title>
+<title>13&nbsp; Power series and convergence – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../taylor/01-intro.html" rel="next">
-<link href="../series/05-ratio-power.html" rel="prev">
+<link href="../series/06-integral-test.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -224,6 +224,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../series/06-integral-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -238,7 +244,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,31 +261,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/02-tangency-taylor-polynomials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Tangency and Taylor polynomials</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Tangency and Taylor polynomials</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/03-taylor-theorem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Taylor’s Theorem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Taylor’s Theorem</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/04-applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Applications</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/05-taylor-series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Taylor series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Taylor series</span></span></a>
   </div>
 </li>
       </ul>
@@ -305,9 +311,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../power_series/01-intro.html">Power series</a></li><li class="breadcrumb-item"><a href="../power_series/01-intro.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></h1>
 </div>
 
 
@@ -343,7 +349,7 @@ f(x)=\sum_{n=0}^\infty \frac{1}{n!}x^n.
 <h3 class="anchored" data-anchor-id="convergence-intervals">Convergence intervals</h3>
 <p>We will show that any power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty a_n x^n\)</span> converges on a symmetric interval around <span class="math inline">\(0\)</span>.</p>
 <div id="thm-convint" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12.1</strong></span> <strong>(convergence interval)</strong> Consider a power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span>. Then</p>
+<p><span class="theorem-title"><strong>Theorem 13.1</strong></span> <strong>(convergence interval)</strong> Consider a power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span>. Then</p>
 <ol type="i">
 <li><p>If <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> converges when <span class="math inline">\(x=b\)</span>, then it converges when <span class="math inline">\(|x|&lt;|b|\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n x^n\)</span> diverges when <span class="math inline">\(x=b\)</span>, then it diverges when <span class="math inline">\(|x|&gt;|b|\)</span>.</p></li>
@@ -380,7 +386,7 @@ n\geq N \Rightarrow |c_n b^n|&lt;1.
 \sum_{n=0}^\infty c_n (x-a)^n
 \]</span> for a sequence <span class="math inline">\(\{c_n\}_{n=0}^\infty\)</span>. We have the following.</p>
 <div id="thm-convint2" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12.2</strong></span> <strong>(convergence interval)</strong> For a given power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n(x-a)^n\)</span>, there are only three possibilities:</p>
+<p><span class="theorem-title"><strong>Theorem 13.2</strong></span> <strong>(convergence interval)</strong> For a given power series <span class="math inline">\(\displaystyle\sum_{n=0}^\infty c_n(x-a)^n\)</span>, there are only three possibilities:</p>
 <ol type="i">
 <li><p>The series converges only if <span class="math inline">\(x=a\)</span>.</p></li>
 <li><p>The series converges for all <span class="math inline">\(x\)</span>.</p></li>
@@ -408,7 +414,7 @@ S=\left\{x:\sum_{n=0}^\infty c_n x^n \text{ converges }\right\}
 </div>
 </div>
 </div>
-<p>The number <span class="math inline">\(R\)</span> in Theorem <a href="#thm-convint2" class="quarto-xref">Theorem&nbsp;<span>12.2</span></a> is called the <em>radius of convergence</em> of the power series. We can also summarize the three discussed cases by <span class="math inline">\(R=0\)</span>, <span class="math inline">\(R&gt;0\)</span>, and <span class="math inline">\(R=\infty\)</span>. If <span class="math inline">\(R=0\)</span>, the series converges only at a single point, whereas if <span class="math inline">\(R=\infty\)</span> convergence is established for all <span class="math inline">\(x\)</span>.</p>
+<p>The number <span class="math inline">\(R\)</span> in Theorem <a href="#thm-convint2" class="quarto-xref">Theorem&nbsp;<span>13.2</span></a> is called the <em>radius of convergence</em> of the power series. We can also summarize the three discussed cases by <span class="math inline">\(R=0\)</span>, <span class="math inline">\(R&gt;0\)</span>, and <span class="math inline">\(R=\infty\)</span>. If <span class="math inline">\(R=0\)</span>, the series converges only at a single point, whereas if <span class="math inline">\(R=\infty\)</span> convergence is established for all <span class="math inline">\(x\)</span>.</p>
 </section>
 </section>
 <section id="examples" class="level2">
@@ -957,13 +963,13 @@ g(x)=\lim_{n\to\infty}T_n(x)=\sum_{k=0}^\infty \binom{m}{k}x^k.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../series/05-ratio-power.html" class="pagination-link" aria-label="Ratio test">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span>
+      <a href="../series/06-integral-test.html" class="pagination-link" aria-label="Integral test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../taylor/01-intro.html" class="pagination-link" aria-label="Polynomials and approximation">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
