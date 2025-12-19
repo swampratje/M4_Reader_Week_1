@@ -357,8 +357,36 @@ Figure&nbsp;12.1: Partial sums <span class="math inline">\(s_n\)</span> as block
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Example of convergence">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example of convergence
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Consider the series <span class="math display">\[\sum_{n=1}^\infty \frac{1}{\sqrt{n}}.\]</span> Then this is the series corresponding to <span class="math inline">\(f(x)=\frac{1}{{x}^2}\)</span> which is decreasing and <span class="math inline">\(\displaystyle \lim_{x\rightarrow\infty}f(x)=0\)</span>.</p>
+<div id="fig-int_test-conv" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-int_test-conv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/integralcr_conv.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-int_test-conv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Partial sums <span class="math inline">\(s_n\)</span> as blocks below the graph of <span class="math inline">\(f\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>The total area of all the blocks is smaller than <span class="math inline">\(a_1\)</span> plus the area between the graph of <span class="math inline">\(f\)</span> and the <span class="math inline">\(x\)</span>-axes on <span class="math inline">\(I=1,\infty)\)</span>. This area is given by <span class="math display">\[\int_1^\infty f(x)dx=\left[ -\frac{1}{x}\right]_1^\infty=1&lt;\infty.\]</span> Therefore the sequence of partial sums is increasing and bounded, so it must converge.</p>
+</div>
+</div>
+</div>
+<p>You are invited to write down a general proof. The answer you can always find below.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -367,7 +395,7 @@ Figure&nbsp;12.1: Partial sums <span class="math inline">\(s_n\)</span> as block
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li><p>Let <span class="math inline">\(k\in\mathbb{N}\)</span> and <span class="math inline">\(x\in[k,k+1]\)</span>. Since <span class="math inline">\(f\)</span> is non-increasing, we have <span class="math inline">\(a_k=f(k)\ge f(x)\)</span>, hence <span class="math display">\[
@@ -391,7 +419,7 @@ s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\inf
 <p><span class="theorem-title"><strong>Theorem 12.2</strong></span> The series <span class="math inline">\(\displaystyle\sum_{n=1}^\infty \frac{1}{n^r}\)</span> is convergent if and only if <span class="math inline">\(r&gt;1\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -400,7 +428,7 @@ s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\inf
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Try to prove it yourself. Calculate the integral <span class="math inline">\(\displaystyle \int_1^\infty \frac{1}{x^r}\,dx\)</span> and conclude.</p>
 </div>
