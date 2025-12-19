@@ -175,12 +175,12 @@
   {
     "objectID": "series/02-basic-properties.html",
     "href": "series/02-basic-properties.html",
-    "title": "Pyodide in Quarto HTML Documents",
+    "title": "8  Series and convergence",
     "section": "",
-    "text": "filters: - pyodide\nA necessary condition for convergence of a series is that the underlying sequence must have a limit 0.\n\nTheorem 8.1 (Necessary condition for convergence).\nIf \\(\\displaystyle\\sum_{n=0}^\\infty a_n\\) converges, then \\(\\displaystyle\\lim_{n\\to\\infty} a_n=0\\).\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nLet \\(s_n=\\displaystyle\\sum_{k=0}^n a_k\\). If \\(s_n\\to S\\), then also \\(s_{n+1}\\to S\\). Hence \\[\na_{n+1}=s_{n+1}-s_n \\longrightarrow S-S = 0.\n\\]\n\n\n\nDo you think it is also a sufficient condition for convergence? Further basic properties of series are these algebraic ones. You may try to prove them yourself:\n\nTheorem 8.2 (Linearity of convergent series).\nLet \\(\\displaystyle\\sum_{n=0}^\\infty a_n\\) and \\(\\displaystyle\\sum_{n=0}^\\infty b_n\\) converge with sums \\(S_a\\) and \\(S_b\\). Then for any \\(c\\in\\mathbb{R}\\):\n\n\\(\\displaystyle\\sum_{n=0}^\\infty (c a_n)\\) converges and has sum \\(cS_a\\);\n\\(\\displaystyle\\sum_{n=0}^\\infty (a_n\\pm b_n)\\) converges and has sum \\(S_a\\pm S_b\\).\n\n\nThis is a pyodide-enabled code cell in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "format: html filters: - pyodide\nA necessary condition for convergence of a series is that the underlying sequence must have a limit 0.\n\nTheorem 8.1 (Necessary condition for convergence).\nIf \\(\\displaystyle\\sum_{n=0}^\\infty a_n\\) converges, then \\(\\displaystyle\\lim_{n\\to\\infty} a_n=0\\).\n\n\n\n\n\n\n\nTipProof\n\n\n\n\n\nLet \\(s_n=\\displaystyle\\sum_{k=0}^n a_k\\). If \\(s_n\\to S\\), then also \\(s_{n+1}\\to S\\). Hence \\[\na_{n+1}=s_{n+1}-s_n \\longrightarrow S-S = 0.\n\\]\n\n\n\nDo you think it is also a sufficient condition for convergence? Further basic properties of series are these algebraic ones. You may try to prove them yourself:\n\nTheorem 8.2 (Linearity of convergent series).\nLet \\(\\displaystyle\\sum_{n=0}^\\infty a_n\\) and \\(\\displaystyle\\sum_{n=0}^\\infty b_n\\) converge with sums \\(S_a\\) and \\(S_b\\). Then for any \\(c\\in\\mathbb{R}\\):\n\n\\(\\displaystyle\\sum_{n=0}^\\infty (c a_n)\\) converges and has sum \\(cS_a\\);\n\\(\\displaystyle\\sum_{n=0}^\\infty (a_n\\pm b_n)\\) converges and has sum \\(S_a\\pm S_b\\).\n\n\nThis is a pyodide-enabled code cell in a Quarto HTML document.\nn = 5\nwhile n &gt; 0:\n  print(n)\n  n = n - 1\n\nprint('Blastoff!')",
     "crumbs": [
       "Series",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pyodide in Quarto HTML Documents</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Series and convergence</span>"
     ]
   },
   {
