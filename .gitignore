@@ -1,0 +1,22 @@
+# Quarto internals / cache
+.quarto/
+.quarto-cache/
+
+# Freeze (only relevant if you enable freeze later)
+_freeze/
+
+# Jupyter / Python (you use jupyter: python3)
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+/.quarto/
+**/*.quarto_ipynb

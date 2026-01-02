@@ -1,5 +1,8 @@
 ---
 title: "Series"
+filters:
+- pyodide
+format: html
 ---
 Series are constructed using sequences. Consider a sequence $\{a_n\}_{n\in \mathbb{N}}$. We can form the sequence of **partial sums**
 $$
@@ -57,10 +60,16 @@ Hence,
 $$
 \lim_{k\to\infty} s_{2^k}=\infty,
 $$
-so also $\lim_{n\to\infty} s_n=\infty$. Therefore the harmonic series does **not**
+so also $\lim_{n\to\infty} s_n=\infty$. Therefore the harmonic series does *not*
 converge, even though the terms $\frac{1}{k}$ tend to $0$.
 
-We will see below that $a_n\to 0$ is a **necessary** condition for
-$\sum_{n=1}^\infty a_n$ to converge, but it is **not sufficient**. $\triangleleft$
+```{pyodide-python}
+# Calculate the smallest number n such that s_n>=5
 
+print("s_n =", n)
+```
 :::
+
+
+We will see below that $a_n\to 0$ is a *necessary* condition for
+$\sum_{n=1}^\infty a_n$ to converge, but it is *not sufficient*. $\triangleleft$

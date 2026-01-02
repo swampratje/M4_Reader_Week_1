@@ -1,0 +1,4 @@
+\(
+\newcommand{\mR}{\mathbb{R}}
+\newcommand{\mN}{\mathbb{N}}
+\)

@@ -70,6 +70,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+  window.MathJax = {
+    tex: {
+      macros: {
+        mR: "\\mathbb{R}",
+        mN: "\\mathbb{N}"
+      }
+    }
+  };
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -329,7 +339,7 @@ window.Quarto = {
 
 <section id="motivation" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Sequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.</p>
+<p><span class="math inline">\(\mN\)</span> Sequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.</p>
 <p>Consider the simple act of measuring the temperature in your garden on a daily basis. You are then actually generating a sequence (a time series) of temperature readings.</p>
 <p>You will also find numerous examples of sequences in the world of financial econometrics. Analysts study time series comprised of valuations of financial products such as stocks and bonds. These sequences of financial data unveil crucial information about market trends, volatility, and investment opportunities. By scrutinizing these series, analysts can make informed decisions and devise effective investment strategies.</p>
 <p>In the course <em>Programming and Numerical Analysis</em>, you were introduced to algorithms that generate sequences of values. These algorithms serve a crucial purpose, because they help estimate fundamental mathematical quantities like derivatives and roots of equations.</p>

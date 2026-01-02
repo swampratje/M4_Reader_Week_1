@@ -1,42 +1,105 @@
 ---
-title: "Power series"
+title: "Power series and convergence"
 ---
 
-Above we have seen that we may write $e^x$ as a series, an infinite polynomial:
-$$
-e^x
-=\lim_{n\to\infty}\sum_{k=0}^n \frac{x^k}{k!}
-=\sum_{k=0}^\infty \frac{x^k}{k!}.
-$$
-This is an example of a **power series**, i.e. an infinite sum of powers of $x$.
+## Power series
 
-A general power series takes the form
+Power series are special series, which take the form
 $$
-\sum_{k=0}^\infty a_k x^k,
+\sum_{n=0}^\infty a_n x^n,
 $$
-where $(a_k)$ is a sequence and $x$ a real variable. Such a series always converges at $x=0$. The question is: **for which values of $x$ does it converge?** Equivalently, what is the domain of the function
-$$
-f(x):=\sum_{k=0}^\infty a_k x^k \, ?
-$$
+where $\{a_n\}_{n=0}^\infty$ is a sequence and $x\in\mathbb{R}$. We may wonder for what $x$ values such series converge, or not.
 
-## Ratio test
+As an example, consider the power series
+$$
+\sum_{n=0}^\infty b_n := \sum_{n=0}^\infty \frac{x^n}{n!},
+$$
+where we took $a_n=\frac{1}{n!}$. A natural question here is for what $x$ this sum makes sense. If we use the ratio criterion we get:
+$$
+\left|\frac{b_{n+1}}{b_n}\right|
+=\left|\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right|
+=\left|\frac{x}{n+1}\right|
+\rightarrow 0, \quad \text{as } n\rightarrow \infty.
+$$
+So we see that we have convergence for all $x\in\mathbb{R}$. In particular this means that the above power series as an infinite sum is always well-defined. So in this way we may define a function $f:\mathbb{R}\rightarrow \mathbb{R}$ by
+$$
+f(x)=\sum_{n=0}^\infty \frac{1}{n!}x^n.
+$$
+Later we will see that this is the well-known exponential function $f(x)=e^x$.
 
-::: {#thm-ratio-test}
-**Theorem (Ratio test).**  
-Let $(a_n)_{n\in\mathbb{N}}$ be a sequence. If
-$$
-\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1,
-$$
-then the infinite sum
-$$
-\sum_{k=1}^\infty a_k=\lim_{n\to\infty}\sum_{k=1}^n a_k
-$$
-exists (i.e. the series converges).
+### Convergence intervals
+
+We will show that any power series $\displaystyle\sum_{n=0}^\infty a_n x^n$ converges on a symmetric interval around $0$.
+
+::: {#thm-convint} 
+**(convergence interval)**
+Consider a power series $\displaystyle\sum_{n=0}^\infty c_n x^n$. Then
+
+(i) If $\displaystyle\sum_{n=0}^\infty c_n x^n$ converges when $x=b$, then it converges when $|x|<|b|$.
+
+(ii) If $\displaystyle\sum_{n=0}^\infty c_n x^n$ diverges when $x=b$, then it diverges when $|x|>|b|$.
 :::
 
-::: {.callout-note title="Proof idea"}
-A full proof is found in your Appendix (B4) and uses the theory of **absolute convergence** (B3).
+::: {.callout-tip collapse="true" title="Proof"}
+
+**Case (i).** Suppose that $\displaystyle\sum_{n=0}^\infty c_n b^n$ converges and $b\neq 0$. Then in particular
+$$
+\lim_{n\rightarrow \infty} c_n b^n=0.
+$$
+So for $\varepsilon=1$ there is a positive integer $N$ such that
+$$
+n\geq N \Rightarrow |c_n b^n|<1.
+$$
+Thus for $n\geq N$ we have
+$$
+|c_n x^n|
+=\left|\frac{c_n b^n x^n}{b^n}\right|
+=|c_n b^n|\left|\frac{x}{b}\right|^n
+<\left|\frac{x}{b}\right|^n.
+$$
+If $|x|<|b|$, then $|x/b|<1$ so that $\displaystyle\sum_{n=0}^\infty |x/b|^n$ is a convergent geometric series. Then $\displaystyle \sum_{n=N}^\infty |c_n x^n|$ is also convergent. Hence the series $\displaystyle\sum_{n=0}^\infty |c_n x^n|$ is convergent (absolutely), and therefore $\displaystyle\sum_{n=0}^\infty c_n x^n$ is convergent.
+
+**Case (ii).** Suppose that $\displaystyle\sum_{n=0}^\infty c_n d^n$ diverges. If $x$ is any number with $|x|>|d|$, then $\displaystyle\sum_{n=0}^\infty c_n x^n$ cannot converge, because—by Case (i)—it would imply that $\displaystyle\sum_{n=0}^\infty c_n d^n$ converges.
 :::
+
+This theorem shows that either there is a maximal $R\in\mathbb{R}_+$ with convergence on $I=(-R,R)$, or the interval of convergence is all of $\mathbb{R}$.
+
+We cannot say so much about the end-points of those intervals; these have to be checked separately. The theory easily extends to cases where the power series *center* around a value $a\in \mathbb{R}$ instead of $0$, i.e.
+$$
+\sum_{n=0}^\infty c_n (x-a)^n
+$$
+for a sequence $\{c_n\}_{n=0}^\infty$. We have the following.
+
+::: {#thm-convint2}
+**(convergence interval)**
+For a given power series $\displaystyle\sum_{n=0}^\infty c_n(x-a)^n$, there are only three possibilities:
+
+(i) The series converges only if $x=a$.
+
+(ii) The series converges for all $x$.
+
+(iii) There is a positive number $R$ such that the series converges if $|x-a|<R$ and diverges if $|x-a|>R$.
+:::
+
+::: {.callout-tip collapse="true" title="Proof"}
+First look at power series centered around $a=0$: $\displaystyle\sum_{n=0}^\infty c_n x^n$.
+
+Now suppose that for this series (i) and (ii) do not hold. Then there are nonzero numbers $b$ and $d$ such that $\displaystyle\sum_{n=0}^\infty c_n b^n$ converges and $\displaystyle\sum_{n=0}^\infty c_n d^n$ diverges. Therefore the set
+$$
+S=\left\{x:\sum_{n=0}^\infty c_n x^n \text{ converges }\right\}
+$$
+is nonempty. We also know that the series diverges for any $x$ with $|x|>|d|$, so $S$ has an upper bound. Then $S$, being nonempty and bounded, has a least upper bound $R:=\sup S$.
+
+If $|x|>R$, then $x\notin S$, so $\sum_{n=0}^\infty c_n x^n$ diverges. If $|x|<R$, then $|x|$ is not an upper bound for $S$, and so there is $b\in S$ with $b>|x|$. Since $b\in S$, $\displaystyle\sum_{n=0}^\infty c_n b^n$ converges, so must $\displaystyle\sum_{n=0}^\infty c_n x^n$.
+
+Now consider the general case, with $a\neq 0$. Make the change of variable $u=x-a$. Then the power series becomes $\sum_{n=0}^\infty c_n u^n$ and we can apply the former argument to this series. In particular, in case (iii) we have convergence for $|u|<R$ and divergence for $|u|>R$. Thus we have convergence for $|x-a|<R$ and divergence for $|x-a|>R$.
+:::
+
+The number $R$ in Theorem @thm-convint2 is called the *radius of convergence* of the power series. We can also summarize the three discussed cases by $R=0$, $R>0$, and $R=\infty$. If $R=0$, the series converges only at a single point, whereas if $R=\infty$ convergence is established for all $x$.
+
+
+
+
 
 ## Examples
 

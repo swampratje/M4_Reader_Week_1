@@ -1,0 +1,226 @@
+%TeX-definitions
+\usepackage{hyperref} 
+\usepackage{amsmath, array, amssymb}
+\usepackage{amsthm}
+\usepackage{mathdots,caption}
+
+\usepackage{paralist}
+\usepackage[mathcal]{eucal}
+\usepackage{booktabs,array,tabularx}
+\newcommand{\otoprule}{\midrule[\heavyrulewidth]}
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}}
+\usepackage{framed}
+\usepackage[x11names]{xcolor}
+\definecolor{shadecolor}{gray}{0.9}
+\usepackage[british]{babel}
+
+\usepackage{enumerate}
+\usepackage{version}
+
+
+\renewcommand{\labelenumi}{\bf\arabic{enumi}.}
+\renewcommand{\labelenumii}{\bf\alph{enumii}}
+\usepackage{multicol,mdwlist}
+
+\newtheoremstyle{oefening}
+{\baselineskip}%	<Space above> 
+{}%	<Space below> 
+{}          %	<Body font>
+{}                %	<Indent amount> 
+{\bfseries}       %     <Theorem head font> 
+{}               %	<Punctuation after theorem head> 
+{0.01em}           %	<Space after theorem head>2 
+{\thmname{#1}\thmnumber{ #2}} %    <Theorem head spec (can be left empty, meaning `normal')>
+
+\newtheoremstyle{oefening1}
+{\baselineskip} % <Space above>
+{}              % <Space below>
+{}              % <Body font>
+{}              % <Indent amount>
+{\bfseries}     % <Theorem head font>
+{}             % <Punctuation after theorem head>
+{}         % <Space after theorem head>
+{\thmname{#1}\thmnumber{ #2}\phantom{asdf}\\\protect\vspace{1em}}
+
+\theoremstyle{oefening}
+\newtheorem{exercise}{Exercise}
+
+\makeatletter
+\@addtoreset{exercise}{section}
+\makeatother
+% ---------------------------------
+
+\usepackage{subcaption}
+%\usepackage{subfigure}
+
+\usepackage[
+   width=\textwidth, 
+   parskip=5pt, 
+   font={small,it}, 
+   labelfont={up,bf}
+]{caption} 
+
+\usepackage[xetex]{graphicx}
+
+
+%DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{
+  a4paper,
+  left   = 1.25in,
+  right  = 1.25in,
+  top    = 1in,
+  bottom = 2in
+}
+
+\usepackage{setspace}
+\setstretch{1.1}
+
+\usepackage{parskip}
+
+\raggedbottom
+
+%\setlength\parindent{3em}
+%\setlength{\parindent}{1em}
+
+
+% FONTS
+\usepackage{fontspec,xltxtra,xunicode} 
+\fontspec[Numbers=OldStyle]{Junicode}
+
+\setromanfont[Mapping=tex-text, Ligatures=Common,
+      Numbers=OldStyle]{Junicode}
+\setsansfont [Mapping=tex-text]{Arial}
+ 
+\setcounter{secnumdepth}{3}
+
+\usepackage[pagestyles]{titlesec}
+
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\itshape}
+\titleformat{\paragraph}[runin]{\bfseries}%
+   {}{0.25em}{}[.]
+
+\titlespacing*{\section   }   {0pt}{    \baselineskip}{2\baselineskip}
+\titlespacing*{\subsection}   {0pt}{0.71\baselineskip}{0.25\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.5 \baselineskip}{0\baselineskip}
+\titlespacing*{\paragraph }   {0pt}{0.36 \baselineskip}{0.25em}
+
+\renewpagestyle{plain}{
+  %\global\topskip\normaltopskip
+  %\sethead[][\normalsize\scshape\sectiontitle][]
+  %        {}{\normalsize\scshape\sectiontitle}{}
+  \setfoot [][\thepage][]
+          {}{\thepage}{}
+}
+
+\pagestyle{plain}
+
+
+\usepackage{graphicx}
+%\pagestyle{myheadings}
+\usepackage{rotating}
+\usepackage{lscape}
+
+\newtheoremstyle{stelling}
+{0.5\baselineskip}%	<Space above> 
+{0.5\baselineskip}%	<Space below> 
+{\itshape}% \addtolength{\leftskip}{2em}}        %	<Body font>
+{}                %	<Indent amount> 
+{\bfseries}       %     <Theorem head font> 
+{.}               %	<Punctuation after theorem head> 
+{.5em}            %	<Space after theorem head>2 
+{} %    <Theorem head spec (can be left empty, meaning `normal')>
+
+\newtheoremstyle{beroemdestelling}
+{0.5\baselineskip}%	<Space above> 
+{0.5\baselineskip}%	<Space below> 
+{\itshape}        %	<Body font>
+{}                %	<Indent amount> 
+{\bfseries}       %     <Theorem head font> 
+{.}               %	<Punctuation after theorem head> 
+{.5em}            %	<Space after theorem head>2 
+{\thmnote{ #3}\thmnumber{ #2}} 
+                  % <Theorem head spec 
+                  % (can be left empty, meaning `normal')>
+
+\newtheoremstyle{definitie}
+{0.5\baselineskip}
+{0.5\baselineskip}
+{}
+{}
+{\bfseries}{.}{.5em}{}
+
+\theoremstyle{stelling}
+\newtheorem{theorem}{Theorem}[section] 
+\newtheorem{stelling}{Stelling}[section] 
+\newtheorem*{stelling*}{Stelling}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definitie}
+\newtheorem{definition}[theorem]{Definition} 
+\newtheorem{definitie} [theorem]{Definitie } 
+\newtheorem{assumption}[theorem]{Assumption}
+
+
+\theoremstyle{beroemdestelling}
+\newtheorem*{famoustheorem}{Theorem}
+
+\setlength{\unitlength}{1cm}
+
+\newcommand\stut{\rule{0pt}{2.6ex}}
+\newcommand\onderstut{\rule[-1.2ex]{0pt}{0pt}}
+\newcommand\mand{\quad\text{and}\quad}
+
+\newenvironment{bewijs}
+{
+  \removelastskip \medskip \noindent
+  \textbf{Bewijs}\\
+}
+{
+  \qed 
+}
+
+\newenvironment{voorbeeld}
+{
+  \medskip
+  \small
+  \noindent
+  \textbf{Voorbeeld.}\\
+}
+{
+  \medskip
+  \normalsize
+}
+
+
+\newenvironment{hardproof}
+{
+  \removelastskip \medskip \noindent 
+  {\bf Proof} 
+  \begin{quote}
+  \removelastskip\small
+}
+{
+  \normalsize
+  \qed
+  \end{quote}
+}
+
+\newenvironment{answer}{
+    \vspace{2\baselineskip}
+    \noindent\ignorespaces
+      \begin{snugshade}
+      \textit{Solution:\\}} {%
+      \end{snugshade}
+    \par\noindent\ignorespacesafterend
+}
+
+
+\newcommand{\disp}{\displaystyle}

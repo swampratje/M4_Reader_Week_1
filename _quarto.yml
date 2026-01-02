@@ -22,6 +22,7 @@ book:
         - series/03-alternating.qmd
         - series/04-absolute.qmd
         - series/05-ratio-power.qmd
+        - series/06-integral-test.qmd
     - part: "Power series"
       chapters:
         - power_series/01-intro.qmd
@@ -36,12 +37,29 @@ book:
 
 format:
   html:
+    html-math-method: mathjax
+    include-in-header:
+      text: |
+        <script>
+          window.MathJax = {
+            tex: {
+              macros: {
+                mR: "\\mathbb{R}",
+                mN: "\\mathbb{N}"
+              }
+            }
+          };
+        </script>
     include-after-body: _includes/footer.html
     css: css/styles.css
     toc: true
     number-sections: true
-    number-depth: 1 
+    number-depth: 1
     theme: cosmo
+
+  pdf:
+    include-in-header:
+      file: latex/latex-preamble.tex
 
 execute:
   echo: true
@@ -49,3 +67,11 @@ execute:
   message: false
   cache: false
   jupyter: python3
+
+custom:
+    - kind: exercise
+      latex-env: exercise
+      title: "Exercise"
+      ref-type: "Exercise"
+      numbering:
+        level: 2    # numbering within sections (1.1, 1.2, …)

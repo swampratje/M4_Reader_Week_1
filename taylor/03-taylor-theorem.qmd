@@ -2,13 +2,12 @@
 title: "Taylor's Theorem"
 ---
 
-## Why do we need a theorem? {#sec-why}
-
-Taylor polynomials match derivatives of a function at a point. The natural next question is whether they also provide good approximations to the *function values* on some interval.
+Taylor polynomials match derivatives of a function at a point. The zero order Taylor polynomial agrees with the function value, the first order Taylor approximation agrees with function value and slope, the second order Taylorpolynomial does all this and agrees in curvature of the function. The natural next question is whether they also provide good approximations to the *function values* on some interval.
 
 In *Mathematics 1* you saw that a linear approximation can be poor if curvature is large. The same idea appears here: approximation quality depends on higher derivatives.
 
-### Example: linear approximation can be bad {#sec-bad-linear}
+
+::: {.callout-note title="Example bad linear approximation" collapse="false"}
 
 Consider
 $$
@@ -26,7 +25,9 @@ R_1(x)=f(x)-T_1(x)=100x^2,
 $$
 which becomes large even for small deviations from $0$.
 
-![Here $T_2(x)=f(x)$, while the straight line $T_1(x)$ is a poor approximation.](Figure9_Taylor_bad.pdf){#fig-taylor-bad width=50%}
+![Here $T_2(x)=f(x)$, while the straight line $T_1(x)$ is a poor approximation.](../figures/Taylor_bad.png){#fig-taylor-bad width=50%}
+
+:::
 
 ## The remainder term {#sec-remainder}
 
@@ -38,7 +39,7 @@ $$
 ## Taylor’s Theorem {#sec-taylor-theorem}
 
 ::: {#thm-taylor}
-**Theorem (Taylor).**  
+**(Taylor).**  
 Let $f^{(n)}(t)$ be continuous for $a\le t\le x$ and let $f^{(n+1)}(t)$ exist for all $a<t<x$. Then there exists a point $\xi_x$ between $a$ and $x$ such that
 $$
 R_n(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
@@ -49,10 +50,10 @@ If $x<a$, interpret “$\xi_x$ between $a$ and $x$” as $\xi_x\in(x,a)$.
 
 To prove Taylor’s Theorem, we first prepare two results.
 
-## Cauchy’s Mean Value Theorem {#sec-cauchy-mvt}
+::: {.callout-tip collapse="true" title="Cauchy's Mean Value Theorem"}
 
 ::: {#thm-cauchy}
-**Theorem (Cauchy’s Mean Value Theorem).**  
+**(Cauchy’s Mean Value Theorem).**  
 Let $f,g:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Assume $g'(x)\ne 0$ for all $x\in(a,b)$. Then there exists $\xi\in(a,b)$ such that
 $$
 \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
@@ -81,11 +82,11 @@ f'(\xi)+p\,g'(\xi)=0
 p=-\frac{f'(\xi)}{g'(\xi)}.
 $$
 Equating the two expressions for $p$ gives the result. $\square$
+:::
 
-## A technical lemma {#sec-technical-lemma}
+::: {.callout-tip collapse="true" title="Technical Lemma"}
 
-::: {#thm-cauchy2}
-**Theorem.**  
+:::::: {#thm-tech} 
 Let $I$ be an open interval and let $f:I\to\mathbb{R}$ be $(n+1)$ times differentiable on $I$, with
 $$
 f(a)=f'(a)=\cdots=f^{(n)}(a)=0.
@@ -118,10 +119,8 @@ $$
 f(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
 $$
 $\square$
-
-## Proof of Taylor’s Theorem {#sec-proof-taylor}
-
-**Proof.**  
+:::
+::: {.callout-tip collapse="true" title="Proof of Taylor's Theorem"}
 Let $R_n(x)=f(x)-T_n(x)$. Since $T_n$ matches derivatives of $f$ at $a$ up to order $n$, we have
 $$
 R_n^{(k)}(a)=0\qquad (k=0,1,\ldots,n).
@@ -130,7 +129,8 @@ Apply the previous theorem to $R_n$ to obtain a point $\xi_x$ between $a$ and $x
 $$
 R_n(x)=\frac{R_n^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.
 $$
-Because $T_n^{(n+1)}\equiv 0$, we have $R_n^{(n+1)}(\xi_x)=f^{(n+1)}(\xi_x)$, which gives the desired formula. $\square$
+Because polynomial $T_n$ is of order $n$, we have $T_n^{(n+1)}(x)\equiv 0$. So this means that $R_n^{(n+1)}(\xi_x)=f^{(n+1)}(\xi_x)$, which gives the desired formula. \hskip 1cm $\square$
+:::
 
 ## Interpretation {#sec-interpretation}
 

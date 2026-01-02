@@ -32,12 +32,9 @@ $$
 d(x,y)=\|x-y\|=\sqrt{\sum_{k=1}^m(x_k-y_k)^2}.
 $$
 
-It is called a norm because it satisfies the following properties:
 
-<details markdown="1">
-<summary><strong>Norm axioms</strong></summary>
+::: {.callout-tip title="Properties of norms, general definition" collapse="true"}
 
-::: {.callout-tip}
 A function $\lVert\cdot\rVert:\mathbb{R}^m\to\mathbb{R}$ is a **norm** if for all $x,y\in\mathbb{R}^m$ and $\alpha\in\mathbb{R}$:
 
 1. **Non-negativity:** $\|x\|\ge 0$.
@@ -53,13 +50,11 @@ There are different norms on $\mathbb{R}^m$ that have clear applications. Here a
 What do your think an alternative name is for the Euclidean norm?
 :::
 
-</details>
-
 
 ### Convergence in $\mathbb{R}^m$ {-}
 
 ::: {#def-conv-rm}
-**Definition (Convergence in $\mathbb{R}^m$).**  
+**(Convergence in $\mathbb{R}^m$).**  
 A sequence $\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m$ *converges* to $L\in \mathbb{R}^m$ if for each $\varepsilon>0$ there exists $N\in \mathbb{N}$ such that
 $$
 n\geq N \Rightarrow \Vert a_n-L\Vert\leq \varepsilon.
@@ -81,17 +76,15 @@ Then $a_n\to (1,0)$, because
 
 ::: {.callout-note title="Example" #ex-nonconv}
 Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by $$a_n:=\left(1+\tfrac{1}{n}, n\right).$$
-Then we see that the sequence of the first coordinates $\{a_{n,1}\}_{n\in \mathbb{N}}=\{1+\tfrac{1}{n}\}_{n\in \mathbb{N}}$ converges with limit $1$, whereas the sequence of second coordinates $\{a_{n,2}\}_{n\in \mathbb{N}} $ does not converge as $a_{n,2}\rightarrow \infty$ for $n\rightarrow\infty$. The sequence $\{a_n\}$ does not get close to a particular element of $\mathbb{R}^2$ for $n\rightarrow\infty$ , so we would intuitively say that it does not converge. In fact, for any fixed $L=(L_1,L_2)\in \mathbb{R}^2$,
+Then we see that the sequence of the first coordinates $\{a_{n,1}\}_{n\in \mathbb{N}}=\{1+\tfrac{1}{n}\}_{n\in \mathbb{N}}$ converges with limit $1$, whereas the sequence of second coordinates \({\{a_{n,2}\}}_{{n\in \mN}}\) does not converge as $a_{n,2}\rightarrow \infty$ for $n\rightarrow\infty$. The sequence $\{a_n\}$ does not get close to a particular element of $\mathbb{R}^2$ for $n\rightarrow\infty$ , so we would intuitively say that it does not converge. In fact, for any fixed $L=(L_1,L_2)\in \mathbb{R}^2$,
 $$
 \Vert a_n-L\Vert = \sqrt{(1-L_1+\tfrac{1}{n})^2+(n-L_2)^2}\rightarrow \infty.
 $$
 :::
 
-<details markdown="1">
-::: {.callout-tip}
+::: {.callout-tip title="A nice property of norms on $\mathbb{R}^m$" collapse="true"}
 A common property of all norms on $\mathbb{R}^m$ is that they have the same convergence properties. In the definition above you may exchange $\|\cdot\|$ for any norm. Interested? Figure out, or use the web. 
 :::
-</details>
 
 ### Coordinate-wise criterion {-}
 

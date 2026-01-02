@@ -2,12 +2,7 @@
 title: 'Sequences in $\mathbb{R}$ and convergence'
 ---
 
-Some quick numerical illustration:
 
-```{python}
-import numpy as np
-np.mean([1, 2, 3])
-```
 
 ## Definition of convergence {#sec-convergence-def}
 
@@ -43,13 +38,10 @@ $$
 |a_n-L|\leq \tfrac{2}{n}.
 $$
 If $\tfrac{2}{n}\leq\varepsilon$ then $|a_n-L|\leq \varepsilon$, which is guaranteed when
-$n\geq N:=\left\lceil\frac{2}{\varepsilon}\right\rceil$.[^ceil]
+$n\geq N:=\left\lceil\frac{2}{\varepsilon}\right\rceil$.[^1] 
+
+![Illustration of the limit in Example 1.](../figures/Figure7_conv_random.png){#fig-conv-random width=60%}
 :::
-
-[^ceil]: Here $\lceil\cdot\rceil$ denotes the ceiling function, $\lceil x\rceil:=\min \{k\in \mathbb{Z}: k\geq x\}$.
-
-![Illustration of the limit in Example 1.](figures/Figure7_conv_random.png){#fig-conv-random width=60%}
-
 
 
 ::: {.callout-note title="Example 2: geometric sequence" #ex-geoseries}
@@ -78,3 +70,27 @@ Consider the arithmetic sequence inductively defined, i.e. $a_1=A, a_n=a_{n-1}+K
 :::
 
 Arithmetic sequences also appear in finance. Whenever a cash flow, payment, or value changes by a constant amount per period—such as in stepwise contributions, fixed annual raises in income, or straight-line depreciation—the underlying quantities follow an arithmetic pattern.
+
+
+
+[^1]:Here $\lceil\cdot\rceil$ denotes the ceiling function, $\lceil x\rceil:=\min \{k\in \mathbb{Z}: k\geq x\}$.
+
+## Exercises {-}
+
+
+::: {#exr-sum}
+Show that $\sum_{k=1}^n k = \frac{n(n+1)}{2}$.
+:::
+
+As seen in @exr-sum, the formula can be proved by induction.
+
+
+
+::: {#exr-sum1}
+Show that $\sum_{k=1}^n k = \frac{n(n+1)}{2}$.
+:::
+
+As seen in @exr-sum1, the formula can be proved by induction.
+
+
+

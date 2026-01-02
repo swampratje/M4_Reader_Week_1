@@ -1,0 +1,51 @@
+---
+title: "Integral test"
+---
+
+
+::: {#thm-integral} 
+Let $f:[1,\infty)\to \mathbb{R}_+$ be a continuous non-increasing function with the property that
+$$
+\lim_{x\to\infty} f(x)=0.
+$$
+Define the sequence $\{a_n\}_{n=1}^\infty$ by $a_n=f(n)$. Then:
+
+(a) If $\displaystyle\int_1^\infty f(x)\,dx=\infty$, then $\displaystyle \sum_{n=1}^\infty a_n=\infty$.
+
+(b) If $\displaystyle\int_1^\infty f(x)\,dx=L<\infty$, then $\displaystyle \sum_{n=1}^\infty a_n$ is convergent.
+:::
+
+::: {.callout-tip title="Proof" collapse="true"}
+(a) Let $k\in\mathbb{N}$ and $x\in[k,k+1]$. Since $f$ is non-increasing, we have $a_k=f(k)\ge f(x)$, hence
+$$
+a_k \ge \int_k^{k+1} f(x)\,dx.
+$$
+Therefore,
+$$
+\sum_{k=1}^\infty a_k \ge \int_1^\infty f(x)\,dx=\infty.
+$$
+
+(b) Let $k\in\mathbb{N}$ and $x\in[k,k+1]$. Since $f$ is non-increasing, we have $f(x)\ge f(k+1)=a_{k+1}$, hence
+$$
+\int_k^{k+1} f(x)\,dx \ge a_{k+1}.
+$$
+Summing from $k=1$ to $n-1$ gives
+$$
+\int_1^{n} f(x)\,dx \ge \sum_{k=2}^{n} a_k.
+$$
+So for the partial sums $s_n=\sum_{k=1}^n a_k$,
+$$
+s_n = a_1 + \sum_{k=2}^n a_k \le a_1 + \int_1^{n} f(x)\,dx \le a_1 + \int_1^\infty f(x)\,dx.
+$$
+All terms $a_k$ are nonnegative, so $(s_n)$ is increasing, and the inequality above shows it is bounded. Hence $(s_n)$ converges, so $\sum_{n=1}^\infty a_n$ converges.
+:::
+
+A direct application is the following.
+
+::: {#thm-integral-pol} 
+The series $\displaystyle\sum_{n=1}^\infty \frac{1}{n^r}$ is convergent if and only if $r>1$.
+:::
+
+::: {.callout-tip title="Proof" collapse="true"}
+Try to prove it yourself. Calculate the integral $\displaystyle \int_1^\infty \frac{1}{x^r}\,dx$ and conclude.
+:::

@@ -31,3 +31,15 @@ h6 .header-section-number {
   display: none;
 }
 
+/* ===== Sidebar (left) ===== */
+#quarto-sidebar,
+#quarto-sidebar .sidebar {
+  background: #1b1f2a !important;   /* <-- your sidebar color */
+  color: #ffffff !important;
+}
+
+/* Sidebar links */
+#quarto-sidebar a,
+#quarto-sidebar a:visited {
+  color: rgba(255,255,255,0.9) !important;
+}

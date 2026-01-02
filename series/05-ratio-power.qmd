@@ -1,16 +1,19 @@
 ---
-title: "Ratio test and power series"
+title: "Ratio test"
 ---
-## The ratio test
+
 
 For many sequences it may be hard to know whether the corresponding series converge. Fortunately, there are several criteria that can help. Here we focus on the **ratio test**, which shows that a series can often be compared to a geometric series—whose convergence behavior we understand well.^[There are other tests. One you may have discovered in earlier exercises is the **integral test**. Another is **D’Alembert’s criterion**. For our purposes here, the ratio test suffices.]
 
 
-::: {#thm-ratio}
-**Theorem (Ratio test).**
+::: {#thm-ratio} 
+**(Ratio test)**
+
 Let $\{a_n\}$ be a sequence with $a_n\neq 0$ eventually.
-1. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$, then $\sum_{n=1}^\infty a_n$ converges (in fact absolutely).
-2. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1$ or the limit is $\infty$, then $\sum_{n=1}^\infty a_n$ diverges.
+
+1. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$, then $\displaystyle\sum_{n=1}^\infty a_n$ converges (in fact absolutely).
+2. If $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1$ or the limit is $\infty$, then $\displaystyle\sum_{n=1}^\infty a_n$ diverges.
+
 :::
 
 ::: {.callout-tip title="Proof" collapse="true"}
@@ -56,36 +59,4 @@ $|a_n|$ cannot tend to $0$, so $a_n\nrightarrow 0$. By the term test for diverge
 
 :::
 
-
-## Power series and convergence
-
-A **power series** has the form
-$$
-\sum_{n=0}^\infty a_n x^n.
-$$
-
-Example:
-$$
-\sum_{n=0}^\infty \frac{x^n}{n!}
-$$
-converges for every $x\in\mathbb{R}$ (ratio test gives limit $0$).
-
-### Convergence interval
-
-::: {#thm-interval}
-**Theorem (Convergence propagates inward).**
-For a power series $\sum_{n=0}^\infty c_n x^n$:
-1. If it converges at $x=b\neq 0$, then it converges for all $|x|<|b|$.
-2. If it diverges at $x=b$, then it diverges for all $|x|>|b|$.
-:::
-
-### Radius of convergence
-
-::: {#thm-radius}
-**Theorem (Radius of convergence).**
-For $\sum_{n=0}^\infty c_n (x-a)^n$, exactly one holds:
-1. it converges only at $x=a$;
-2. it converges for all $x$;
-3. there exists $R>0$ such that it converges if $|x-a|<R$ and diverges if $|x-a|>R$.
-The number $R$ is the **radius of convergence**.
-:::
+Some examples here!

@@ -12,14 +12,16 @@ Let $f,g:\mathbb{R}\to\mathbb{R}$ be differentiable.
   f(a)=g(a)\quad\text{and}\quad f'(a)=g'(a).
   $$
 
-### Example: intersecting vs tangent {#sec-tangent-example}
+
+::: {.callout-note title="Example"}
 
 Consider $f(x)=2-e^{x-1}$.  
 
 - The graph of $g_0(x)=1$ merely intersects $f$ at $x=1$, because $f(1)=g_0(1)=1$.
 - The graph of $g_1(x)=2-x$ is tangent to $f$ at $x=1$, because $f(1)=g_1(1)=1$ and $f'(1)=g_1'(1)=-1$.
 
-![Tangency example.](../figures/Taylor_approx.png){#fig-taylor-approx width=70%}
+![Tangency example.](../figures/Taylor_approx.png){#fig-taylor-approx width=90%}
+:::
 
 ## Higher-order tangency {#sec-higher-tangency}
 
@@ -73,7 +75,7 @@ $$
 makes $p$ tangent to $f$ at $a$ to order $n$.
 
 ::: {#def-taylor-poly}
-**Definition (Taylor polynomial).**  
+**(Taylor polynomial)**  
 Let $I\subset\mathbb{R}$ be a nonempty open interval and let $f:I\to\mathbb{R}$ be $n$ times continuously differentiable.
 For $a\in I$, the polynomial
 $$

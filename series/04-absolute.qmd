@@ -1,12 +1,27 @@
 ---
 title: "Absolute convergence"
 ---
-We call $\sum_{n=1}^\infty a_n$ **absolutely convergent** if $\sum_{n=1}^\infty |a_n|$ converges.
+We call $\displaystyle\sum_{n=1}^\infty a_n$ *absolutely convergent* if $\displaystyle\sum_{n=1}^\infty |a_n|$ converges.
 
 ::: {#thm-abs}
-**Theorem (Absolute convergence implies convergence).**
-If $\sum_{n=1}^\infty |a_n|$ converges, then $\sum_{n=1}^\infty a_n$ converges.
+**(Absolute convergence implies convergence).**
+
+If $\displaystyle\sum_{n=1}^\infty |a_n|$ converges, then $\displaystyle\sum_{n=1}^\infty a_n$ converges.
 :::
+
+
+
+::: {.callout-tip title="Proof" collapse="true"}
+Consider the sequence $\{a_n\}_{n\in \mathbb{N}}$. Suppose it is absolutely convergent, and
+$$\sum_{n=1}^\infty |a_n|=S.$$
+Then $\displaystyle\sum_{n=1}^\infty 2 a_n$ is convergent with sum $2S$. Now consider the sequence $\{b_n\}_{n\in \mathbb{N}}$ where $b_n=a_n+|a_n|$ for all $n$. We have that
+$$0\leq b_n \leq 2|a_n|.$$
+For the partial sums we see that $\displaystyle\sum_{n=1}^k b_n$ is non-decreasing in $k$ by nonnegativity of the elements $b_n$. Also $\displaystyle\sum_{n=1}^k b_n\leq 2S.$ Then by the Monotonic Convergence Theorem we conclude that the partial sums of $b_n$ must converge, and that $\displaystyle\sum_{n=1}^\infty b_n$ exists. Now realize that
+$$\sum_{n=1}^ka_n = \sum_{n=1}^k b_k -\sum_{n=1}^k |a_n|$$ and that the right-hand partial sums both converge, so that the left-hand partial sums must also converge. 
+:::
+
+We cannot simply reverse the theorem. If a sequence is *convergent*, it does not mean that it is *absolutely convergent*. This is a very common misconception (!). See the example below.
+
 
 ::: {.callout-note title="Example: convergent but not absolutely"}
 The alternating harmonic series
@@ -19,5 +34,5 @@ $$
 =
 \sum_{n=1}^\infty \frac{1}{n}
 $$
-diverges. So it is **conditionally convergent**.
+diverges. So it is not absolutely convergent. Such series are called *conditionally convergent*.
 :::

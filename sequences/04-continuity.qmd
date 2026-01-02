@@ -3,13 +3,12 @@ title: 'Sequences and continuity'
 ---
 
 ## Continuity {-} 
-%{#sec-continuity}
 
 Using functions $f:\mathbb{R}\rightarrow \mathbb{R}$ it is easy to generate a new sequence $\{b_n\}_{n\in \mathbb{N}}$ from a given sequence $\{a_n\}_{n\in\mathbb{N}}$ by applying $f$ to each element:
 $$
 b_n:=f(a_n).
 $$
-Below we focus on continuous $f$.
+Below we focus on continuous $f$. First we will repeat what that actually means.
 
 ::: {.callout-note title="Continuity (definition)"}
 Consider a function $f:I\rightarrow \mathbb{R}$, where $I\subset \mathbb{R}$ is an open interval, and take $a\in I$. Then $f$ is *continuous at* $a$ if
@@ -34,8 +33,7 @@ f(a_n)\to f(a).
 $$
 :::
 
-<details>
-<summary><b>Proof</b></summary>
+::: {.callout-tip title="Proof" collapse="true"}
 
 ($\Rightarrow$) If $f$ is continuous at $a$, then for each $\varepsilon>0$ there exists $\delta>0$ such that
 $|x-a|\le\delta\Rightarrow |f(x)-f(a)|\le\varepsilon$.
@@ -43,7 +41,7 @@ If $a_n\to a$, then for some $N$ we have $n\ge N\Rightarrow |a_n-a|\le\delta$, h
 
 ($\Leftarrow$) Suppose the sequential condition holds but $f$ is not continuous at $a$. Then there exists $\varepsilon>0$ such that for every $n$ there exists $b_n\in (a-\tfrac1n,a+\tfrac1n)$ with $|f(b_n)-f(a)|>\varepsilon$. Then $b_n\to a$ but $f(b_n)\not\to f(a)$, contradiction.
 
-</details>
+:::
 
 A standard consequence: if $a_n\to a$ and $f$ is continuous at $a$, then $f(a_n)\to f(a)$. For example:
 $$

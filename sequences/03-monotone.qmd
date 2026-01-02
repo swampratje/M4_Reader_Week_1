@@ -18,8 +18,8 @@ $$
 $$
 :::
 
-::: {#sec-mct}
-**Theorem (Monotonic Convergence Theorem).**  
+::: {#thm-mct}
+**(Monotonic Convergence Theorem).**  
 Suppose $\{a_n\}_{n\in \mathbb{N}}$ is bounded and monotonic. Then the limit
 $$
 L=\lim_{n\rightarrow \infty}a_n
@@ -27,8 +27,7 @@ $$
 exists.
 :::
 
-<details>
-<summary><b>Proof (increasing case)</b></summary>
+::: {.callout-tip title="Proof (increasing case)" collapse="true"}
 
 Assume $\{a_n\}$ is monotonically increasing and bounded. Then
 $$
@@ -36,11 +35,11 @@ L=\sup\{a_n\mid n\in\mathbb{N}\}
 $$
 exists. Take $\varepsilon>0$. Since $L$ is the least upper bound, $L-\varepsilon$ is not an upper bound, so there exists $N$ with
 $L-\varepsilon < a_N \le L$. Because the sequence is increasing, for all $n\ge N$ we have
-$L-\varepsilon < a_n \le L$, hence $|a_n-L|<\varepsilon$.
+$L-\varepsilon < a_N\le a_n \le L$, hence $|a_n-L|<\varepsilon$.
 
 A proof for decreasing sequences is similar (use the infimum).
 
-</details>
+:::
 
 ::: {.callout-note title="Worked example: an iteratively defined sequence"}
 Consider the sequence defined by
@@ -61,7 +60,7 @@ so $P(k+1)$ holds.
 
 *Bounded.* One can show $a_n\le 3$ for all $n$ (and all terms stay positive).
 
-By the Monotonic Convergence Theorem, $L=\lim_{n\to\infty}a_n$ exists. Compute:
+By the *Monotonic Convergence Theorem*, $L=\lim_{n\to\infty}a_n$ exists. Compute:
 $$
 L=\lim_{n\rightarrow\infty}a_{n+1}
 =\lim_{n\rightarrow \infty}\left(3-\frac{1}{a_n}\right)

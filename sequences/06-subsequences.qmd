@@ -19,14 +19,13 @@ Let $a_n=(-1)^n$. Then $f(n)=2n$ defines the constant subsequence $b_n=a_{f(n)}=
 Let $\{x_n\}$ be a bounded sequence in $\mathbb{R}^m$. Then it has a convergent subsequence.
 :::
 
-<details>
-<summary><b>Proof (sketch)</b></summary>
+::: {.callout-tip title="Proof."}
 
 For $m=1$: put all points in an interval $[a_0,b_0]$. Bisect repeatedly and keep a subinterval that contains infinitely many points. This yields nested intervals with lengths going to zero. Pick one sequence element from each interval with increasing indices; by squeezing, the subsequence converges.
 
 For general $m$: apply the one-dimensional result to coordinates iteratively and use a diagonal subsequence so that all coordinates converge.
 
-</details>
+:::
 
 ::: {.callout-note title="Example: bounded but not convergent; has convergent subsequence"}
 The sequence $(-1)^n$ does not converge, but it is bounded and has convergent subsequences, e.g. $a_{2n}=1$.
