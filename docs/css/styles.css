@@ -26,20 +26,55 @@ h6 .header-section-number {
   display: none;
 }
 
-/* 3) In the left sidebar: hide numbers for items whose level contains a dot (e.g. 1.1, 2.3.4) */
+/* Hide numbers for dotted levels (sections like 1.1, 2.3.4) */
 #quarto-sidebar .sidebar-item[data-level*="."] .chapter-number {
   display: none;
 }
 
-/* ===== Sidebar (left) ===== */
+/* ===== LEFT SIDEBAR: blue bg, chapters grey, sections white ===== */
+
+/* Sidebar background */
 #quarto-sidebar,
-#quarto-sidebar .sidebar {
-  background: #1b1f2a !important;   /* <-- your sidebar color */
-  color: #ffffff !important;
+#quarto-sidebar .sidebar,
+#quarto-sidebar .sidebar-content {
+  background: #0b3d91 !important;   /* blue */
 }
 
-/* Sidebar links */
+/* Default link styling (sections will end up white) */
 #quarto-sidebar a,
-#quarto-sidebar a:visited {
-  color: rgba(255,255,255,0.9) !important;
+#quarto-sidebar a:visited,
+#quarto-sidebar .sidebar-item-text {
+  color: rgba(255,255,255,0.92) !important;  /* white-ish */
+  font-weight: 500 !important;
+}
+
+/* Top-level chapters (no dot in data-level): make GREY */
+#quarto-sidebar .sidebar-item[data-level]:not([data-level*="."]) > .sidebar-item-container > a,
+#quarto-sidebar .sidebar-item[data-level]:not([data-level*="."]) > .sidebar-item-container > a .sidebar-item-text {
+  color: rgba(255,255,255,0.70) !important;  /* grey */
+  font-weight: 650 !important;
+}
+
+/* Nested sections (has dot): force WHITE */
+#quarto-sidebar .sidebar-item[data-level*="."] > .sidebar-item-container > a,
+#quarto-sidebar .sidebar-item[data-level*="."] > .sidebar-item-container > a .sidebar-item-text {
+  color: rgba(255,255,255,0.95) !important;
+  font-weight: 500 !important;
+}
+
+/* Optional: active item highlight */
+#quarto-sidebar .sidebar-item-container .active,
+#quarto-sidebar .sidebar-item-container .active a {
+  background: rgba(255,255,255,0.10) !important;
+  border-radius: 10px;
+}
+
+/* Sidebar non-list text (title/brand/search labels): grey */
+#quarto-sidebar .sidebar-title,
+#quarto-sidebar .sidebar-brand,
+#quarto-sidebar .sidebar-header,
+#quarto-sidebar .sidebar-tools,
+#quarto-sidebar .sidebar-search {
+  color: rgba(255,255,255,0.70) !important;
+  font-weight: 650 !important;
 }
