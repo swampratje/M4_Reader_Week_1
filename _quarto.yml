@@ -55,7 +55,15 @@ format:
     toc: true
     number-sections: true
     number-depth: 1
-    theme: cosmo
+
+    # 👇 add dark mode support + toggle
+    theme:
+      light: cosmo
+      dark: darkly
+
+    # optional: default follows the visitor’s OS/browser preference
+    respect-user-color-scheme: true
+
 
   pdf:
     include-in-header:
