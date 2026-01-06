@@ -78,3 +78,79 @@ h6 .header-section-number {
   color: rgba(255,255,255,0.70) !important;
   font-weight: 650 !important;
 }
+
+/* Theorem box: light body */
+.theorem{
+  background: #f1f1f1;          
+  border-left: 5px solid #1b1f2a;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+/* Theorem heading = first line/paragraph inside the block */
+.theorem:not(.exercise) > p:first-child{
+  background: #6f83c6;          /* dark header */
+  color: #fffffe;              /* white header text */
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+
+  /* make it span the full width of the box */
+  margin: -1rem -1.25rem 0.9rem -1.25rem;
+
+  /* round only the top corners */
+  border-radius: 6px 6px 0 0;
+}
+
+/* Ensure bold in the header stays white */
+.theorem > p:first-child strong{
+  color: inherit;
+}
+
+
+/* Quarto exercise blocks (light grey) */
+.exercise{
+  background: #ffffff;                          /* white */
+  border-left: 6px solid rgba(170,170,170,0.60);/* light grey */
+  border-radius: 0;                             /* straight corners */
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+/* --- Theorem: straight left bracket in SAME color as theorem name --- */
+
+/* pick the color once */
+:root{
+  --thm-accent: #ffffff;   /* same as your header text now */
+}
+
+/* remove the old left border + rounding */
+.theorem{
+  border-left: 0 !important;
+  border-radius: 0 !important;   /* straight corners */
+}
+
+/* header gets the straight left bracket */
+.theorem:not(.exercise) > p:first-child{
+  border-left: 0px solid var(--thm-accent);
+  border-radius: 0 !important;   /* keep it straight */
+  color: var(--thm-accent) !important;
+}
+
+/* Definition header color (override theorem header) */
+:root{
+  --def-head-bg: #7283a7;  /* <-- pick your new header color */
+  --def-head-fg: #f2f2f2;
+}
+
+/* Quarto sometimes uses p:first-child, sometimes .theorem-title */
+.theorem.definition > p:first-child,
+.theorem.definition .theorem-title{
+  background: var(--def-head-bg) !important;
+  color: var(--def-head-fg) !important;
+}
+
+/* If you use the “straight left bracket” on the header */
+.theorem.definition > p:first-child{
+  border-left-color: var(--def-head-fg) !important;
+}
