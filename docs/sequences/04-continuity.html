@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Sequences and continuity – Reader Week 1</title>
+<title>4&nbsp; Sequences and continuity – Reader Week 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -48,11 +47,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -115,10 +114,10 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/styles1.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -293,43 +292,40 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Reader Week 1</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/04-continuity.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/04-continuity.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Reader Week 1</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reader Week 1</span></span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -344,31 +340,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sequences/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Motivation and basic definitions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Motivation and basic definitions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sequences/02-convergence-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span> and convergence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sequences/03-monotone.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monotonic convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Monotonic convergence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sequences/04-continuity.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sequences/05-Rm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}^m\)</span></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}^m\)</span></span></span></a>
   </div>
 </li>
       </ul>
@@ -385,37 +381,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Series</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/02-basic-properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series and convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series and convergence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/03-alternating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alternating series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alternating series</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/04-absolute.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Absolute convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Absolute convergence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/05-ratio-power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ratio test</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../series/06-integral-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Integral test</span></span></a>
   </div>
 </li>
       </ul>
@@ -432,7 +428,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../power_series/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Power series and convergence</span></span></a>
   </div>
 </li>
       </ul>
@@ -449,31 +445,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Polynomials and approximation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/02-tangency-taylor-polynomials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Tangency and Taylor polynomials</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Tangency and Taylor polynomials</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/03-taylor-theorem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Taylor’s Theorem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Taylor’s Theorem</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/04-applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Applications</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../taylor/05-taylor-series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Taylor series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Taylor series</span></span></a>
   </div>
 </li>
       </ul>
@@ -497,9 +493,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/04-continuity.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/01-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/04-continuity.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequences and continuity</span></h1>
 </div>
 
 
@@ -521,34 +517,24 @@ window.Quarto = {
 <p>Using functions <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> it is easy to generate a new sequence <span class="math inline">\(\{b_n\}_{n\in \mathbb{N}}\)</span> from a given sequence <span class="math inline">\(\{a_n\}_{n\in\mathbb{N}}\)</span> by applying <span class="math inline">\(f\)</span> to each element: <span class="math display">\[
 b_n:=f(a_n).
 \]</span> Below we focus on continuous <span class="math inline">\(f\)</span>. First we will repeat what that actually means.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Continuity (definition)">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Continuity (definition)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider a function <span class="math inline">\(f:I\rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(I\subset \mathbb{R}\)</span> is an open interval, and take <span class="math inline">\(a\in I\)</span>. Then <span class="math inline">\(f\)</span> is <em>continuous at</em> <span class="math inline">\(a\)</span> if <span class="math display">\[
+<div id="def-cont" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.1 (Continuity)</strong></span> Consider a function <span class="math inline">\(f:I\rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(I\subset \mathbb{R}\)</span> is an open interval, and take <span class="math inline">\(a\in I\)</span>. Then <span class="math inline">\(f\)</span> is <em>continuous at</em> <span class="math inline">\(a\)</span> if <span class="math display">\[
 \lim_{x\rightarrow a}f(x)=f(a).
 \]</span> Equivalently: for each <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math display">\[
 x\in I,\ |x-a|\leq \delta\Rightarrow |f(x)-f(a)|\leq \varepsilon.
 \]</span> The function <span class="math inline">\(f\)</span> is <em>continuous on <span class="math inline">\(I\)</span></em> if it is continuous at every <span class="math inline">\(a\in I\)</span>.</p>
 </div>
-</div>
 </section>
 <section id="continuity-and-row-continuity" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="continuity-and-row-continuity">Continuity and row continuity</h2>
 <div id="thm-seqcont" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5.1</strong></span> <strong>(Characterization of continuity in terms of sequences).</strong><br>
-Let <span class="math inline">\(f:I\rightarrow \mathbb{R}\)</span> with <span class="math inline">\(I\subset\mathbb{R}\)</span> open. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\in I\)</span> <strong>iff</strong> for each sequence <span class="math inline">\(\{a_n\}\subset I\)</span> with <span class="math inline">\(a_n\to a\)</span> we have <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 4.1</strong></span> <span class="math inline">\(\sim\)</span> Characterization of continuity in terms of sequences</p>
+<p>Let <span class="math inline">\(f:I\rightarrow \mathbb{R}\)</span> with <span class="math inline">\(I\subset\mathbb{R}\)</span> open. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\in I\)</span> <strong>iff</strong> for each sequence <span class="math inline">\(\{a_n\}\subset I\)</span> with <span class="math inline">\(a_n\to a\)</span> we have <span class="math display">\[
 f(a_n)\to f(a).
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -557,7 +543,7 @@ f(a_n)\to f(a).
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>, then for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-a|\le\delta\Rightarrow |f(x)-f(a)|\le\varepsilon\)</span>. If <span class="math inline">\(a_n\to a\)</span>, then for some <span class="math inline">\(N\)</span> we have <span class="math inline">\(n\ge N\Rightarrow |a_n-a|\le\delta\)</span>, hence <span class="math inline">\(|f(a_n)-f(a)|\le\varepsilon\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose the sequential condition holds but <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\(a\)</span>. Then there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that for every <span class="math inline">\(n\)</span> there exists <span class="math inline">\(b_n\in (a-\tfrac1n,a+\tfrac1n)\)</span> with <span class="math inline">\(|f(b_n)-f(a)|&gt;\varepsilon\)</span>. Then <span class="math inline">\(b_n\to a\)</span> but <span class="math inline">\(f(b_n)\not\to f(a)\)</span>, contradiction.</p>
@@ -1002,12 +988,12 @@ f(a_n)\to f(a).
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../sequences/03-monotone.html" class="pagination-link" aria-label="Monotonic convergence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monotonic convergence</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Monotonic convergence</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../sequences/05-Rm.html" class="pagination-link" aria-label="Sequences in $\mathbb{R}^m$">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}^m\)</span></span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}^m\)</span></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

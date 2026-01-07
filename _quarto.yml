@@ -1,10 +1,13 @@
 project:
   type: book
   output-dir: docs
-
+  
 book:
   title: "Reader Week 1"
   author: "Maurice Koster"
+  navbar:
+    pinned: true
+    search: true
   page-navigation: true
   chapters:
     - index.qmd
@@ -51,7 +54,7 @@ format:
           };
         </script>
     include-after-body: _includes/footer.html
-    css: css/styles.css
+    css: css/styles1.css
     toc: true
     number-sections: true
     number-depth: 1
