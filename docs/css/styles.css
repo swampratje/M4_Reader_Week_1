@@ -460,3 +460,45 @@ body.quarto-dark{
 .theorem.example .theorem-title + p{
   margin-top: 0 !important;
 }
+
+
+/* ============================================================
+   FINAL OVERRIDE: header = theorem-title only, never p:first-child
+   ============================================================ */
+
+/* Never paint the whole first paragraph (it may contain the body) */
+.theorem:not(.exercise) > p:first-child{
+  background: transparent !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  padding: 0 !important;
+  margin: 0 0 .9rem 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Paint ONLY the title span as the header bar */
+.theorem:not(.exercise) > p:first-child > .theorem-title{
+  display: block !important;
+  background: var(--thm-head-bg) !important;
+  color: var(--thm-head-fg) !important;
+  font-weight: 700 !important;
+
+  padding: var(--thm-head-pad-y, .32rem) var(--thm-head-pad-x, 1rem) !important;
+  line-height: var(--thm-head-line, 1.15) !important;
+
+  margin: -1rem -1.25rem .55rem -1.25rem !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+
+/* Force body onto a new line even if title+text share the same <p> */
+.theorem:not(.exercise) > p:first-child > .theorem-title::after{
+  content: "";
+  display: block;
+  height: .35rem;
+}
+
+/* Definition colors */
+.theorem.definition > p:first-child > .theorem-title{
+  background: var(--def-head-bg) !important;
+  color: var(--def-head-fg) !important;
+}
