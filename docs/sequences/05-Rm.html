@@ -586,14 +586,12 @@ d(x,y)=\|x-y\|=\sqrt{\sum_{k=1}^m(x_k-y_k)^2}.
 </div>
 <section id="convergence-in-mathbbrm" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="convergence-in-mathbbrm">Convergence in <span class="math inline">\(\mathbb{R}^m\)</span></h3>
-<p>The intuition of converging sequences in <span class="math inline">\(\mathbb{R}^m\)</span> is similar to that for sequences in <span class="math inline">\(\mathbb{R}\)</span>, except that now you need to specify distance in a different way. Usually we take the Euclidean norm for that.</p>
-<div id="def-conv-rm" class="definition theorem">
-<p><span class="theorem-title"><strong>Definition 6.1</strong></span> <strong>(Convergence in <span class="math inline">\(\mathbb{R}^m\)</span>).</strong></p>
-<p>A sequence <span class="math inline">\(\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m\)</span> <em>converges</em> to <span class="math inline">\(L\in \mathbb{R}^m\)</span> if for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N\in \mathbb{N}\)</span> such that <span class="math display">\[
-n\ge N \Rightarrow \lVert a_n-L\rVert \le \varepsilon.
+<div id="def-conv-rm" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6.1</strong></span> <strong>(Convergence in <span class="math inline">\(\mathbb{R}^m\)</span>).</strong><br>
+A sequence <span class="math inline">\(\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m\)</span> <em>converges</em> to <span class="math inline">\(L\in \mathbb{R}^m\)</span> if for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N\in \mathbb{N}\)</span> such that <span class="math display">\[
+n\geq N \Rightarrow \Vert a_n-L\Vert\leq \varepsilon.
 \]</span></p>
 </div>
-<p>So a sequence has a limit <span class="math inline">\(L\in\mathbb{R}^m\)</span> if its elements get arbitrarily close to <span class="math inline">\(L\)</span>, where the distance is measured by the length of the difference <em>vector</em>, <span class="math inline">\(a_n-L\)</span>.</p>
 <div id="ex-conv" class="callout callout-style-default callout-note callout-titled" title="Example">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -649,8 +647,8 @@ a_n:=\left(1+\tfrac{1}{n}, \tfrac{1}{n}\right).
 <h3 class="unnumbered anchored" data-anchor-id="coordinate-wise-criterion">Coordinate-wise criterion</h3>
 <p>In our previous example, what went wrong with respect to convergence is that in one coordinate the values of the vectors did not converge. It is easily seen that a sequence of vectors can only converge only if all coordinates of these vectors converge. It will also be sufficient. We have the following:</p>
 <div id="thm-coord" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6.1</strong></span> <strong>Theorem (Coordinate-wise convergence criterion).</strong></p>
-<p>The sequence <span class="math inline">\(\{a_n\}\subset \mathbb{R}^m\)</span> converges to <span class="math inline">\(L\)</span> <strong>iff</strong> for <span class="math inline">\(k=1,2,\ldots,m\)</span>, <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 6.1</strong></span> <strong>Theorem (Coordinate-wise convergence criterion).</strong><br>
+The sequence <span class="math inline">\(\{a_n\}\subset \mathbb{R}^m\)</span> converges to <span class="math inline">\(L\)</span> <strong>iff</strong> for <span class="math inline">\(k=1,2,\ldots,m\)</span>, <span class="math display">\[
 \lim_{n\rightarrow \infty}a_{n,k}=L_k.
 \]</span></p>
 </div>
@@ -712,8 +710,8 @@ b_n=a_{f(n)}=1.
 <h3 class="unnumbered anchored" data-anchor-id="theorem-of-bolzanoweierstrass">Theorem of Bolzano–Weierstrass</h3>
 <p>The following theorem will be important in numerous applications in proofs in the second part of the course. You will also encounter it in the second reader, only then confined to a slightly different setting.</p>
 <div id="thm-bw" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6.2</strong></span> <strong>Theorem (Bolzano–Weierstrass).</strong></p>
-<p>Let <span class="math inline">\(\{x_n\}\)</span> be a bounded sequence in <span class="math inline">\(\mathbb{R}^m\)</span>. Then it has a convergent subsequence.</p>
+<p><span class="theorem-title"><strong>Theorem 6.2</strong></span> <strong>Theorem (Bolzano–Weierstrass).</strong><br>
+Let <span class="math inline">\(\{x_n\}\)</span> be a bounded sequence in <span class="math inline">\(\mathbb{R}^m\)</span>. Then it has a convergent subsequence.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proof">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">

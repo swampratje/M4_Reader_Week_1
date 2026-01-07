@@ -154,35 +154,3 @@ h6 .header-section-number {
 .theorem.definition > p:first-child{
   border-left-color: var(--def-head-fg) !important;
 }
-
-/* =========================
-   Dark mode: readable theorem body
-   ========================= */
-
-/* Make the BODY text dark when the block background is light */
-.quarto-dark .theorem{
-  color: #111 !important;          /* body text */
-  background: #f1f1f1 !important;  /* keep your light body */
-}
-
-/* Exercises too (your exercise background is white) */
-.quarto-dark .exercise{
-  color: #111 !important;
-  background: #ffffff !important;
-}
-
-/* Keep the header text white (so it doesn't get overridden by the body rule) */
-.quarto-dark .theorem:not(.exercise) > p:first-child{
-  color: var(--thm-accent) !important;  /* you set --thm-accent: #ffffff */
-}
-
-/* If Quarto inserts a title element instead of p:first-child in some formats */
-.quarto-dark .theorem:not(.exercise) .theorem-title{
-  color: var(--thm-accent) !important;
-}
-
-/* Optional: links inside theorem/exercise blocks in dark mode */
-.quarto-dark .theorem a,
-.quarto-dark .exercise a{
-  color: #433181 !important;
-}
