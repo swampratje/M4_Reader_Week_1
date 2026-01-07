@@ -54,7 +54,7 @@ format:
           };
         </script>
     include-after-body: _includes/footer.html
-    css: css/styles-v4.css
+    css: css/styles.css
     toc: true
     number-sections: true
     number-depth: 1
