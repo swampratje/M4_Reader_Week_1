@@ -4,14 +4,18 @@ title: 'Monotonic convergence'
 
 In this chapter we examine two qualitative properties that are very useful to show convergence: **boundedness** and **monotonicity**. Many times we do not have a closed formula for the sequence (or it is hard to obtain), but these qualitative tools still let us prove convergence.
 
-::: {.callout-note title="Monotonicity"}
+::: {#def-monot}
+## Monotonicity
+
 A sequence $\{a_n\}_{n\in \mathbb{N}}$ is *monotonic* if either:
 
 - $a_{n}\geq a_{n+1}$ for all $n$ (monotonically decreasing), or
 - $a_{n+1}\geq a_n$ for all $n$ (monotonically increasing).
 :::
 
-::: {.callout-note title="Boundedness"}
+::: {#def-bounded}
+## Boundedness
+
 A sequence $\{a_n\}_{n\in \mathbb{N}}$ is *bounded* if there is a constant $M>0$ such that
 $$
 -M\leq a_n\leq M \quad \text{for all } n.
@@ -19,7 +23,8 @@ $$
 :::
 
 ::: {#thm-mct}
-**(Monotonic Convergence Theorem).**  
+## Monotonic Convergence Theorem
+
 Suppose $\{a_n\}_{n\in \mathbb{N}}$ is bounded and monotonic. Then the limit
 $$
 L=\lim_{n\rightarrow \infty}a_n
@@ -41,7 +46,9 @@ A proof for decreasing sequences is similar (use the infimum).
 
 :::
 
-::: {.callout-note title="Worked example: an iteratively defined sequence"}
+::: {#exm-iterseq}
+## An iteratively defined sequence
+
 Consider the sequence defined by
 $$
 a_1=1,\qquad a_{n+1} =3-\frac{1}{a_n}.

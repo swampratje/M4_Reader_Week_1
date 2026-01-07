@@ -2,9 +2,7 @@
 title: "Motivation and basic definitions"
 ---
 
-## Motivation {-}
-
-$\mN$ Sequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.
+Sequences are basic mathematical constructs over the natural numbers, and indispensable in numerous areas of science. They are not just a mathematical concept: they are an integral tool in the realm of science. In fact, examples of sequences and series abound in real-life scenarios, illustrating their practical relevance.
 
 Consider the simple act of measuring the temperature in your garden on a daily basis. You are then actually generating a sequence (a time series) of temperature readings.
 
@@ -40,7 +38,8 @@ Re-labelling is not really necessary: you could start numbering at $n=2$, so tha
 
 [^stewart]: This is the reason that sequences are sometimes denoted $\{a_n\}$ if there is common ground about the indices. In this case we could have known that $\{a_n\}=\{a_n\}_{n=2}^\infty$. For example, this approach is used in Stewart, Chapter 11 on sequences and series.
 
-::: {.callout-note title="Examples"}
+::: {#exm-seq}
+
 - A trivial example of a sequence in $\mathbb{N}$ is the mapping $f(n)=n$.
 - The sequence of all even numbers can be associated with the mapping $f(n)=2n$.
 - The sequence of all odd numbers can be associated with the mapping $f(n)=2n+1$.

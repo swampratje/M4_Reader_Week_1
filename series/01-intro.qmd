@@ -14,7 +14,9 @@ S=\lim_{n\to\infty} s_n
 $$
 exists, then the series **converges** and $S$ is called its **sum**.
 
-::: {.callout-note title="Example: geometric series"}
+::: {#exm-geomseries}
+## Geometric series
+
 Let $r\in\mathbb{R}$ and consider $\{r^n\}_{n=0}^\infty$. The partial sums satisfy
 $$
 s_n=\sum_{k=0}^n r^k=\frac{1-r^{n+1}}{1-r}\quad (r\neq 1).
@@ -29,7 +31,8 @@ $$
 $$
 :::
 
-::: {.callout-note title="Example: harmonic series"}
+::: {#exm-harmseries}
+## Harmonic series
 
 
 Consider the **harmonic series**

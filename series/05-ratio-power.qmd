@@ -7,7 +7,8 @@ For many sequences it may be hard to know whether the corresponding series conve
 
 
 ::: {#thm-ratio} 
-**(Ratio test)**
+
+## Ratio test
 
 Let $\{a_n\}$ be a sequence with $a_n\neq 0$ eventually.
 

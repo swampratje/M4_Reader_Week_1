@@ -76,7 +76,7 @@ For small $n$:
 In general:
 
 ::: {#thm-binomial}
-**Theorem (Binomial formula).**  
+## Binomial formula
 For $x,a\in\mathbb{R}$ and $n\in\mathbb{N}$,
 \begin{align*}
 (x+a)^n
@@ -91,9 +91,8 @@ $$
 
 The binomial coefficient $\binom{n}{k}$ counts the number of ways to select $k$ objects from $n$ when order does not matter—matching the idea that expanding $(x+a)^n$ corresponds to choosing $a$ from exactly $k$ of the $n$ factors.
 
-### Proof via Taylor’s theorem {#sec-binomial-proof}
-
-**Proof.**  
+::: {.callout-tip collapse="true" title="Proof via Taylor's Theorem"}
+ 
 Let $f(x)=(x+a)^n$. Then
 $$
 f^{(k)}(x)=\frac{n!}{(n-k)!}(x+a)^{n-k},
@@ -113,3 +112,4 @@ T_n(x)
 &=\sum_{k=0}^n\binom{n}{k}a^{n-k}x^k.
 \end{align*}
 Since $f^{(n+1)}\equiv 0$, Taylor’s Theorem gives $R_n(x)=0$ and hence $f(x)=T_n(x)$, which is exactly the binomial formula. $\square$
+:::

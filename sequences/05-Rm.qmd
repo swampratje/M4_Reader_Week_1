@@ -6,7 +6,7 @@ title: 'Sequences in $\mathbb{R}^m$'
 A sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^m$ consists of elements $a_n\in \mathbb{R}^m$. So instead of considering numbers only, we now look at $m$-tuples of numbers. 
 
 
-::: {.callout-note title="Example"}
+::: {#exm-seq}
 Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by
 $$
 a_n:=(\cos(n),\sin(n)).
@@ -52,16 +52,20 @@ What do your think an alternative name is for the Euclidean norm?
 
 
 ### Convergence in $\mathbb{R}^m$ {-}
+The notion of converging sequences in $\mR$ is easily extended to sequences in $\mR^m$. Now, a converging sequence in $\mR^m$ *closes in* on some vector $L\in\mR^m$. This means that by picking high enough indices, the distance between the corresponding row elements and $L$ become arbitrary small. We will measure the distance between vectors by the *Euclidean norm* $\Vert\cdot \Vert$. Formally,
+
 
 ::: {#def-conv-rm}
-**(Convergence in $\mathbb{R}^m$).**  
+## Convergence in $\mathbb{R}^m$
+
 A sequence $\{a_n\}_{n\in \mathbb{N}}\subset\mathbb{R}^m$ *converges* to $L\in \mathbb{R}^m$ if for each $\varepsilon>0$ there exists $N\in \mathbb{N}$ such that
 $$
 n\geq N \Rightarrow \Vert a_n-L\Vert\leq \varepsilon.
 $$
 :::
 
-::: {.callout-note title="Example" #ex-conv}
+::: {#exm-conv}
+
 Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by
 $$
 a_n:=\left(1+\tfrac{1}{n}, \tfrac{1}{n}\right).
@@ -74,7 +78,7 @@ Then $a_n\to (1,0)$, because
 \end{align*}
 :::
 
-::: {.callout-note title="Example" #ex-nonconv}
+::: {#exm-nonconv}
 Define the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}^2$ by $$a_n:=\left(1+\tfrac{1}{n}, n\right).$$
 Then we see that the sequence of the first coordinates $\{a_{n,1}\}_{n\in \mathbb{N}}=\{1+\tfrac{1}{n}\}_{n\in \mathbb{N}}$ converges with limit $1$, whereas the sequence of second coordinates \({\{a_{n,2}\}}_{{n\in \mN}}\) does not converge as $a_{n,2}\rightarrow \infty$ for $n\rightarrow\infty$. The sequence $\{a_n\}$ does not get close to a particular element of $\mathbb{R}^2$ for $n\rightarrow\infty$ , so we would intuitively say that it does not converge. In fact, for any fixed $L=(L_1,L_2)\in \mathbb{R}^2$,
 $$
@@ -91,7 +95,8 @@ A common property of all norms on $\mathbb{R}^m$ is that they have the same conv
 In our previous example, what went wrong with respect to convergence is that in one coordinate the values of the vectors did not converge. It is easily seen that a sequence of vectors can only converge only if all coordinates of these vectors converge. It will also be sufficient. We have the following:
 
 ::: {#thm-coord}
-**Theorem (Coordinate-wise convergence criterion).**  
+## Coordinate-wise convergence criterion
+
 The sequence $\{a_n\}\subset \mathbb{R}^m$ converges to $L$ **iff** for $k=1,2,\ldots,m$,
 $$
 \lim_{n\rightarrow \infty}a_{n,k}=L_k.
@@ -139,7 +144,7 @@ Given a sequence $\{a_n\}_{n\in \mathbb{N}}$ and an increasing function $f:\math
 
 A subsequence is therefore a sequence which is “drawn” from a sequence of elements.
 
-::: {.callout-note title="Example" #ex-subseq-constant}
+::: {#exm-subseq-constant}
 Let $\{a_n\}_{n\in \mathbb{N}}=\{(-1)^n\}_{n\in\mathbb{N}}$. Then $f:\mathbb{N}\rightarrow\mathbb{N}$ with $f(n)=2n$ defines the constant subsequence
 $$
 b_n=a_{f(n)}=1.
@@ -152,7 +157,8 @@ The following theorem will be important in numerous applications in proofs in th
 
 
 ::: {#thm-bw}
-**Theorem (Bolzano–Weierstrass).**  
+## Bolzano–Weierstrass
+
 Let $\{x_n\}$ be a bounded sequence in $\mathbb{R}^m$. Then it has a convergent subsequence.
 :::
 
@@ -186,10 +192,23 @@ After $m$ steps we obtain a subsequence $\{x_{n_k}\}$ for which all components c
 :::
 
 
-::: {.callout-note title="Example" #ex-bw-alt}
+::: {#exm-bw-alt}
+##
+
 The sequence $\{(-1)^n\}_{n\in \mathbb{N}}$ does not converge, but it is bounded. One convergent subsequence is obtained by $f(n)=2n$, giving $b_n=a_{2n}=1$.
 :::
 
-::: {.callout-note title="Example" #ex-bw-cossin}
+::: {#exm-bw-cossin}
+##
+
 Consider the sequence $a_n=(\cos n,\sin n)$ in $\mathbb{R}^2$. This sequence does not converge. But since $\|a_n\|=1$ for all $n$, it is bounded, so by Bolzano–Weierstrass it has a convergent subsequence.
+:::
+
+
+::: {#exm-bounded-subseq}
+##
+
+Let $a_n = (-1)^n$. If we choose the increasing index map $f(n)=2n$, then
+$$b_n := a_{f(n)} = a_{2n} = 1 \quad \text{for all } n,$$
+so $\{b_n\}$ is a constant (and hence convergent) subsequence.
 :::

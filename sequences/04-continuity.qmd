@@ -10,7 +10,9 @@ b_n:=f(a_n).
 $$
 Below we focus on continuous $f$. First we will repeat what that actually means.
 
-::: {.callout-note title="Continuity (definition)"}
+::: {#def-cont} 
+## Continuity
+
 Consider a function $f:I\rightarrow \mathbb{R}$, where $I\subset \mathbb{R}$ is an open interval, and take $a\in I$. Then $f$ is *continuous at* $a$ if
 $$
 \lim_{x\rightarrow a}f(x)=f(a).
@@ -25,8 +27,9 @@ The function $f$ is *continuous on $I$* if it is continuous at every $a\in I$.
 
 ## Continuity and row continuity {-}
 
-::: {#thm-seqcont}
-**(Characterization of continuity in terms of sequences).**  
+::: {#thm-seqcont} 
+$\sim$ Characterization of continuity in terms of sequences
+
 Let $f:I\rightarrow \mathbb{R}$ with $I\subset\mathbb{R}$ open. Then $f$ is continuous at $a\in I$ **iff** for each sequence $\{a_n\}\subset I$ with $a_n\to a$ we have
 $$
 f(a_n)\to f(a).

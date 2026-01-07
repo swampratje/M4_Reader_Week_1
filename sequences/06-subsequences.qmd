@@ -15,7 +15,8 @@ Let $a_n=(-1)^n$. Then $f(n)=2n$ defines the constant subsequence $b_n=a_{f(n)}=
 :::
 
 ::: {#thm-bw}
-**Theorem (Bolzano–Weierstrass).**
+$\sim$ Bolzano–Weierstrass
+
 Let $\{x_n\}$ be a bounded sequence in $\mathbb{R}^m$. Then it has a convergent subsequence.
 :::
 
@@ -45,15 +46,14 @@ Then the sequence $\{a_{f(n)}\}_{n\in\mathbb{N}}$ is called a *subsequence* of $
 
 Intuitively, a subsequence is “drawn” from the original sequence by keeping some terms and discarding others, but never changing the order.
 
-::: {.callout-note title="Example"}
-Let $a_n = (-1)^n$. If we choose the increasing index map $f(n)=2n$, then
+::: {#exm-bounded-subseq}
+## Example
+dsafljkdsjfLet $a_n = (-1)^n$. If we choose the increasing index map $f(n)=2n$, then
 \[
 b_n := a_{f(n)} = a_{2n} = 1 \quad \text{for all } n,
 \]
 so $\{b_n\}$ is a constant (and hence convergent) subsequence.
 :::
-
-
 
 ## Bolzano–Weierstrass {#sec-bw}
 

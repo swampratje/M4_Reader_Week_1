@@ -7,7 +7,8 @@ Taylor polynomials match derivatives of a function at a point. The zero order Ta
 In *Mathematics 1* you saw that a linear approximation can be poor if curvature is large. The same idea appears here: approximation quality depends on higher derivatives.
 
 
-::: {.callout-note title="Example bad linear approximation" collapse="false"}
+::: {#exm-badapprox}
+## bad linear approximation
 
 Consider
 $$
@@ -39,7 +40,8 @@ $$
 ## Taylor’s Theorem {#sec-taylor-theorem}
 
 ::: {#thm-taylor}
-**(Taylor).**  
+## Taylor
+
 Let $f^{(n)}(t)$ be continuous for $a\le t\le x$ and let $f^{(n+1)}(t)$ exist for all $a<t<x$. Then there exists a point $\xi_x$ between $a$ and $x$ such that
 $$
 R_n(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}(x-a)^{n+1}.

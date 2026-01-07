@@ -4,6 +4,8 @@ title: "Integral test"
 
 
 ::: {#thm-integral} 
+## Integral test
+
 Let $f:[1,\infty)\to \mathbb{R}_+$ be a continuous non-increasing function with the property that
 $$
 \lim_{x\to\infty} f(x)=0.
@@ -17,7 +19,8 @@ Define the sequence $\{a_n\}_{n=1}^\infty$ by $a_n=f(n)$. Then:
 
 A proof is illustrated by the following two examples.
 
-::: {.callout-note title="Example of divergence" collapse="false"}
+::: {#exm-diverg-inttest}
+
 Consider the series $$\sum_{n=1}^\infty \frac{1}{\sqrt{n}}.$$
 Then this is the series corresponding to $f(x)=\frac{1}{\sqrt{x}}$ which is decreasing and $\displaystyle \lim_{x\rightarrow\infty}f(x)=0$.
 
@@ -28,7 +31,7 @@ $$\int_1^\infty f(x)dx=\infty.$$
 Therefore the series must diverge.
 :::
 
-::: {.callout-note title="Example of convergence" collapse="false"}
+::: {#exm-conv-inttest}
 Consider the series $$\sum_{n=1}^\infty \frac{1}{\sqrt{n}}.$$
 Then this is the series corresponding to $f(x)=\frac{1}{{x}^2}$ which is decreasing and $\displaystyle \lim_{x\rightarrow\infty}f(x)=0$.
 

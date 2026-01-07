@@ -4,7 +4,7 @@ title: "Series and convergence"
 A necessary condition for convergence of a series is that the underlying sequence must have a limit 0. 
 
 ::: {#thm-conv}
-**(Necessary condition for convergence).**
+## Necessary condition for convergence
 
 If $\displaystyle\sum_{n=0}^\infty a_n$ converges, then $\displaystyle\lim_{n\to\infty} a_n=0$.
 :::
@@ -19,7 +19,7 @@ $$
 Do you think it is also a sufficient condition for convergence? Further basic properties of series are these algebraic ones. You may try to prove them yourself:
 
 ::: {#thm-linear}
-**(Linearity of convergent series).**
+## Linearity of convergent series
 
 Let $\displaystyle\sum_{n=0}^\infty a_n$ and $\displaystyle\sum_{n=0}^\infty b_n$ converge with sums $S_a$ and $S_b$.
 Then for any $c\in\mathbb{R}$:

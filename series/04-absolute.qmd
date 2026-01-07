@@ -4,7 +4,7 @@ title: "Absolute convergence"
 We call $\displaystyle\sum_{n=1}^\infty a_n$ *absolutely convergent* if $\displaystyle\sum_{n=1}^\infty |a_n|$ converges.
 
 ::: {#thm-abs}
-**(Absolute convergence implies convergence).**
+## Absolute convergence implies convergence
 
 If $\displaystyle\sum_{n=1}^\infty |a_n|$ converges, then $\displaystyle\sum_{n=1}^\infty a_n$ converges.
 :::
@@ -23,7 +23,8 @@ $$\sum_{n=1}^ka_n = \sum_{n=1}^k b_k -\sum_{n=1}^k |a_n|$$ and that the right-ha
 We cannot simply reverse the theorem. If a sequence is *convergent*, it does not mean that it is *absolutely convergent*. This is a very common misconception (!). See the example below.
 
 
-::: {.callout-note title="Example: convergent but not absolutely"}
+::: {#exm-convnabs}
+##  convergent but not absolutely
 The alternating harmonic series
 $$
 \sum_{n=1}^\infty \frac{(-1)^n}{n}

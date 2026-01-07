@@ -8,7 +8,9 @@ title: 'Sequences in $\mathbb{R}$ and convergence'
 
 We say that the sequence $\{a_n\}_{n\in \mathbb{N}}$ in $\mathbb{R}$ has limit $L\in\mathbb{R}$ if, for large enough indices, the elements become arbitrarily close to $L$.
 
-::: {.callout-note title="Convergence of sequences in $\mathbb{R}$"}
+::: {#def-conv-seq}
+## Convergence of sequences in $\mathbb{R}$    
+
 The sequence $\{a_n\}_{n\in \mathbb{N}}$ has limit $L\in \mathbb{R}$ if for each $\varepsilon>0$ there exists an index number $N\in \mathbb{N}$ such that
 $$
 n\geq N\Rightarrow |a_n-L|\leq \varepsilon.
@@ -22,9 +24,10 @@ $$
 If a sequence does not converge, it is called *divergent*.
 :::
 
-### Examples {-}
 
-::: {.callout-note title="Example 1: random perturbation sequence" #ex-random}
+::: {#exm-random}
+## Random sequence
+
 Generate a sequence $\{a_n\}_{n=1}^\infty$ using
 $$
 a_n=1+\frac{(-1)^n+\delta}{n},
@@ -44,7 +47,9 @@ $n\geq N:=\left\lceil\frac{2}{\varepsilon}\right\rceil$.[^1]
 :::
 
 
-::: {.callout-note title="Example 2: geometric sequence" #ex-geoseries}
+::: {#exm-geomseq}
+## Geometric sequence
+
 Consider the geometric sequence $a_n=r^n$ for $n\in \mathbb{N}$, and assume $r\neq 0$. Then $a_n$ converges for $-1<r\leq 1$.
 
 If $r=1$ convergence is clear, as $a_n=1$ for all $n$. If $r=-1$, divergence is also clear as $a_n=(-1)^n$.
@@ -65,7 +70,8 @@ then $n\geq N\Rightarrow |a_n-L|\leq \varepsilon$.
 
 Geometric sequences play an important role in finance, as these can be used to model processes with a constant proportional change (e.g., steady growth, inflation, or discount factors), where each period’s value is obtained by multiplying the previous one by the same factor.
 
-::: {.callout-note title="Example 3: arithmetic sequence" #ex-ariseries}
+::: {#exm-arithseq}
+## Arithmetic sequence
 Consider the arithmetic sequence inductively defined, i.e. $a_1=A, a_n=a_{n-1}+K$ for $n\in \mathbb{N}$. This sequence clearly does not converge, or it must be constant.   
 :::
 
@@ -79,18 +85,11 @@ Arithmetic sequences also appear in finance. Whenever a cash flow, payment, or v
 
 
 ::: {#exr-sum}
+
 Show that $\sum_{k=1}^n k = \frac{n(n+1)}{2}$.
 :::
 
 As seen in @exr-sum, the formula can be proved by induction.
-
-
-
-::: {#exr-sum1}
-Show that $\sum_{k=1}^n k = \frac{n(n+1)}{2}$.
-:::
-
-As seen in @exr-sum1, the formula can be proved by induction.
 
 
 
